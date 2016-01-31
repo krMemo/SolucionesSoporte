@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<xliff version="1.1" xmlns="urn:oasis:names:tc:xliff:document:1.1">
+    <file source-language="en" original="com.oracle.e1.jdemf.bundle.jdemfResourceBundle" datatype="x-oracle-adf">
+        <body>
+            <trans-unit id="USER_NAME" maxwidth="20">
+                <source>Usuario</source>
+                <target/>
+                <note>Used on the login page, along with Password, as part of the user E1 credentials. </note>
+            </trans-unit>
+            <trans-unit id="PASSWORD" maxwidth="20">
+                <source>Contraseña</source>
+                <target/>
+                <note>Used on the login page, along with User Name, as part of the user E1 credentials </note>
+            </trans-unit>
+            <trans-unit id="ENVIRONMENT" maxwidth="20">
+                <source>Ambiente</source>
+                <target/>
+                <note>Generally a hidden field only shown to admin or developers. The E1 environment, such as "PD910". </note>
+            </trans-unit>
+            <trans-unit id="ROLE" maxwidth="20">
+                <source>Rol</source>
+                <target/>
+                <note>Generally a hidden field only shown to admin or developers. The E1 user role, such as "*ALL". </note>
+            </trans-unit>
+            <trans-unit id="JAS_SERVER" maxwidth="20">
+                <source>JAS Server</source>
+                <target/>
+                <note>Generally a hidden field only shown to admin or developers. The web address where the jas server is located. </note>
+            </trans-unit>
+            <trans-unit id="LOGIN" maxwidth="20">
+                <source>Iniciar</source>
+                <target/>
+                <note>The text placed on the Login button when pressed will use the users credentials to attempt to login to E1</note>
+            </trans-unit>
+            <trans-unit id="URL_TEXT_1">
+                <source>No fue posible conectarse</source>
+                <target/>
+                <note>No maxwidth. Header text shown on the form prior to the login form, which is only shown if the user has not entered their login
+                URL in the app Preferences, it was entered incorrectly, or the server is unavailable.  A field will be shown where they can 
+                view and enter the Preferences URL</note>
+            </trans-unit>
+            <trans-unit id="OK" maxwidth="15">
+                <source>OK</source>
+                <target/>
+                <note>An acknowledgement of the presented information</note>
+            </trans-unit>
+            <trans-unit id="AUTH_ERROR">
+                <source>Error de Autenticación: Autenticación incorrecta</source>
+                <target/>
+                <note>An error shown on the login form when the user login failed</note>
+            </trans-unit>
+            <trans-unit id="DEFAULT_ERROR">
+                <source>Server Connection Error: The application cannot connect to the server</source>
+                <target/>
+                <note>No max width. An error shown when the app cannot connect to the server but the reason is unknown</note>
+            </trans-unit>
+            <trans-unit id="ADMIN_ERROR">
+                <source>Contact Administrator:  The url is not registered in the jas.ini of the JAS server</source>
+                <target/>
+                <note>No max width. An error shown when the app cannot connect because the URL is not registered, the user cannot correct this </note>
+            </trans-unit>
+            <trans-unit id="USER_REQ_ERROR">
+                <source>Authentication Error: User and password are required fields</source>
+                <target/>
+                <note>No max width. User and password cannot be blank</note>
+            </trans-unit>
+            <trans-unit id="SERVER_PROCESS_ERROR">
+                <source>The server is unable to process the request.</source>
+                <target/>
+                <note>No max width. Error shown on the screen when the request to the server failed</note>
+            </trans-unit>
+            <trans-unit id="TIMEOUT_ERROR">
+                <source>Your session is no longer valid. Please login again.</source>
+                <target/>
+                <note>No max width. Error shown on the screen when the session has timed out</note>
+            </trans-unit>
+            <trans-unit id="URL_TEXT_ENTER">
+                <source>Por favor ingrese la URL del servidor</source>
+                <target/>
+                <note>No max width.  Text requesting the user to enter a configuration url on the first time they run the application.
+            </note>
+            </trans-unit>
+            <trans-unit id="URL_TEXT_3">
+                <source>The application cannot connect to the server. Verify that you have a working network connection and that the server URL is correct in the application preferences.</source>
+                <target/>
+                <note>No max width. Text shown if the application is unable to connect to the server. A field (not editable) will be shown with the url that is configured.</note>
+            </trans-unit>
+            <trans-unit id="LOGOUT" maxwidth="10">
+                <source>Logout</source>
+                <target/>
+                <note>Logout button will terminate the users session and then allow them to login again.</note>
+            </trans-unit>
+            <trans-unit id="AUTHORIZATION_ERROR">
+                <source>Contact Administrator: You are not authorized to run this application.</source>
+                <target/>
+                <note>No max width. The user is not authorized in E1 to run this application.</note>
+            </trans-unit>
+            <trans-unit id="BACK" maxwidth="10">
+                <source>Back</source>
+                <target/>
+                <note>A button on the page that returns the user to where they came from</note>
+            </trans-unit>
+            <trans-unit id="LEGAL_TERMS" maxwidth="15">
+                <source>Legal Terms</source>
+                <target/>
+                <note>Text for the link to view the application legal terms.</note>
+            </trans-unit>
+            <trans-unit id="DONE" maxwidth="8">
+                <source>Done</source>
+                <target/>
+                <note>Done viewing the page</note>
+            </trans-unit>
+            <trans-unit id="APPLICATION_NAME" maxwidth="30">
+                <source>Application Name</source>
+                <target/>
+                <note>The name of the application shown on the about page.</note>
+            </trans-unit>
+            <trans-unit id="VERSION" maxwidth="30">
+                <source>Version</source>
+                <target/>
+                <note>The version of the application displayed on the about page.</note>
+            </trans-unit>
+            <trans-unit id="AIS_SERVER" maxwidth="30">
+                <source>AIS Server</source>
+                <target/>
+                <note>The AIS server currently configured for the application shown on the about page.</note>
+            </trans-unit>
+            <trans-unit id="ABOUT" maxwidth="20">
+                <source>About</source>
+                <target/>
+                <note>The title of the about page.</note>
+            </trans-unit>
+            <trans-unit id="USER" maxwidth="20">
+                <source>Usuario</source>
+                <target/>
+                <note>User name shown on about page</note>
+            </trans-unit>
+            <trans-unit id="JDE_VERSION" maxwidth="20">
+                <source>JDE Version</source>
+                <target/>
+                <note>Version of the JDE Application used for processing options</note>
+            </trans-unit>
+            <trans-unit id="MOBILE_APP_ID" maxwidth="20">
+                <source>Mobile App ID</source>
+                <target/>
+                <note>Mobile applicaiton id shown in about page</note>
+            </trans-unit>
+            <trans-unit id="ENTERPRISEONE_HTML_SERVER" maxwidth="34">
+                <source>EnterpriseOne HTML Server</source>
+                <target/>
+                <note>Html server displayed on about page</note>
+            </trans-unit>
+            <trans-unit id="MOBILE_APP_VERSION" maxwidth="34">
+                <source>Mobile App Version</source>
+                <target/>
+                <note>Mobile app version displayed on about page</note>
+            </trans-unit>
+            <trans-unit id="AIS_SERVER_VERSION" maxwidth="34">
+                <source>AIS Server Version</source>
+                <target/>
+                <note>AIS Server version displayed on about page</note>
+            </trans-unit>
+            <trans-unit id="GENERAL" maxwidth="12">
+                <source>General</source>
+                <target/>
+                <note>General tab on about page</note>
+            </trans-unit>
+            <trans-unit id="ADVANCED" maxwidth="12">
+                <source>Advanced</source>
+                <target/>
+                <note>Advanced tab on about page</note>
+            </trans-unit>
+            <trans-unit id="UNKNOWN" maxwidth="35">
+                <source>Unknown</source>
+                <target/>
+                <note>Shown on about page when AIS server version is unknown</note>
+            </trans-unit>
+            <trans-unit id="SSO_ENABLED" maxwidth="25">
+                <source>Use Single Sign On</source>
+                <target/>
+                <note>Text next to a check box to indicate if application is participating in Single Sign On (SSO) </note>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

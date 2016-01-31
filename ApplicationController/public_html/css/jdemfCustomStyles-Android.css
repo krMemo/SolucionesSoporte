@@ -1,0 +1,91 @@
+/******** Android **********/
+
+.amx-panelPage-header-overflowIcon {
+  /**background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB0AAAAgCAYAAADud3N8AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wMCFBcKPGzQJQAAALhJREFUSMftlTEKAjEQRZ+LKd0j7CGiexjthK22zBms01lo4wU8gicQzCkEOxsFhYDYpBDNVu40Or8LA3nMkHkBjaaHDF4PxgWAEmiA0Xv9y5yBNXD/uNS4sAdqoSYP0dtJkSnUgpMdA+SgR0HotQs6Ay4CwBsw1TVSOagcVA4qh3+VQ9rTFlgKsB5AE73d5F7vQqjBIhkpuzKl4GSHXdCtIHSXFX70FuPCHKh6Fv4pertKn4rmx/IED1EuPO8zsFQAAAAASUVORK5CYII=);
+  **/
+  visibility: hidden;
+}
+
+/*Reduce top and bottom padding causing issues in Android popups*/
+
+html[dir="ltr"] .amx-panelFormLayout.amx-label-position-topStart .field-value, 
+html[dir="ltr"] .amx-panelFormLayout.amx-label-position-topCenter .field-value, 
+html[dir="ltr"] .amx-panelFormLayout.amx-label-position-topEnd .field-value {
+
+padding: 0px 10px 10px 0px;
+
+}
+/*Reduce top and bottom padding causing issues in Android popups*/
+html[dir="ltr"] .amx-panelFormLayout.amx-label-position-topStart .field-label, 
+html[dir="ltr"] .amx-panelFormLayout.amx-label-position-topCenter .field-label, 
+html[dir="ltr"] .amx-panelFormLayout.amx-label-position-topEnd .field-label, 
+html[dir="rtl"] .amx-panelFormLayout.amx-label-position-topStart .field-label, 
+html[dir="rtl"] .amx-panelFormLayout.amx-label-position-topCenter .field-label, 
+html[dir="rtl"] .amx-panelFormLayout.amx-label-position-topEnd .field-label {
+    
+padding: 0px 10px 10px 0px;   
+    
+}
+
+
+
+/*Style class to be used for input date time*/
+.jdeAndroidDateTime .amx-inputDate-trigger-dateTime {
+    width: 175px;
+}
+/*Default style class to resize the date input*/
+.amx-inputDate-trigger-dateTime {
+    width: 117px;
+}
+/*Set size and color to match labels*/
+.jdeAndroidOutputTextLabel {
+    color: #3A3A3A;
+    font-size: 13.5px;
+    padding-left: 7px;
+}
+
+.jdemfFooter{
+
+height:44px;
+border-top: 1px solid #D1D1D3;
+border-left: none;
+border-bottom: none;
+overflow: hidden;
+opacity: .95;
+width: 100%;
+display: block;
+background-color: #6B83C9;
+
+}
+
+/* When media object input text component is disabled, do not gray out the label. */
+.jdemfMediaTextHistory.amx-panelFormLayout .amx-inputText.amx-disabled {
+    opacity: 1 !important;
+}
+
+/* When media object input text component is disabled, only gray out the text. */
+.amx-inputText.amx-disabled, .jdemfMediaTextHistory.amx-panelFormLayout .amx-inputText.amx-disabled textarea {
+    opacity: .6 !important;
+}
+
+    /*.field.required .field-label:before {*/
+    .field.required.jdemfInputTextWithIcon .field-label:before {
+
+    margin-top: 0px;
+}
+
+    /* Lessen negative margin which causes required icon to be cut off*/
+    
+    html[dir=ltr] .field.required .field-label:before {
+        background-position: left center;
+        margin-left: 5px; 
+        margin-right: 1px;
+    }
+    
+    /* Match previous adjustment on oposite alignent */
+    
+    html[dir=rtl] .field.required .field-label:before {
+        background-position: right center;
+        margin-left: 1px;
+        margin-right: 5px;
+    }

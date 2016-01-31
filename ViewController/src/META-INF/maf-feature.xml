@@ -2,7 +2,11 @@
 <adfmf:features xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:adfmf="http://xmlns.oracle.com/adf/mf">
   <adfmf:feature id="Customers" name="Customers">
     <adfmf:content id="Customers.1">
-      <adfmf:amx file="Customers/CustomersVC-task-flow.xml#CustomersVC-task-flow"/>
+      <adfmf:amx file="Customers/CustomersVC-task-flow.xml#CustomersVC-task-flow">
+        <adfmf:includes>
+          <adfmf:include type="JavaScript" file="js/jdemfJavascript.js" id="i1"/>
+        </adfmf:includes>
+      </adfmf:amx>
     </adfmf:content>
   </adfmf:feature>
 </adfmf:features>

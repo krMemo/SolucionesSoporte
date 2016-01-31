@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version = '1.0' encoding = 'UTF-8'?>
 <Settings xmlns="http://xmlns.oracle.com/sync/config">
   <BaseUri>http://127.0.0.1</BaseUri>
   <AppId/>

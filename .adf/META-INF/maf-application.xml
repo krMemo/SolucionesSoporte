@@ -2,5 +2,9 @@
 <adfmf:application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:adfmf="http://xmlns.oracle.com/adf/mf"
                    version="1.0" name="SolucionesSoporte" id="com.company.SolucionesSoporte"
                    appControllerFolder="ApplicationController" listener-class="application.LifeCycleListenerImpl">
+  <adfmf:featureReference refId="com.oracle.e1.jdemf.login" id="fr2"/>
   <adfmf:featureReference refId="Customers" id="fr1"/>
+  <adfmf:navigation>
+    <adfmf:navigationBar enabled="false"/>
+  </adfmf:navigation>
 </adfmf:application>

@@ -1,0 +1,288 @@
+    /******** BASE **********/
+
+/*Custom inputtext krm*/
+/*.mainBG{
+    background-image: url("../images/yankui_logo_1280_800.png");
+}*/
+.icon25{
+    max-height:25pt; max-width:25pt;
+}
+.namefilter{
+    min-width: 200pt;
+}
+
+/* Show the loading indicator immediately*/
+.amx-loading.showing {
+  animation-duration: 1050ms;
+  -webkit-animation-duration: 1050ms;
+}
+    
+   
+/*Default style class to resize the date input */
+.amx-inputDate .amx-inputDate-content {
+  width: 117px;
+}
+
+.jdemfSpringboardButton > .amx-commandButton-label
+
+{
+color:White;    
+}
+
+.jdemfSpringboard {
+    background-image: -webkit-linear-gradient(bottom, #6983CE 0%, #DEE3F3 70%);
+    background-image: linear-gradient(0deg, #6983CE 5%, #DEE3F3 80%);
+}
+
+    
+    
+    .jdemfListItemsuppressSelect
+    {
+       background-color:transparent !important; 
+    }
+    
+    /* Remove white background color on the outer container list view. */ 
+    .jdemfContentListView {
+        background-color:transparent;
+    }
+    
+    /* Remove separator lines between list items belonging to the outer container list view. */ 
+    .jdemfContentListView > .amx-listView-main > .amx-listView-content > .amx-listItem {
+        border-bottom:none;
+         border-top:none;
+    }
+    
+    
+    /* Remove background color for selected list items belonging to the outer container list view. */
+    
+    .jdemfContentListView > .amx-listView-main > .amx-listView-content > .amx-listItem.amx-listItem-selected                   
+    {
+        background-color:transparent !important;
+    }
+    
+    
+    
+    /*The rounded x icon that is inside a filter entry field to clear*/
+    .innerclearicon{
+        position: absolute;
+        z-index: 2;
+        margin: -10px 0px 0px -45px;
+        height: 20px;
+        width: 20px;
+    }
+    
+    /* Position (x) icon within an input text field using the jdemfInputTextWithIcon style class. */
+    .jdemfInputTextWithIcon-innerClearIcon {
+        position: absolute;
+        z-index: 2;
+        margin: -10px 0px 0px -32px;
+        height: 20px;
+        width: 20px;
+    }
+    
+    /* When check box is disabled do not gray it out. */
+    .amx-selectBooleanCheckbox.amx-disabled {    
+         opacity: 1;    
+    }
+    
+    /* Reduce padding on field label in PFL 
+    HTML[dir=ltr] .amx-panelFormLayout .field .field-label {
+        padding: 10px 5px 10px 5px;
+    }
+    
+    /* Reduce padding everywhere
+    HTML[dir=ltr] .amx-panelFormLayout .field .field-value {
+        padding: 5px 10px;
+    }*/
+    
+    
+    
+    
+    
+    
+
+    
+    /* Remove some padding in PFL*/
+    html[dir=ltr] .amx-panelFormLayout_body{
+        padding-left: 3px;
+    }
+    
+    /* Left padding in pfl*/
+    .amx-panelFormLayout.amx-layout-separate-rows{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .amx-panelFormLayout.amx-layout-separate-rows .field-label{
+            padding: 0px 5px 0px 5px;   
+    }
+    .amx-panelFormLayout.amx-layout-separate-rows .field-value{
+            padding: 0px 5px 5px 5px;
+    }
+    
+    
+    .filtericon{
+     width:30px;
+     margin:5px 5px 5px 5px;
+    }
+    
+    
+    /* For grouping fields in panel form layout remove a top border*/
+    .amx-panelFormLayout.amx-layout-separate-rows > .amx-panelFormLayout_body > .jdemfPanelFormSuppressTopBorder {
+        border-top: none;
+    }
+    
+    .jdemfPanelFormSuppressTopBorder.amx-inputText.amx-node.field {
+        
+        border-top: none !important;
+        
+    }
+    
+    
+    
+    /* Shrink Header Text in Title to fit titles allowing for translations*/
+    .amx-panelPage-facet-header > .amx-outputText{
+    font-size: larger;
+    margin-top: 10px;
+    }
+    
+    
+    /* Shrink button label size so it's smaller than header text*/
+    .amx-commandButton-label{
+    font-size: medium;
+    }
+    
+    
+    /* With border around a list view, remove the last bottom border so it will not double */
+    .jdemfListViewSuppressBottomBorder .amx-listItem:last-child {
+    border-bottom:none !important;
+    }
+    
+    
+    .jdemfListViewBorder .amx-listItem:last-child {
+    border-bottom:none !important;
+    }
+    
+    .jdemfListViewBorder {    
+        border:thin solid #D1D1D3;    
+    }
+    
+    .jdemfTabletSearchField{
+        background:white;
+        border-bottom:thin solid #D1D1D3;    
+    }
+    
+
+    
+    
+    
+    
+    .amx-selectOneButton .selectItemsContainer {
+      padding-left: 4px;
+    }
+    
+    /* Remove right padding for an input text field with an associated icon, like search or filter. */
+    .field.amx-simple.jdemfInputTextWithIcon > .field-value {
+        padding-right:0;
+    }
+    
+    /* Further reduce right padding (from 8px) for an input text field with an associated icon. */
+    .field.amx-simple.jdemfInputTextWithIcon > .field-value > .wrap {
+        padding-right:5px;
+    }
+    
+    /* Start text Media Object input field styles. */
+    /* Remove padding around panel form layout containing media object input text field. */
+    .amx-panelFormLayout.jdemfInputTextRemovePadding {
+        padding:0;
+    }
+    
+    /* Remove padding around panel form body containing media object input text. */
+    .amx-panelFormLayout.jdemfInputTextRemovePadding > .amx-panelFormLayout_body {
+        padding:0;
+    }
+    
+    /* Remove excess space around media object input text field. */
+    .amx-panelFormLayout.jdemfInputTextRemovePadding > .amx-panelFormLayout_body .field.amx-simple > .field-value {
+        /*padding:0;*/
+        padding:0px 10px 0px 5px;
+        margin:0;
+    }
+    
+    /* Remove padding around media object input text field. */
+    .amx-panelFormLayout.jdemfInputTextRemovePadding > .amx-panelFormLayout_body .field.amx-simple > .field-value > .wrap {
+        padding:0;
+    }
+    
+    /* Remove the top and bottom margins of the inner HTML text area. */
+    .amx-panelFormLayout.jdemfInputTextRemovePadding > .amx-panelFormLayout_body .field.amx-simple > .field-value > .wrap > textarea {
+        margin:0;
+    }
+    /* End text Media Object styles. */
+    
+    /* Style to correct margins and size of menu icon */ 
+    .jdemfMenuIcon {
+        margin: 4px 6px 0 -5px !important;
+    }
+    
+    
+    
+    
+    
+    
+    
+    /* Style to correct margins and size of menu icon */ 
+    .jdemfMenuIcon > .amx-image {
+        height:35px!important; 
+        width:35px!important;
+    }
+    
+    .jdemfSecondaryFacetIcon {
+        margin: 9px 10px 0 -5px !important;
+    }
+    
+    .jdemfSecondaryFacetIcon > .amx-image {
+        height:30px!important; 
+        width:30px!important;
+    }
+    
+    
+    
+    
+/* begin styles to support point of sale app */ 
+     
+    .badge {
+  padding: 1px 4px 2px;
+  font-size: 10px;
+  font-weight: bold;
+  line-height: 14px;
+  color: #ffffff;
+  vertical-align: baseline;
+  white-space: nowrap;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #0572ce;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+}
+
+.primaryNav {
+    width:97%;
+    clear: both;
+    margin: 0 auto;
+    padding: 0;
+    height: 40px;
+    border-style: solid;
+    border-color: #E1E1E1;
+    border-width: 1px;
+    background-color: #ffffff;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(226,226,226,0)), color-stop(100%,rgba(204,204,204,0.65)));
+    text-transform:uppercase;
+    
+    white-space:nowrap;
+
+    }   
+    
+/* end styles to support point of sale app */ 
+
+    
+    

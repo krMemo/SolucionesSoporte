@@ -216,6 +216,8 @@
          <string v=".xlf"/>
       </list>
       <value n="DefaultBundleTypeId" v="xliffResourceBundleId"/>
+      <value n="DefaultProjectBundleName" v="com.oracle.e1.jdemf.bundle.jdemfResourceBundle"/>
+      <list n="RegisteredResourceBundles"/>
    </hash>
    <hash n="use-workspace-shared-properties">
       <value n="oracle.jdeveloper.runner.RunConfigurations" v="true"/>

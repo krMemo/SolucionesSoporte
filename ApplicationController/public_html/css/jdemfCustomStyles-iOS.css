@@ -1,0 +1,85 @@
+/******* IOS**********/
+
+/*** Put a box around input fields so they can be seen in ios*/
+.amx-inputText  input, .amx-inputText textarea{
+  padding: 2px !important;
+  border: thin;
+  border-style: solid;
+  border-color: #d1d1d3;  
+}
+.amx-inputText.amx-disabled input, 
+.amx-inputText.amx-disabled textarea {
+  /*border: none;*/
+}
+
+/* Remove border around input text component displaying media object text history. */
+.jdemfMediaTextHistory.amx-panelFormLayout .field.amx-disabled textarea {
+    border: none;
+}
+
+/* When media object input text component is disabled, do not gray out the label. */
+.jdemfMediaTextHistory.amx-panelFormLayout .amx-inputText.amx-disabled {
+    opacity: 1 !important;
+}
+
+/* When media object input text component is disabled, only gray out the text. */
+.amx-inputText.amx-disabled, .jdemfMediaTextHistory.amx-panelFormLayout .amx-inputText.amx-disabled textarea {
+    opacity: .4 !important;
+}
+
+.field-value {
+    margin: 6px 10px 6px 5px;
+}
+
+.wrap {
+    margin: 0px 0px 0px 0px;
+}
+
+
+/* create a left border to seperate panelSplitter components */
+.amx-panelSplitter_contentContainer{
+   
+    border-color: #D1D1D3;
+    border-width: thin;
+    border-style: none none none solid; 
+}
+
+/* Create right border to separate panel splitter components in portrait mode. */
+.amx-panelSplitter_navPortrait {
+    border-right: #D1D1D3 1px solid;
+}
+
+.jdemfFooter{
+
+height:44px;
+border-top: 1px solid #D1D1D3;
+border-bottom: none;
+overflow: hidden;
+opacity: .95;
+width: 100%;
+display: block;
+background-color: #F6F6F7;
+
+}
+
+    /*.field.required .field-label:before {*/
+    .field.required.jdemfInputTextWithIcon .field-label:before {
+    
+    margin-top: 0px;
+}
+
+    /* Lessen negative margin which causes required icon to be cut off*/
+    
+    html[dir=ltr] .field.required .field-label:before {
+        background-position: left center;
+        /*margin-left: -2px;DWN*/ 
+        margin-right: 1px;
+    }
+    
+    /* Match previous adjustment on oposite alignent */
+    
+    html[dir=rtl] .field.required .field-label:before {
+        background-position: right center;
+        margin-left: 1px;
+        margin-right: -2px;
+    }
