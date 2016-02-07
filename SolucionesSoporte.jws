@@ -113,7 +113,72 @@
                   </hash>
                </list>
             </hash>
+            <hash n="iosDeploymentOptions">
+               <value n="appBundleId" v="com.dicipa.SolucionesSoporte"/>
+               <value n="simulatorTarget" v="iPad 2 (iOS 8.4 - iPad 2)"/>
+            </hash>
             <url n="jarURL" path="deploy/iOS1/iOS1.jar/"/>
+            <hash n="mnfImageOptions">
+               <list n="deviceTypes">
+                  <hash>
+                     <value n="appIconPath" v=""/>
+                     <value n="deviceTypeName" v="iPhone Retina"/>
+                     <value n="landscapeSplashScreenPath" v=""/>
+                     <value n="portraitSplashScreenPath" v=""/>
+                  </hash>
+                  <hash>
+                     <value n="appIconPath" v=""/>
+                     <value n="deviceTypeName" v="iPad"/>
+                     <value n="landscapeSplashScreenPath" v=""/>
+                     <value n="portraitSplashScreenPath" v=""/>
+                  </hash>
+                  <hash>
+                     <value n="appIconPath" v=""/>
+                     <value n="deviceTypeName" v="iPad Mini"/>
+                     <value n="landscapeSplashScreenPath" v=""/>
+                     <value n="portraitSplashScreenPath" v=""/>
+                  </hash>
+                  <hash>
+                     <value n="appIconPath" v=""/>
+                     <value n="deviceTypeName" v="iPhone 5"/>
+                     <value n="landscapeSplashScreenPath" v=""/>
+                     <value n="portraitSplashScreenPath" v=""/>
+                  </hash>
+                  <hash>
+                     <value n="appIconPath" v=""/>
+                     <value n="deviceTypeName" v="iPad Retina"/>
+                     <value n="landscapeSplashScreenPath" v=""/>
+                     <value n="portraitSplashScreenPath" v=""/>
+                  </hash>
+                  <hash>
+                     <value n="appIconPath" v=""/>
+                     <value n="deviceTypeName" v="iPhone"/>
+                     <value n="landscapeSplashScreenPath" v=""/>
+                     <value n="portraitSplashScreenPath" v=""/>
+                  </hash>
+               </list>
+               <value n="imageResourceBaseDir" v="/Users/yankuiapps/Documents/Mobile/YankuiApps/SolucionesSoporte/resources/ios/"/>
+               <value n="IPAD_NON_RETINA_7_APP_IMAGE" v="resources/ios/Icon-76.png"/>
+               <value n="IPAD_NON_RETINA_7_HORIZ_SPLASH" v="resources/ios/Default-LandscapeRetina.png"/>
+               <value n="IPAD_NON_RETINA_7_PORT_SPLASH" v="resources/ios/Default-PortraitRetina.png"/>
+               <value n="IPAD_NON_RETINA_7_SETTINGS" v="resources/ios/Icon-29.png"/>
+               <value n="IPAD_NON_RETINA_7_SPOTLIGHT" v="resources/ios/Icon-40.png"/>
+               <value n="IPAD_RETINA_7_APP_IMAGE" v="resources/ios/Icon-76@2x.png"/>
+               <value n="IPAD_RETINA_7_HORIZ_SPLASH" v="resources/ios/Default-LandscapeRetina@2x.png"/>
+               <value n="IPAD_RETINA_7_PORT_SPLASH" v="resources/ios/Default-PortraitRetina@2x.png"/>
+               <value n="IPAD_RETINA_7_SETTINGS" v="resources/ios/Icon-29@2x.png"/>
+               <value n="IPAD_RETINA_7_SPOTLIGHT" v="resources/ios/Icon-40@2x.png"/>
+               <value n="IPHONE_6_PLUS_APP_IMAGE" v="resources/ios/Icon-60@3x.png"/>
+               <value n="IPHONE_6_PLUS_HORIZ_SPLASH" v="resources/ios/Default-Landscape-621@2x.png"/>
+               <value n="IPHONE_6_PLUS_PORT_SPLASH" v="resources/ios/Default-1104h@2x.png"/>
+               <value n="IPHONE_6_PLUS_SETTINGS" v="resources/ios/Icon-29@3x.png"/>
+               <value n="IPHONE_6_PLUS_SPOTLIGHT" v="resources/ios/Icon-40@3x.png"/>
+               <value n="IPHONE_6_SPLASH" v="resources/ios/Default-667h@2x.png"/>
+               <value n="IPHONE_RETINA_6_SPLASH" v="resources/ios/Default@2x.png"/>
+               <value n="IPHONE_RETINA_7_APP_IMAGE" v="resources/ios/Icon-120.png"/>
+               <value n="IPHONE_RETINA_7_SPLASH" v="resources/ios/Default-568h@2x.png"/>
+               <value n="itunesArtwork" v="resources/ios/iTunesArtwork.png"/>
+            </hash>
             <value n="profileClass" v="oracle.adfmf.framework.dt.deploy.ios.McIosFrameworkProfile"/>
             <value n="profileName" v="iOS1"/>
          </hash>
@@ -153,9 +218,9 @@
          </hash>
       </hash>
       <list n="profileList">
-         <string v="SolucionesSoporte_archive"/>
-         <string v="iOS1"/>
          <string v="Android1"/>
+         <string v="iOS1"/>
+         <string v="SolucionesSoporte_archive"/>
       </list>
    </hash>
    <hash n="oracle.jdeveloper.model.ApplicationLibraries">
@@ -194,7 +259,9 @@
             </hash>
             <hash/>
          </list>
-         <list n="url-path"/>
+         <list n="url-path">
+            <url path="src/"/>
+         </list>
       </hash>
    </hash>
    <hash n="ResourceBundleOptions">
