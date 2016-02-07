@@ -9,4 +9,9 @@
       </adfmf:amx>
     </adfmf:content>
   </adfmf:feature>
+  <adfmf:feature id="StartApp" name="StartApp">
+    <adfmf:content id="StartApp.1">
+      <adfmf:amx file="StartApp/StartApp.amx"/>
+    </adfmf:content>
+  </adfmf:feature>
 </adfmf:features>

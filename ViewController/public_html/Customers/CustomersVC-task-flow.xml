@@ -3,7 +3,7 @@
   <task-flow-definition id="CustomersVC-task-flow">
     <default-activity>custlist</default-activity>
     <view id="custlist">
-      <page>/custlist.amx</page>
+      <page>/Customers/custlist.amx</page>
     </view>
     <page-flow-scope-behavior>
       <push-new/>

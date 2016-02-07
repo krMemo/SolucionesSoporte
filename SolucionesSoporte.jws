@@ -230,7 +230,7 @@
             <hash n="iOS Simulator">
                <value n="custom" v="false"/>
                <hash n="iOS_options">
-                  <value n="iosSimulatorName" v="iPad 2 (iOS 8.4 - iPad 2)"/>
+                  <value n="iosSimulatorName" v="iPhone 6 (iOS 8.4 - iPhone 6)"/>
                </hash>
                <value n="mobilePlatform" v="iOS"/>
                <value n="name" v="iOS Simulator"/>
@@ -239,10 +239,9 @@
             </hash>
          </hash>
          <list n="runConfigurationList">
-            <string v="Shared"/>
-            <string v="iOS Simulator"/>
-            <string v="Android Emulator"/>
             <string v="Android Device"/>
+            <string v="Android Emulator"/>
+            <string v="iOS Simulator"/>
          </list>
       </hash>
    </hash>

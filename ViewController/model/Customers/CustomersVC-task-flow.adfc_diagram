@@ -7,7 +7,7 @@
       <property
          name="activityId">custlist</property>
       <property
-         name="page">/custlist.amx</property>
+         name="page">/Customers/custlist.amx</property>
       <property
          name="start">true</property>
       <property
