@@ -15,6 +15,8 @@ public class StartBean {
     private Boolean manager = true;
     private String soType;
     private String aliasname;
+    private String recoveryUser;
+    private String recoveryMail;
     boolean isPopupOpen = true;
     private PropertyChangeSupport propertyChangeSupport = new PropertyChangeSupport(this);
     private String alias;
@@ -55,6 +57,23 @@ public class StartBean {
 
     public String getAliasname() {
         return aliasname;
+    }
+
+
+    public void setRecoveryUser(String recoveryUser) {
+        this.recoveryUser = recoveryUser;
+    }
+
+    public String getRecoveryUser() {
+        return recoveryUser;
+    }
+
+    public void setRecoveryMail(String recoveryMail) {
+        this.recoveryMail = recoveryMail;
+    }
+
+    public String getRecoveryMail() {
+        return recoveryMail;
     }
 
     public StartBean() {

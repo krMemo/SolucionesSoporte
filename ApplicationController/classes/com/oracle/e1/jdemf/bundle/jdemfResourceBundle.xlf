@@ -3,22 +3,22 @@
     <file source-language="en" original="com.oracle.e1.jdemf.bundle.jdemfResourceBundle" datatype="x-oracle-adf">
         <body>
             <trans-unit id="USER_NAME" maxwidth="20">
-                <source>Usuario</source>
+                <source>User Name</source>
                 <target/>
                 <note>Used on the login page, along with Password, as part of the user E1 credentials. </note>
             </trans-unit>
             <trans-unit id="PASSWORD" maxwidth="20">
-                <source>Contraseña</source>
+                <source>Password</source>
                 <target/>
                 <note>Used on the login page, along with User Name, as part of the user E1 credentials </note>
             </trans-unit>
             <trans-unit id="ENVIRONMENT" maxwidth="20">
-                <source>Ambiente</source>
+                <source>Environment</source>
                 <target/>
                 <note>Generally a hidden field only shown to admin or developers. The E1 environment, such as "PD910". </note>
             </trans-unit>
             <trans-unit id="ROLE" maxwidth="20">
-                <source>Rol</source>
+                <source>Role</source>
                 <target/>
                 <note>Generally a hidden field only shown to admin or developers. The E1 user role, such as "*ALL". </note>
             </trans-unit>
@@ -28,12 +28,12 @@
                 <note>Generally a hidden field only shown to admin or developers. The web address where the jas server is located. </note>
             </trans-unit>
             <trans-unit id="LOGIN" maxwidth="20">
-                <source>Iniciar</source>
+                <source>Login</source>
                 <target/>
                 <note>The text placed on the Login button when pressed will use the users credentials to attempt to login to E1</note>
             </trans-unit>
             <trans-unit id="URL_TEXT_1">
-                <source>No fue posible conectarse</source>
+                <source>Cannot Connect to Server</source>
                 <target/>
                 <note>No maxwidth. Header text shown on the form prior to the login form, which is only shown if the user has not entered their login
                 URL in the app Preferences, it was entered incorrectly, or the server is unavailable.  A field will be shown where they can 
@@ -45,7 +45,7 @@
                 <note>An acknowledgement of the presented information</note>
             </trans-unit>
             <trans-unit id="AUTH_ERROR">
-                <source>Error de Autenticación: Autenticación incorrecta</source>
+                <source>Authentication Error: Authentication Failed</source>
                 <target/>
                 <note>An error shown on the login form when the user login failed</note>
             </trans-unit>
@@ -75,7 +75,7 @@
                 <note>No max width. Error shown on the screen when the session has timed out</note>
             </trans-unit>
             <trans-unit id="URL_TEXT_ENTER">
-                <source>Por favor ingrese la URL del servidor</source>
+                <source>Please Enter Configuration URL</source>
                 <target/>
                 <note>No max width.  Text requesting the user to enter a configuration url on the first time they run the application.
             </note>
@@ -131,7 +131,7 @@
                 <note>The title of the about page.</note>
             </trans-unit>
             <trans-unit id="USER" maxwidth="20">
-                <source>Usuario</source>
+                <source>User</source>
                 <target/>
                 <note>User name shown on about page</note>
             </trans-unit>

@@ -5,6 +5,7 @@
   <adfmf:featureReference refId="StartApp" id="fr3"/>
   <adfmf:featureReference refId="com.oracle.e1.jdemf.login" id="fr2"/>
   <adfmf:featureReference refId="Customers" id="fr1"/>
+  <adfmf:featureReference refId="PassRecovery" id="fr4"/>
   <adfmf:navigation>
     <adfmf:navigationBar enabled="false"/>
   </adfmf:navigation>

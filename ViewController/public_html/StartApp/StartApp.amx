@@ -4,14 +4,16 @@
 <amx:panelPage id="pp1">
 <?audit suppress oracle.maf.warning-missing-shortDesc?>
 <?audit suppress oracle.maf.warning-missing-hintText?>
-    <amx:spacer height="#{deviceScope.hardware.screen.width &lt; deviceScope.hardware.screen.height?(deviceScope.hardware.screen.availableHeight-490)/2:(deviceScope.hardware.screen.availableHeight-310)/2}"
+    <amx:spacer height="#{deviceScope.hardware.screen.width &lt; deviceScope.hardware.screen.height?(deviceScope.hardware.screen.availableHeight)/5:(deviceScope.hardware.screen.availableHeight)/4}"
                     id="sp1"/>
+    <!--amx:spacer height="#{deviceScope.hardware.screen.width &lt; deviceScope.hardware.screen.height?(deviceScope.hardware.screen.availableHeight)/10:(deviceScope.hardware.screen.availableHeight)/6}"
+                    id="sp2" rendered="#{deviceScope.device.os eq 'Android'}"/-->
         <amx:tableLayout id="tl1" width="100%" halign="center" inlineStyle="position:relative;">
             <amx:rowLayout id="rl1"
                            rendered="#{deviceScope.hardware.screen.width &lt; deviceScope.hardware.screen.height?false:true}">
                 <amx:cellFormat id="cf2" rowSpan="9" halign="center" valign="middle">
                     <amx:image id="i1" source="/images/logo_login.jpeg"
-                               inlineStyle="height:#{deviceScope.hardware.screen.height =='480'?'96':'128'}px;"/>
+                               inlineStyle="height:#{deviceScope.hardware.screen.height &lt;= '500'?'96':'128'}px;"/>
                 </amx:cellFormat>
             </amx:rowLayout>
             <amx:rowLayout id="rl9"
@@ -19,7 +21,7 @@
                 <amx:cellFormat id="cf12" width="8px" rowSpan="8"></amx:cellFormat>
                 <amx:cellFormat id="cf14" halign="center" valign="middle">
                     <amx:image id="i4" source="/images/logo_login.jpeg"
-                               inlineStyle="height:#{deviceScope.hardware.screen.height =='480'?'86':'96'}px; margin-bottom:25px; margin-top:30px;"/>
+                               inlineStyle="height:#{deviceScope.hardware.screen.height &lt;= '500'?'86':'96'}px; margin-bottom:25px; margin-top:30px;"/>
                 </amx:cellFormat>
                 <amx:cellFormat id="cf15" width="8px" rowSpan="8"/>
             </amx:rowLayout>
@@ -29,14 +31,17 @@
                                     inlineStyle="font-size:x-large; font-weight:bold; color:#5e5e5e;"/>
                 </amx:cellFormat>
             </amx:rowLayout>
-            <amx:rowLayout id="rl2">
-                <amx:cellFormat id="cf4" halign="center" valign="middle">
-                    <amx:outputText id="ot2" value="Usuario" rendered="#{deviceScope.device.os eq 'Android'}"/>
-                    <amx:commandLink id="cb3" text="Iniciar Sesión" action="#{startBean.gotoLogin}" rendered="#{deviceScope.device.os eq 'iOS'}">
-                    </amx:commandLink>
+            <amx:rowLayout id="rl3">
+                <amx:cellFormat id="cf1" halign="center" valign="middle" height="65px">
+                    <amx:commandButton id="cb3" text="Iniciar Sesión" action="#{startBean.gotoLogin}"/>
                 </amx:cellFormat>
             </amx:rowLayout>
-            <amx:rowLayout id="rl3" rendered="#{deviceScope.device.os eq 'Android'}">
+            <!--amx:rowLayout id="rl2">
+                <amx:cellFormat id="cf4" halign="center" valign="middle">
+                    <amx:outputText id="ot2" value="Usuario" rendered="#{deviceScope.device.os eq 'Android'}"/>
+                </amx:cellFormat>
+            </amx:rowLayout>
+            <amx:rowLayout id="rl10" rendered="#{deviceScope.device.os eq 'Android'}">
                 <amx:cellFormat id="cf5" halign="center" valign="middle">
                     <amx:inputText id="it1" maximumLength="15" inlineStyle="width:200px; color:Gray;" simple="true"
                                    inputType="number">
@@ -62,7 +67,7 @@
                                    inlineStyle="height:50px; margin-bottom:15px;"/>
                     </amx:commandLink>
                 </amx:cellFormat>
-            </amx:rowLayout>
+            </amx:rowLayout-->
             <amx:rowLayout id="rl8" >
                 <amx:cellFormat id="cf10" halign="center" valign="middle" height="35px">
                     <amx:commandLink  text="¿Olvidó su contraseña?"

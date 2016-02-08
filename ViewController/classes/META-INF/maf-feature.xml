@@ -14,4 +14,9 @@
       <adfmf:amx file="StartApp/StartApp.amx"/>
     </adfmf:content>
   </adfmf:feature>
+  <adfmf:feature id="PassRecovery" name="PassRecovery">
+    <adfmf:content id="PassRecovery.1">
+      <adfmf:amx file="PassRecovery/passRecovery.amx"/>
+    </adfmf:content>
+  </adfmf:feature>
 </adfmf:features>
