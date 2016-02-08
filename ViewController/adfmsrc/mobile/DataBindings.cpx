@@ -3,9 +3,11 @@
              SeparateXMLFiles="false" Package="mobile" ClientType="Generic">
   <pageMap>
     <page path="/Customers/custlist.amx" usageId="mobile_custlistPageDef"/>
+    <page path="/Customers/soQuery.amx" usageId="mobile_soQueryPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="mobile_custlistPageDef" path="Customers.custlistPageDef"/>
+    <page id="mobile_soQueryPageDef" path="Customers.soQueryPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <dc id="CustomersDC" path="application.CustomersDC"/>

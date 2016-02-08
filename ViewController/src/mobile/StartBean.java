@@ -1,14 +1,23 @@
 package mobile;
 
 
+import javax.el.ValueExpression;
+
 import oracle.adfmf.amx.event.ActionEvent;
 import oracle.adfmf.framework.FeatureContext;
 import oracle.adfmf.framework.api.AdfmfContainerUtilities;
 import oracle.adfmf.framework.api.AdfmfJavaUtilities;
+import oracle.adfmf.framework.model.AdfELContext;
+import oracle.adfmf.java.beans.PropertyChangeListener;
+import oracle.adfmf.java.beans.PropertyChangeSupport;
 
 public class StartBean {
+    private Boolean manager = true;
     private String soType;
+    private String aliasname;
     boolean isPopupOpen = true;
+    private PropertyChangeSupport propertyChangeSupport = new PropertyChangeSupport(this);
+    private String alias;
 
     public void setIsPopupOpen(boolean isPopupOpen) {
         this.isPopupOpen = isPopupOpen;
@@ -18,14 +27,36 @@ public class StartBean {
         return isPopupOpen;
     }
 
+
+    public void setManager(Boolean manager) {
+        this.manager = manager;
+    }
+
+    public Boolean getManager() {
+        return manager;
+    }
+
     public void setSoType(String soType) {
+        String oldSoType = this.soType;
         this.soType = soType;
+        propertyChangeSupport.firePropertyChange("soType", oldSoType, soType);
     }
 
     public String getSoType() {
         return soType;
     }
-    
+
+
+    public void setAliasname(String aliasname) {
+        String oldAliasname = this.aliasname;
+        this.aliasname = aliasname;
+        propertyChangeSupport.firePropertyChange("aliasname", oldAliasname, aliasname);
+    }
+
+    public String getAliasname() {
+        return aliasname;
+    }
+
     public StartBean() {
     }
 
@@ -95,5 +126,21 @@ public class StartBean {
         AdfmfContainerUtilities.hideSpringboard();
         setSpringboardVisible(false);
         return null;
+    }
+
+    public void addPropertyChangeListener(PropertyChangeListener l) {
+        propertyChangeSupport.addPropertyChangeListener(l);
+    }
+
+    public void removePropertyChangeListener(PropertyChangeListener l) {
+        propertyChangeSupport.removePropertyChangeListener(l);
+    }
+
+    public void setAlias(String alias) {
+        this.alias = alias;
+    }
+
+    public String getAlias() {
+        return alias;
     }
 }

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<amx:view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+          xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+    <!--amx:navigationDragBehavior action="#{MainBean.showCustomSpringboard}" direction="back" id="ndb1"/>
+    <amx:navigationDragBehavior action="#{MainBean.hideCustomSpringboard}" direction="forward" id="ndb2"/-->
+    <amx:panelPage id="pp1">
+    <?audit suppress oracle.maf.warning-missing-shortDesc?>
+        <amx:facet name="header">
+            <amx:outputText value="Consulta de Reportes de Servicio" id="ot1"/>
+        </amx:facet>
+        <amx:facet name="primary">
+            <amx:commandButton text="Regresar" id="cb1" action="__back"/>
+        </amx:facet>
+        <amx:tableLayout id="tl3" layout="fixed" halign="center" width="100%">
+            <amx:rowLayout id="rl2">
+                <amx:cellFormat id="cf6" width="80%">
+                    <amx:inputText value="#{bindings.soFilter.inputValue}" simple="true" id="it1" inputType="number"
+                                   hintText="No. Reporte" keyboardDismiss="search" />
+                </amx:cellFormat>
+                <amx:cellFormat id="cf7" width="20%" halign="center">
+                    <amx:commandLink actionListener="#{bindings.getServiceOrdersList.execute}"
+                                     disabled="#{!bindings.getServiceOrdersList.enabled}" id="cl10">
+                        <amx:image id="i1" source="/images/search.png" inlineStyle="height:30pt;"/>
+                    </amx:commandLink>
+                </amx:cellFormat>
+            </amx:rowLayout>
+        </amx:tableLayout>
+        <amx:listView var="row" value="#{bindings.rowset.collectionModel}" fetchSize="#{bindings.rowset.rangeSize}"
+                      selectedRowKeys="#{bindings.rowset.collectionModel.selectedRow}"
+                      selectionListener="#{bindings.rowset.collectionModel.makeCurrent}" showMoreStrategy="autoScroll"
+                      bufferStrategy="viewport" id="lv1" bufferSize="20">
+            <amx:listItem id="li1" action="toDetail">
+                <amx:tableLayout width="100%" id="tl1">
+                    <amx:rowLayout id="rheader">
+                        <amx:cellFormat width="25px" rowSpan="3" id="cf3"/>
+                        <amx:cellFormat width="100%" columnSpan="2"
+                                        height="#{deviceScope.device.os=='Android'?'36':'32'}px" id="cf4"
+                                        inlineStyle="background-color:Highlight;">
+                            <amx:outputText value="Reporte No. #{row.mnPegtoWO_424.bindings.value.inputValue}"
+                                            id="ot3"/>
+                        </amx:cellFormat>
+                    </amx:rowLayout>
+                    <amx:rowLayout id="rl1">
+                        <amx:cellFormat width="70%" halign="start"
+                                        height="#{deviceScope.device.os=='Android'?'36':'32'}px" id="cf2">
+                            <amx:outputText value="#{row.SDescrpcinModelo_678.bindings.value.inputValue}"
+                                            styleClass="adfmf-listItem-highlightText" id="ot2"/>
+                        </amx:cellFormat>
+                        <amx:cellFormat width="30%" halign="end" id="cf5">
+                            <amx:outputText value="#{row.dtOrderDate_19.bindings.value.inputValue}"
+                                            styleClass="adfmf-listItem-captionText" id="ot4"/>
+                        </amx:cellFormat>
+                    </amx:rowLayout>
+                    <amx:rowLayout id="rl3">
+                        <amx:cellFormat width="50%" halign="start"
+                                        height="#{deviceScope.device.os=='Android'?'36':'32'}px" id="cf8">
+                            <amx:outputText value="#{row.SWOSt_447.bindings.value.inputValue}"
+                                            styleClass="adfmf-listItem-captionText" id="ot5"/>
+                        </amx:cellFormat>
+                        <amx:cellFormat width="50%" halign="end" id="cf1">
+                            <amx:outputText value="#{row.SSerialNumber_563.bindings.value.inputValue}"
+                                            styleClass="adfmf-listItem-captionText" id="ot14"/>
+                        </amx:cellFormat>
+                    </amx:rowLayout>
+                </amx:tableLayout>
+            </amx:listItem>
+        </amx:listView>
+    </amx:panelPage>
+</amx:view>
