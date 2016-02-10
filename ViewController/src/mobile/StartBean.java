@@ -88,8 +88,10 @@ public class StartBean {
         AdfmfJavaUtilities.setELValue((String)"#{applicationScope.logout}", (Object)"1");
         AdfmfJavaUtilities.setELValue((String)"#{preferenceScope.feature.com.oracle.e1.jdemf.login.Connection.URL}", (Object)"http://201.161.1.59:87");
         AdfmfContainerUtilities.resetFeature((String)"com.oracle.e1.jdemf.login");
+        AdfmfJavaUtilities.setELValue((String)"#{bindings.username1.inputValue}", (Object)"84002");
         return null;
     }
+    
     
     /*================== =========== ==================*/
     /*================== POPUPHANDLE ==================*/

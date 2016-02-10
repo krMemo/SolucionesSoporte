@@ -5,12 +5,11 @@
   <?audit suppress oracle.maf.warning-missing-shortDesc?>
 
     <amx:facet name="header">
-      <amx:outputText value="Selección de Cliente" id="ot1"/>
+      <amx:outputText value="#{applicationScope.startBean.manager == true?'Selección de Cliente':'Soluciones Soporte'}" id="ot1"/>
     </amx:facet>
     <amx:facet name="secondary">
       <amx:commandButton id="cb2"/>
     </amx:facet>
-    <amx:outputText value="#{bindings.aliasName.inputValue}" id="ot4"/>
     <amx:tableLayout id="tl12" halign="center" rendered="#{applicationScope.startBean.aliasname != ''}">
             <amx:rowLayout id="rh">
                 <amx:cellFormat id="ch" halign="center" valign="middle" columnSpan="7" header="true" height="60px">
@@ -21,7 +20,7 @@
             <amx:rowLayout id="rl12">
                 <amx:cellFormat id="cfleft" halign="center" valign="middle" width="10px" rowSpan="3"/>
                 <amx:cellFormat id="cf12" halign="center" valign="middle">
-                    <amx:commandLink id="cl12" action="toQuery">
+          <amx:commandLink id="cl12" action="toQuery" actionListener="#{bindings.getServiceOrdersList.execute}" disabled="#{!bindings.getServiceOrdersList.enabled}">
                         <amx:image id="i12" source="/images/blueicon_search_512.png"
                                    inlineStyle="height:#{(deviceScope.hardware.screen.availableWidth-(deviceScope.hardware.screen.availableWidth*.15))/3}px;"/>
                     </amx:commandLink>

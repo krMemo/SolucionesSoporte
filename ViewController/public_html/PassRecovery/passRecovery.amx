@@ -7,6 +7,9 @@
         <amx:facet name="header">
             <amx:outputText value="Recuperar Contraseña" id="ot1"/>
         </amx:facet>
+        <amx:facet name="primary">
+            <amx:commandButton text="Regresar" id="cb1" action="__back"/>
+        </amx:facet>
         <amx:tableLayout id="tl3" halign="center" layout="weighted">
             <amx:rowLayout id="rl2">
                 <amx:cellFormat id="cf4" halign="center" >
@@ -22,8 +25,8 @@
             </amx:rowLayout>
             <amx:rowLayout id="rl4">
                 <amx:cellFormat id="cf6" halign="center">
-                    <amx:commandButton  text="Recuperar Contraseña"
-                                       id="cb1"/>
+                    <amx:commandButton text="Recuperar Contraseña"
+                                       id="cb3"/>
                 </amx:cellFormat>
             </amx:rowLayout>
             <amx:rowLayout id="rl5">

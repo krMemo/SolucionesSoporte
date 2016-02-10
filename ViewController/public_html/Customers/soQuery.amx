@@ -6,7 +6,7 @@
     <amx:panelPage id="pp1">
     <?audit suppress oracle.maf.warning-missing-shortDesc?>
         <amx:facet name="header">
-            <amx:outputText value="Consulta de Reportes de Servicio" id="ot1"/>
+            <amx:outputText value="Consulta" id="ot1"/>
         </amx:facet>
         <amx:facet name="primary">
             <amx:commandButton text="Regresar" id="cb1" action="__back"/>
@@ -32,7 +32,7 @@
             <amx:listItem id="li1" action="toDetail">
                 <amx:tableLayout width="100%" id="tl1">
                     <amx:rowLayout id="rheader">
-                        <amx:cellFormat width="25px" rowSpan="3" id="cf3"/>
+                        <amx:cellFormat width="10px" rowSpan="3" id="cf3"/>
                         <amx:cellFormat width="100%" columnSpan="2"
                                         height="#{deviceScope.device.os=='Android'?'36':'32'}px" id="cf4"
                                         inlineStyle="background-color:Highlight;">
@@ -52,12 +52,12 @@
                         </amx:cellFormat>
                     </amx:rowLayout>
                     <amx:rowLayout id="rl3">
-                        <amx:cellFormat width="50%" halign="start"
+                        <amx:cellFormat width="60%" halign="start"
                                         height="#{deviceScope.device.os=='Android'?'36':'32'}px" id="cf8">
                             <amx:outputText value="#{row.SWOSt_447.bindings.value.inputValue}"
                                             styleClass="adfmf-listItem-captionText" id="ot5"/>
                         </amx:cellFormat>
-                        <amx:cellFormat width="50%" halign="end" id="cf1">
+                        <amx:cellFormat width="40%" halign="end" id="cf1">
                             <amx:outputText value="#{row.SSerialNumber_563.bindings.value.inputValue}"
                                             styleClass="adfmf-listItem-captionText" id="ot14"/>
                         </amx:cellFormat>

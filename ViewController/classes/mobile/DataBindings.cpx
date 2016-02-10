@@ -4,12 +4,19 @@
   <pageMap>
     <page path="/Customers/custlist.amx" usageId="mobile_custlistPageDef"/>
     <page path="/Customers/soQuery.amx" usageId="mobile_soQueryPageDef"/>
+    <page path="/PassRecovery/passRecovery.amx" usageId="mobile_passRecoveryPageDef"/>
+    <page path="/StartApp/StartApp.amx" usageId="mobile_StartAppPageDef"/>
+    <page path="/Customers/soDetail.amx" usageId="mobile_soDetailPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="mobile_custlistPageDef" path="Customers.custlistPageDef"/>
     <page id="mobile_soQueryPageDef" path="Customers.soQueryPageDef"/>
+    <page id="mobile_passRecoveryPageDef" path="PassRecovery.passRecoveryPageDef"/>
+    <page id="mobile_StartAppPageDef" path="StartApp.StartAppPageDef"/>
+    <page id="mobile_soDetailPageDef" path="Customers.soDetailPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
+    <dc id="RecoveryDC" path="application.RecoveryDC"/>
     <dc id="CustomersDC" path="application.CustomersDC"/>
   </dataControlUsages>
 </Application>

@@ -26,6 +26,7 @@ public class CustomersDC {
     String alphaName;
     String aliasName;
     String soFilter;
+    String soType; 
 
     P5848APP_W5848APPA_FormParent customersAlias_FormParent = new P5848APP_W5848APPA_FormParent();
     P594820I_W594820IA_FormParent serviceOrders_FormParent = new P594820I_W594820IA_FormParent();
@@ -94,11 +95,9 @@ public class CustomersDC {
             formRequest.setFormServiceAction("R");
             
             FSREvent custAliasFSREvent = new FSREvent();
-            //TODO change 50 for custNumber or Alias
             custAliasFSREvent.setFieldValue("30",getCustNumber()); //set search type to parent customer
-            //custAliasFSREvent.setFieldValue("30","50");
             
-            //custAliasFSREvent.doControlAction("15");  // Trigger the Find Button
+            custAliasFSREvent.doControlAction("15");  // Trigger the Find Button
             formRequest.addFSREvent(custAliasFSREvent); //add the events to the form request
             try
             {
@@ -141,7 +140,7 @@ public class CustomersDC {
         if (soFilter != null && soFilter.trim().length() > 0) {
             //set Service Order filter  in QBE
             w594820IAFSREvent.setQBEValue("1[424]", "*" + soFilter.trim() + "*");
-        }
+        } 
         w594820IAFSREvent.doControlAction("6"); //TriggertheFindButton
         formRequest.addFSREvent(w594820IAFSREvent); //addtheeventstotheformrequest
         try {
