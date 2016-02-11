@@ -5,6 +5,7 @@
       <adfmf:amx file="Customers/CustomersVC-task-flow.xml#CustomersVC-task-flow">
         <adfmf:includes>
           <adfmf:include type="JavaScript" file="js/jdemfJavascript.js" id="i1"/>
+          <adfmf:include type="JavaScript" file="js/NavigationController.js" id="i2"/>
         </adfmf:includes>
       </adfmf:amx>
     </adfmf:content>

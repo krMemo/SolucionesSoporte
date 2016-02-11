@@ -42,8 +42,10 @@
         <Item Value="aliasName"/>
       </AttrNames>
     </attributeValues>
-    <methodAction id="getServiceOrdersList" RequiresUpdateModel="true" Action="invokeMethod"
-                  MethodName="getServiceOrdersList" IsViewObjectMethod="false" DataControl="CustomersDC"
+    <methodAction id="getRecentServiceOrders" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="getRecentServiceOrders" IsViewObjectMethod="false" DataControl="CustomersDC"
                   InstanceName="data.CustomersDC.dataProvider"/>
+    <methodAction id="getProductsList" RequiresUpdateModel="true" Action="invokeMethod" MethodName="getProductsList"
+                  IsViewObjectMethod="false" DataControl="CustomersDC" InstanceName="data.CustomersDC.dataProvider"/>
   </bindings>
 </pageDefinition>

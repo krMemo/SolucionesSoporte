@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <amx:view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
           xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
-  <amx:panelPage id="pp1">
-  <?audit suppress oracle.maf.warning-missing-shortDesc?>
-
-    <amx:facet name="header">
+    <amx:panelPage id="pp1">
+        <?audit suppress oracle.maf.warning-missing-shortDesc?>
+        <amx:facet name="header">
             <amx:outputText value="Detalle del Reporte" id="ot1"/>
         </amx:facet>
-    <amx:facet name="primary">
-      <amx:commandButton id="cb0" action="__back"/>
-    </amx:facet>
-    <amx:facet name="secondary">
-        <amx:commandLink id="cb1" action="__back">
-            <amx:image id="i2" inlineStyle="height:32px;" source="/images/blueicon_close_512.png"/>
-        </amx:commandLink>
-    </amx:facet>
+        <amx:facet name="primary">
+            <amx:commandButton id="cb0" action="__back" rendered="#{deviceScope.device.os eq 'Android'}"/>
+        </amx:facet>
+        <amx:facet name="secondary">
+            <amx:commandLink id="cb1" action="__back">
+                <amx:image id="i2" inlineStyle="height:28px;" source="/images/blueicon_close_512.png"/>
+            </amx:commandLink>
+        </amx:facet>
         <amx:panelFormLayout id="pfl1" labelPosition="topStart" fieldHalign="center">
             <amx:panelLabelAndMessage label="No. de Reporte" id="plam7">
                 <amx:outputText value="#{bindings.value.inputValue}" id="ot12"/>
@@ -40,6 +39,9 @@
             <amx:panelLabelAndMessage label="Teléfono" id="plam3">
                 <amx:outputText value="#{bindings.value7.inputValue}" id="ot8"/>
             </amx:panelLabelAndMessage>
+            <amx:panelLabelAndMessage label="Tipo de Reporte" id="plam9">
+                <amx:outputText value="#{bindings.value8.inputValue}" id="ot2"/>
+            </amx:panelLabelAndMessage>
         </amx:panelFormLayout>
-  </amx:panelPage>
+    </amx:panelPage>
 </amx:view>

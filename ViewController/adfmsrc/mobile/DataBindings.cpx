@@ -2,11 +2,12 @@
 <Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.1.3.12.39" id="DataBindings"
              SeparateXMLFiles="false" Package="mobile" ClientType="Generic">
   <pageMap>
-    <page path="/Customers/custlist.amx" usageId="mobile_custlistPageDef"/>
+    <page path="/Customers/custListMenu.amx" usageId="mobile_custlistPageDef"/>
     <page path="/Customers/soQuery.amx" usageId="mobile_soQueryPageDef"/>
     <page path="/PassRecovery/passRecovery.amx" usageId="mobile_passRecoveryPageDef"/>
     <page path="/StartApp/StartApp.amx" usageId="mobile_StartAppPageDef"/>
     <page path="/Customers/soDetail.amx" usageId="mobile_soDetailPageDef"/>
+    <page path="/Customers/productSelection.amx" usageId="mobile_productSelectionPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="mobile_custlistPageDef" path="Customers.custlistPageDef"/>
@@ -14,6 +15,7 @@
     <page id="mobile_passRecoveryPageDef" path="PassRecovery.passRecoveryPageDef"/>
     <page id="mobile_StartAppPageDef" path="StartApp.StartAppPageDef"/>
     <page id="mobile_soDetailPageDef" path="Customers.soDetailPageDef"/>
+    <page id="mobile_productSelectionPageDef" path="Customers.productSelectionPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <dc id="RecoveryDC" path="application.RecoveryDC"/>

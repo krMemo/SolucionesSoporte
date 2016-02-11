@@ -1,16 +1,13 @@
 package mobile;
 
-
-import javax.el.ValueExpression;
-
 import oracle.adfmf.amx.event.ActionEvent;
 import oracle.adfmf.framework.FeatureContext;
 import oracle.adfmf.framework.api.AdfmfContainerUtilities;
 import oracle.adfmf.framework.api.AdfmfJavaUtilities;
-import oracle.adfmf.framework.model.AdfELContext;
 import oracle.adfmf.java.beans.PropertyChangeListener;
 import oracle.adfmf.java.beans.PropertyChangeSupport;
 
+@SuppressWarnings("oracle.jdeveloper.java.tag-is-missing")
 public class StartBean {
     private Boolean manager = true;
     private String soType;
@@ -24,7 +21,7 @@ public class StartBean {
     public void setIsPopupOpen(boolean isPopupOpen) {
         this.isPopupOpen = isPopupOpen;
     }
-
+    
     public boolean isIsPopupOpen() {
         return isPopupOpen;
     }
@@ -85,13 +82,18 @@ public class StartBean {
     /*================== =========== ==================*/
     
     public String gotoLogin() {
-        AdfmfJavaUtilities.setELValue((String)"#{applicationScope.logout}", (Object)"1");
-        AdfmfJavaUtilities.setELValue((String)"#{preferenceScope.feature.com.oracle.e1.jdemf.login.Connection.URL}", (Object)"http://201.161.1.59:87");
-        AdfmfContainerUtilities.resetFeature((String)"com.oracle.e1.jdemf.login");
-        AdfmfJavaUtilities.setELValue((String)"#{bindings.username1.inputValue}", (Object)"84002");
+        AdfmfJavaUtilities.setELValue("#{applicationScope.logout}", "1");
+        AdfmfJavaUtilities.setELValue("#{preferenceScope.feature.com.oracle.e1.jdemf.login.Connection.URL}",
+                                      "http://201.161.1.59:87");
+        AdfmfContainerUtilities.resetFeature("com.oracle.e1.jdemf.login");
+        AdfmfJavaUtilities.setELValue("#{bindings.username1.inputValue}", "84002");
         return null;
     }
     
+    public void handleNavigation() {
+        //Code to naviagte within task flows programmatically
+        AdfmfContainerUtilities.invokeContainerJavaScriptFunction("Customers", "adf.mf.api.amx.doNavigation", new Object[]{"__back"});
+    }
     
     /*================== =========== ==================*/
     /*================== POPUPHANDLE ==================*/

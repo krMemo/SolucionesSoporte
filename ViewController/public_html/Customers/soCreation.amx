@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<amx:view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+          xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+    <?audit suppress oracle.maf.warning-missing-shortDesc?>
+    <?audit suppress oracle.maf.warning-missing-hintText?>
+    <amx:panelPage id="pp1">
+        <amx:facet name="header">
+            <amx:outputText value="Nuevo Reporte" id="ot1"/>
+        </amx:facet>
+        <amx:facet name="primary">
+            <amx:commandButton text="Regresar" id="cb1" action="__back"/>
+        </amx:facet>
+        <amx:facet name="secondary">
+            <!--amx:outputText value="#{bindings.success.inputValue}" id="ot14" rendered="false"/-->
+            <amx:commandLink id="cl2">
+                <amx:image id="i2" source="/images/blueicon_send_512.png" inlineStyle="height:32pt; margin-top:-10px"/>
+            </amx:commandLink>
+        </amx:facet>
+        <amx:tableLayout id="tl3" layout="weighted" halign="center" width="100%">
+            <amx:rowLayout id="rl2">
+                <amx:cellFormat id="spl" width="15px" rowSpan="10"/>
+                <amx:cellFormat id="cf6" columnSpan="2" halign="center" valign="middle"
+                                height="#{deviceScope.hardware.screen.height &lt; deviceScope.hardware.screen.width?'40':'50'}px">
+                    <amx:outputText value="#{applicationScope.startBean.aliasname}" truncateAt="30" id="ot3"
+                                    inlineStyle="font-weight:bold;"/>
+                </amx:cellFormat>
+                <amx:cellFormat id="spr" width="15px" rowSpan="10"/>
+            </amx:rowLayout>
+            <amx:rowLayout id="rl1">
+                <amx:cellFormat id="cf7" height="#{deviceScope.device.os=='Android'?'36':'32'}px" halign="start"
+                                valign="bottom" columnSpan="2">
+                    <amx:outputText value="No. de Serie: " id="ot4"/>
+                </amx:cellFormat>
+            </amx:rowLayout>
+            <amx:rowLayout id="r20">
+                <amx:cellFormat id="cf8" halign="end" valign="middle"
+                                height="#{deviceScope.device.os=='Android'?'36':'32'}px">
+                    <amx:commandLink id="cl1" action="__back">
+                        <amx:image id="i1" source="/images/blueicon_pencil_512.png" inlineStyle="height:32px;"/>
+                    </amx:commandLink>
+                </amx:cellFormat>
+                <amx:cellFormat id="cf1" halign="start" valign="middle" header="true">
+                    <amx:inputText value="#{bindings.serialProduct.inputValue}" id="ot5" simple="true" disabled="true"/>
+                    <amx:outputText value="#{applicationScope.MainBean.soType}" id="ot6" rendered="false"/>
+                    <amx:outputText value="#{bindings.businessUnit.inputValue}" id="ot7" rendered="false"/>
+                    <amx:outputText value="#{bindings.custId.inputValue}" id="ot8" rendered="false"/>
+                    <amx:outputText value="#{bindings.descProductId.inputValue}" id="ot9" rendered="false"/>
+                    <amx:outputText value="#{bindings.assetNumber.inputValue}" id="ot10" rendered="false"/>
+                    <amx:outputText value="#{bindings.parentItemNo.inputValue}" id="ot11" rendered="false"/>
+                    <amx:outputText value="#{bindings.secondItemNo.inputValue}" id="ot12" rendered="false"/>
+                    <amx:outputText value="#{bindings.priority.inputValue}" id="ot13" rendered="false"/>
+                    <amx:outputText value="#{bindings.umo.inputValue}" id="ot14" rendered="false"/>
+                    <amx:outputText value="#{bindings.wr02.inputValue}" id="ot15" rendered="false"/>
+                    <amx:outputText value="#{bindings.prodFamily.inputValue}" id="ot16" rendered="false"/>
+                </amx:cellFormat>
+            </amx:rowLayout>
+            <amx:rowLayout id="rl14">
+                <amx:cellFormat id="cf19" halign="end" valign="middle"
+                                height="#{deviceScope.device.os=='Android'?'36':'32'}px">
+                    
+                </amx:cellFormat>
+                <amx:cellFormat id="cf20" halign="start" valign="middle" header="true">
+                    <amx:inputText value="#{bindings.descProduct.inputValue}" id="ot17" simple="true" disabled="true"/>
+                </amx:cellFormat>
+                </amx:rowLayout>
+            <amx:rowLayout id="rl3">
+                <amx:cellFormat id="cf2" columnSpan="2" valign="bottom"
+                                height="#{deviceScope.device.os=='Android'?'32':'28'}px">
+                    <amx:outputText value="#{startBean.soType==2?'Descripción de la falla:':'Detalle para programar la capacitación:'}" id="ot18"/>
+                </amx:cellFormat>
+            </amx:rowLayout>
+            <amx:rowLayout id="rl4">
+                <amx:cellFormat id="cf3" columnSpan="2" halign="start" valign="top"
+                                height="#{deviceScope.hardware.screen.height &lt; deviceScope.hardware.screen.width?'48':'96'}px">
+                    <amx:inputText value="#{bindings.issueDesc.inputValue}" hintText="#{MainBean.soType==2?'Descripción...':'Detalle...'" simple="true"
+                                   id="it1"
+                                   rows="#{deviceScope.hardware.screen.height &lt; deviceScope.hardware.screen.width?'2':'4'}"
+                                   required="true" maximumLength="80"/>
+                </amx:cellFormat>
+            </amx:rowLayout>
+            <amx:rowLayout id="rl5">
+                <amx:cellFormat id="cf4" columnSpan="2" valign="bottom"
+                                height="#{deviceScope.device.os=='Android'?'32':'28'}px">
+                    <amx:outputText value="#{MainBean.soType==2?'Responsable del equipo:':'Responsable para coordinar la capacitación:'" id="ot19"/>
+                </amx:cellFormat>
+            </amx:rowLayout>
+            <amx:rowLayout id="rl6">
+                <amx:cellFormat id="cf5" columnSpan="2" height="#{deviceScope.device.os=='Android'?'36':'32'}px">
+                    <amx:inputText value="#{bindings.contactName.inputValue}" simple="true" id="it2"
+                                   maximumLength="25"/>
+                </amx:cellFormat>
+            </amx:rowLayout>
+            <amx:rowLayout id="rl7">
+                <amx:cellFormat id="cf9" columnSpan="2" valign="bottom"
+                                height="#{deviceScope.device.os=='Android'?'36':'32'}px">
+                    <amx:outputText value="Tel. contacto:" id="ot20"/>
+                </amx:cellFormat>
+            </amx:rowLayout>
+            <amx:rowLayout id="rl8">
+                <amx:cellFormat id="cf10" columnSpan="2" height="#{deviceScope.device.os=='Android'?'36':'32'}px">
+                    <amx:inputText value="#{bindings.phoneContact.inputValue}" simple="true" id="it4" maximumLength="30"
+                                   keyboardDismiss="go" inputType="tel" hintText="Teléfono,Ext."></amx:inputText>
+                </amx:cellFormat>
+            </amx:rowLayout>
+        </amx:tableLayout>
+        <amx:commandButton text="_hiddenShow" id="_popShowId" inlineStyle="visibility: hidden;">
+            <amx:showPopupBehavior id="spb1" popupId="p1" type="action" decoration="simple" alignId="pp1"
+                                   align="overlapMiddleCenter"/>
+        </amx:commandButton>
+        <amx:commandButton text="_hiddenClose" id="_popCloseId" inlineStyle="visibility: hidden;">
+            <amx:closePopupBehavior id="cpb1" popupId="p1" type="action"/>
+        </amx:commandButton>
+    </amx:panelPage>
+    <amx:popup id="p1" animation="slideUp" autoDismiss="false" backgroundDimming="on">
+        <amx:tableLayout id="tl2" halign="center">
+            <amx:rowLayout id="rheader">
+                <amx:cellFormat id="cheader" halign="center" valign="middle" header="true"
+                                inlineStyle="background-color:Highlight;">
+                    <amx:outputText id="ot21" value="Alta exitosa"
+                                    inlineStyle="font-size:large; font-weight:bold;"/>
+                </amx:cellFormat>
+            </amx:rowLayout>
+            <amx:rowLayout id="rl10">
+                <amx:cellFormat id="cf15" halign="center" valign="middle">
+                    <amx:outputText value="Se ha generado el reporte No." id="ot22"/>
+                </amx:cellFormat>
+            </amx:rowLayout>
+            <amx:rowLayout id="rl11">
+                <amx:cellFormat id="cf16" halign="center" valign="middle" height="40px">
+                    <amx:outputText value="#{bindings.orderNumber.inputValue}" id="ot23"
+                                    inlineStyle="font-size:large;"/>
+                </amx:cellFormat>
+            </amx:rowLayout>
+            <amx:rowLayout id="rl12">
+                <amx:cellFormat id="cf17" halign="center" valign="middle">
+                    <amx:outputText value="En breve lo contactaremos." id="ot24"/>
+                </amx:cellFormat>
+            </amx:rowLayout>
+            <amx:rowLayout id="rl13">
+                <amx:cellFormat id="cf18" halign="center" valign="middle">
+                    <amx:commandButton id="cb2" text="Aceptar" actionListener="#{startBean.closePopup}"/>
+                </amx:cellFormat>
+            </amx:rowLayout>
+        </amx:tableLayout>
+    </amx:popup>
+    <!--amx:navigationDragBehavior action="#{MainBean.showCustomSpringboard}" direction="back" id="ndb1"/>
+    <amx:navigationDragBehavior action="#{MainBean.hideCustomSpringboard}" direction="forward" id="ndb2"/-->
+</amx:view>

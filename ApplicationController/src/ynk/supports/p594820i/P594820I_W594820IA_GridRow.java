@@ -16,6 +16,7 @@ public class P594820I_W594820IA_GridRow extends GridRowMobile {
     FieldMobile sDescripcinFalla_217 = new FieldMobile();
     FieldMobile sNombreDeUsuario_595 = new FieldMobile();
     FieldMobile sTelefonoUsuario_12 = new FieldMobile();
+    FieldMobile chWOType_10 = new FieldMobile();
 
     public P594820I_W594820IA_GridRow() {
         super();
@@ -92,4 +93,13 @@ public class P594820I_W594820IA_GridRow extends GridRowMobile {
     public FieldMobile getSTelefonoUsuario_12() {
         return sTelefonoUsuario_12;
     }
+
+    public void setChWOType_10(FieldMobile chWOType_10) {
+        this.chWOType_10 = chWOType_10;
+    }
+
+    public FieldMobile getChWOType_10() {
+        return chWOType_10;
+    }
+
 }

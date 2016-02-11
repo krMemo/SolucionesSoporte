@@ -12,13 +12,13 @@
    <View
       id="View2">
       <property
-         name="activityId">custlist</property>
+         name="activityId">custListMenu</property>
       <property
-         name="page">/Customers/custlist.amx</property>
+         name="page">/Customers/custListMenu.amx</property>
       <property
          name="start">true</property>
       <property
-         name="description">&lt;html>&lt;p>&lt;b>custlist&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+         name="description">&lt;html>&lt;p>&lt;b>custListMenu&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
          name="exceptionHandler">false</property>
       <property
@@ -75,5 +75,59 @@
          name="fromOutcome">toDetail</property>
       <property
          name="sdm:polyPoints">R50,432.0752,99.83594,432.0752,99.33594,L50</property>
+   </ControlFlowCase>
+   <View
+      id="View8">
+      <property
+         name="activityId">soCreation</property>
+      <property
+         name="page">/Customers/soCreation.amx</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>soCreation&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">215.40234</property>
+      <property
+         name="x">546.0</property>
+   </View>
+   <View
+      id="View10">
+      <property
+         name="activityId">productSelection</property>
+      <property
+         name="page">/Customers/productSelection.amx</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>productSelection&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">215.60156</property>
+      <property
+         name="x">321.0</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase11"
+      from="View10"
+      to="View8">
+      <property
+         name="fromOutcome">toCreate</property>
+      <property
+         name="tosrcid">__3</property>
+      <property
+         name="fromsrcid">__2</property>
+      <property
+         name="sdm:polyPoints">R50,433.5,215.53516,433.5,215.33594,L50</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase12"
+      from="View2"
+      to="View10">
+      <property
+         name="fromOutcome">toProdSelect</property>
+      <property
+         name="sdm:polyPoints">B50,91.65625,215.53516,L50</property>
    </ControlFlowCase>
 </SDM>

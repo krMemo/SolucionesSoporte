@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE PDefViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<PDefViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="CustomersDC"
+  Version="12.1.3.12.39">
+  <DesignTime>
+    <Attr Name="_DCName" Value="application.DataControls.CustomersDC"/>
+    <Attr Name="_SDName" Value="application.CustomersDC"/>
+  </DesignTime>
+</PDefViewObject>

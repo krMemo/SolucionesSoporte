@@ -8,7 +8,7 @@ function onDeviceReady() {
 function backKeyDown() { 
     //Check the device back button action happened in Employee.amx
     //Call the java method in managed bean 
-    adf.mf.api.invokeMethod("mobile.MainBean", "handleNavigation", onInvokeSuccess, onFail); 
+    adf.mf.api.invokeMethod("mobile.StartBean", "handleNavigation", onInvokeSuccess, onFail); 
 };
 
 function onInvokeSuccess(param) { 

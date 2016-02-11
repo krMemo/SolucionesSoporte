@@ -47,5 +47,11 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <list IterBinding="CustomersDCIterator" id="soType" DTSupportsMRU="true" SelectItemValueMode="ListObject"
+          StaticList="true">
+      <AttrNames>
+        <Item Value="soType"/>
+      </AttrNames>
+    </list>
   </bindings>
 </pageDefinition>

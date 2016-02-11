@@ -4,7 +4,7 @@
     <!--amx:navigationDragBehavior action="#{MainBean.showCustomSpringboard}" direction="back" id="ndb1"/>
     <amx:navigationDragBehavior action="#{MainBean.hideCustomSpringboard}" direction="forward" id="ndb2"/-->
     <amx:panelPage id="pp1">
-    <?audit suppress oracle.maf.warning-missing-shortDesc?>
+        <?audit suppress oracle.maf.warning-missing-shortDesc?>
         <amx:facet name="header">
             <amx:outputText value="Consulta" id="ot1"/>
         </amx:facet>
@@ -15,13 +15,24 @@
             <amx:rowLayout id="rl2">
                 <amx:cellFormat id="cf6" width="80%">
                     <amx:inputText value="#{bindings.soFilter.inputValue}" simple="true" id="it1" inputType="number"
-                                   hintText="No. Reporte" keyboardDismiss="search" />
+                                   hintText="No. Reporte" keyboardDismiss="search"/>
                 </amx:cellFormat>
                 <amx:cellFormat id="cf7" width="20%" halign="center">
                     <amx:commandLink actionListener="#{bindings.getServiceOrdersList.execute}"
                                      disabled="#{!bindings.getServiceOrdersList.enabled}" id="cl10">
                         <amx:image id="i1" source="/images/search.png" inlineStyle="height:30pt;"/>
                     </amx:commandLink>
+                </amx:cellFormat>
+            </amx:rowLayout>
+            <amx:rowLayout id="rl3">
+                <amx:cellFormat id="cf8" columnSpan="2">
+                    <amx:selectOneChoice value="#{bindings.soType.inputValue}" label="Tipo"
+                                         id="soc1" simple="true">
+                        <amx:selectItem id="si1" label="Todos" value=""/>
+                        <amx:selectItem id="si2" label="Correctivos" value="2"/>
+                        <amx:selectItem id="si3" label="Preventivos" value="1"/>
+                        <amx:selectItem id="si4" label="Capacitación" value="6"/>
+                    </amx:selectOneChoice>
                 </amx:cellFormat>
             </amx:rowLayout>
         </amx:tableLayout>
@@ -51,9 +62,9 @@
                                             styleClass="adfmf-listItem-captionText" id="ot4"/>
                         </amx:cellFormat>
                     </amx:rowLayout>
-                    <amx:rowLayout id="rl3">
+                    <amx:rowLayout id="rl4">
                         <amx:cellFormat width="60%" halign="start"
-                                        height="#{deviceScope.device.os=='Android'?'36':'32'}px" id="cf8">
+                                        height="#{deviceScope.device.os=='Android'?'36':'32'}px" id="cf9">
                             <amx:outputText value="#{row.SWOSt_447.bindings.value.inputValue}"
                                             styleClass="adfmf-listItem-captionText" id="ot5"/>
                         </amx:cellFormat>

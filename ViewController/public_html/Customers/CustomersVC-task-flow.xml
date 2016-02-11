@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <adfc-mobile-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.0">
   <task-flow-definition id="CustomersVC-task-flow">
-    <default-activity>custlist</default-activity>
-    <view id="custlist">
-      <page>/Customers/custlist.amx</page>
+    <default-activity>custListMenu</default-activity>
+    <view id="custListMenu">
+      <page>/Customers/custListMenu.amx</page>
     </view>
     <view id="soQuery">
       <page>/Customers/soQuery.amx</page>
@@ -11,12 +11,22 @@
     <view id="soDetail">
       <page>/Customers/soDetail.amx</page>
     </view>
+    <view id="soCreation">
+      <page>/Customers/soCreation.amx</page>
+    </view>
+    <view id="productSelection">
+      <page>/Customers/productSelection.amx</page>
+    </view>
     <control-flow-rule id="__8">
-      <from-activity-id>custlist</from-activity-id>
+      <from-activity-id>custListMenu</from-activity-id>
       <control-flow-case id="__1">
         <from-outcome>toQuery</from-outcome>
         <to-activity-id>soQuery</to-activity-id>
         <transition>slideEnd</transition>
+      </control-flow-case>
+      <control-flow-case id="__4">
+        <from-outcome>toProdSelect</from-outcome>
+        <to-activity-id>productSelection</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <control-flow-rule id="__10">
@@ -25,6 +35,13 @@
         <from-outcome>toDetail</from-outcome>
         <to-activity-id>soDetail</to-activity-id>
         <transition>slideUp</transition>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__2">
+      <from-activity-id>productSelection</from-activity-id>
+      <control-flow-case id="__3">
+        <from-outcome>toCreate</from-outcome>
+        <to-activity-id>soCreation</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <page-flow-scope-behavior>

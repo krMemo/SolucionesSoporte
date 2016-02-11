@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<amx:view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+          xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+    <amx:panelPage id="pp1">
+        <?audit suppress oracle.maf.warning-missing-shortDesc?>
+        <amx:facet name="header">
+            <amx:outputText value="Selecció de Equipo" id="ot1"/>
+        </amx:facet>
+        <amx:facet name="primary">
+            <amx:commandButton text="Regresar" id="cb1" action="__back"/>
+        </amx:facet>
+        <amx:tableLayout id="tl3" layout="fixed" halign="center" width="100%">
+            <amx:rowLayout id="rl2">
+                <amx:cellFormat id="cf6" width="80%" header="true" inlineStyle="max-width:100pt;">
+                    <amx:inputText value="#{bindings.serialFilter.inputValue}" simple="true" id="it1" hintText="No. Serie"
+                           keyboardDismiss="search" inlineStyle="width:250px;"/>
+                    
+                </amx:cellFormat>
+                <amx:cellFormat id="cf7" halign="center">
+                    <amx:commandLink id="cl1" actionListener="#{bindings.getProductsList.execute}"
+                               disabled="#{!bindings.getProductsList.enabled}">
+                        <amx:image id="i1" source="/images/search.png" inlineStyle="height:30pt;"/>           
+                    </amx:commandLink>
+                </amx:cellFormat>
+            </amx:rowLayout>
+        </amx:tableLayout>
+        <amx:listView var="row" value="#{bindings.rowset.collectionModel}" fetchSize="#{bindings.rowset.rangeSize}"
+                      selectedRowKeys="#{bindings.rowset.collectionModel.selectedRow}"
+                      selectionListener="#{bindings.rowset.collectionModel.makeCurrent}"
+                      styleClass="adfmf-listView-insetList" showMoreStrategy="autoScroll"
+                      id="lv1" bufferSize="20">
+            <amx:listItem id="li1" action="toCreate">
+                <amx:tableLayout width="100%" id="tl1">
+                    <amx:rowLayout id="rl">
+                        <amx:cellFormat width="8px" id="cf1"/>
+                        <amx:cellFormat width="35%" height="#{deviceScope.device.os=='Android'?'36':'32'}px" id="cf3">
+                            <amx:outputText value="#{row.SSerialNumber_86.bindings.value.inputValue}" id="ot2"/>
+                        </amx:cellFormat>
+                        <amx:cellFormat width="65%" height="#{deviceScope.device.os=='Android'?'22':'19'}px" id="cf4">
+                            <amx:outputText value="#{row.SProductModel_165.bindings.value.inputValue}"
+                                            styleClass="adfmf-listItem-highlightText" id="ot3"/>
+                                            <amx:outputText value="#{row.SBranchPlant_77.bindings.value.inputValue}"
+                                            id="ot4" rendered="false"/>
+                        </amx:cellFormat>
+                        <amx:cellFormat width="8px" id="cf2"/>
+                    </amx:rowLayout>
+                </amx:tableLayout>
+            </amx:listItem>
+        </amx:listView>
+        <amx:tableLayout id="tl2" layout="fixed" halign="center">
+            <amx:rowLayout id="rl1">
+                <amx:cellFormat id="cf5" halign="center">
+                    <amx:verbatim id="v1">
+                 <![CDATA[
+                    <p class="MsoNormal" style="margin-bottom: 0.0001pt; text-align: center; line-height: normal;">
+                    <span style="font-size: 13pt; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; color: #333333;">
+                        Si el equipo no se encuentra en la lista, por favor, <br> comuníquese al Call Center al 01 800 284 2000.
+                    </span></p>]]>
+                </amx:verbatim>
+                </amx:cellFormat>
+            </amx:rowLayout>
+        </amx:tableLayout>
+    </amx:panelPage>
+    <!--amx:navigationDragBehavior action="#{MainBean.showCustomSpringboard}" direction="back" id="ndb1"/>
+    <amx:navigationDragBehavior action="#{MainBean.hideCustomSpringboard}" direction="forward" id="ndb2"/-->
+</amx:view>
