@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.12.39" id="soCreationPageDef"
+                Package="Customers">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="root" RangeSize="25" DataControl="CustomersDC" id="CustomersDCIterator"/>
+    <accessorIterator MasterBinding="CustomersDCIterator" Binds="productList_FormParent" RangeSize="25"
+                      DataControl="CustomersDC" BeanClass="ynk.supports.p551701s.P551701S_W551701SA_FormParent"
+                      id="productList_FormParentIterator"/>
+    <accessorIterator MasterBinding="productList_FormParentIterator" Binds="fs_P551701S_W551701SA" RangeSize="25"
+                      DataControl="CustomersDC" BeanClass="ynk.supports.p551701s.P551701S_W551701SA"
+                      id="fs_P551701S_W551701SAIterator"/>
+    <accessorIterator MasterBinding="fs_P551701S_W551701SAIterator" Binds="data" RangeSize="25"
+                      DataControl="CustomersDC" BeanClass="ynk.supports.p551701s.P551701S_W551701SA_FormData"
+                      id="dataIterator"/>
+    <accessorIterator MasterBinding="dataIterator" Binds="gridData" RangeSize="25" DataControl="CustomersDC"
+                      BeanClass="ynk.supports.p551701s.P551701S_W551701SA_GridData" id="gridDataIterator"/>
+    <accessorIterator MasterBinding="gridDataIterator" Binds="rowset" RangeSize="25" DataControl="CustomersDC"
+                      BeanClass="ynk.supports.p551701s.P551701S_W551701SA_GridRow" id="rowsetIterator"/>
+    <accessorIterator MasterBinding="rowsetIterator" Binds="SSerialNumber_86" RangeSize="25" DataControl="CustomersDC"
+                      BeanClass="ynk.supports.FieldMobile" id="SSerialNumber_86Iterator"/>
+    <accessorIterator MasterBinding="rowsetIterator" Binds="SBranchPlant_77" RangeSize="25" DataControl="CustomersDC"
+                      BeanClass="ynk.supports.FieldMobile" id="SBranchPlant_77Iterator"/>
+    <accessorIterator MasterBinding="rowsetIterator" Binds="mnCliente_84" RangeSize="25" DataControl="CustomersDC"
+                      BeanClass="ynk.supports.FieldMobile" id="mnCliente_84Iterator"/>
+    <accessorIterator MasterBinding="rowsetIterator" Binds="SProductModel_78" RangeSize="25" DataControl="CustomersDC"
+                      BeanClass="ynk.supports.FieldMobile" id="SProductModel_78Iterator"/>
+    <accessorIterator MasterBinding="rowsetIterator" Binds="mnAssetNumber_57" RangeSize="25" DataControl="CustomersDC"
+                      BeanClass="ynk.supports.FieldMobile" id="mnAssetNumber_57Iterator"/>
+    <accessorIterator MasterBinding="rowsetIterator" Binds="mnParentItemNo_195" RangeSize="25" DataControl="CustomersDC"
+                      BeanClass="ynk.supports.FieldMobile" id="mnParentItemNo_195Iterator"/>
+    <accessorIterator MasterBinding="rowsetIterator" Binds="s2ndItemNumber_196" RangeSize="25" DataControl="CustomersDC"
+                      BeanClass="ynk.supports.FieldMobile" id="s2ndItemNumber_196Iterator"/>
+    <accessorIterator MasterBinding="rowsetIterator" Binds="SPrioridad_200" RangeSize="25" DataControl="CustomersDC"
+                      BeanClass="ynk.supports.FieldMobile" id="SPrioridad_200Iterator"/>
+    <accessorIterator MasterBinding="rowsetIterator" Binds="SUnidadMedida_199" RangeSize="25" DataControl="CustomersDC"
+                      BeanClass="ynk.supports.FieldMobile" id="SUnidadMedida_199Iterator"/>
+    <accessorIterator MasterBinding="rowsetIterator" Binds="SRatGrp_45" RangeSize="25" DataControl="CustomersDC"
+                      BeanClass="ynk.supports.FieldMobile" id="SRatGrp_45Iterator"/>
+    <accessorIterator MasterBinding="rowsetIterator" Binds="SLinea_79" RangeSize="25" DataControl="CustomersDC"
+                      BeanClass="ynk.supports.FieldMobile" id="SLinea_79Iterator"/>
+    <accessorIterator MasterBinding="rowsetIterator" Binds="SProductModel_165" RangeSize="25" DataControl="CustomersDC"
+                      BeanClass="ynk.supports.FieldMobile" id="SProductModel_165Iterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="SSerialNumber_86Iterator" id="serialNumber_86">
+      <AttrNames>
+        <Item Value="value"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SBranchPlant_77Iterator" id="businessUnit_77">
+      <AttrNames>
+        <Item Value="value"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="mnCliente_84Iterator" id="custId_84">
+      <AttrNames>
+        <Item Value="value"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SProductModel_78Iterator" id="descProductId_78">
+      <AttrNames>
+        <Item Value="value"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="mnAssetNumber_57Iterator" id="assetNumber_57">
+      <AttrNames>
+        <Item Value="value"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="mnParentItemNo_195Iterator" id="parentItemNo_195">
+      <AttrNames>
+        <Item Value="value"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="s2ndItemNumber_196Iterator" id="secondItemNo_196">
+      <AttrNames>
+        <Item Value="value"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SPrioridad_200Iterator" id="priority_200">
+      <AttrNames>
+        <Item Value="value"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SUnidadMedida_199Iterator" id="umo_199">
+      <AttrNames>
+        <Item Value="value"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SRatGrp_45Iterator" id="wr02_45">
+      <AttrNames>
+        <Item Value="value"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SLinea_79Iterator" id="prodFamily_79">
+      <AttrNames>
+        <Item Value="value"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SProductModel_165Iterator" id="descProduct">
+      <AttrNames>
+        <Item Value="value"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CustomersDCIterator" id="soType">
+      <AttrNames>
+        <Item Value="soType"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CustomersDCIterator" id="issueDesc">
+      <AttrNames>
+        <Item Value="issueDesc"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CustomersDCIterator" id="contactName">
+      <AttrNames>
+        <Item Value="contactName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CustomersDCIterator" id="phoneContact">
+      <AttrNames>
+        <Item Value="phoneContact"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CustomersDCIterator" id="orderNumber">
+      <AttrNames>
+        <Item Value="orderNumber"/>
+      </AttrNames>
+    </attributeValues>
+    <methodAction id="createServiceOrder" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="createServiceOrder" IsViewObjectMethod="false" DataControl="CustomersDC"
+                  InstanceName="data.CustomersDC.dataProvider">
+      <NamedData NDName="serialProduct" NDValue="#{bindings.serialNumber_86.inputValue}" NDType="java.lang.String"/>
+      <NamedData NDName="descProductId" NDValue="#{bindings.descProductId_78.inputValue}" NDType="java.lang.String"/>
+      <NamedData NDName="businessUnit" NDValue="#{bindings.businessUnit_77.inputValue}" NDType="java.lang.String"/>
+      <NamedData NDName="custId" NDValue="#{bindings.custId_84.inputValue}" NDType="java.lang.String"/>
+      <NamedData NDName="assetNumber" NDValue="#{bindings.assetNumber_57.inputValue}" NDType="java.lang.String"/>
+      <NamedData NDName="parentItemNo" NDValue="#{bindings.parentItemNo_195.inputValue}" NDType="java.lang.String"/>
+      <NamedData NDName="secondItemNo" NDValue="#{bindings.secondItemNo_196.inputValue}" NDType="java.lang.String"/>
+      <NamedData NDName="priority" NDValue="#{bindings.priority_200.inputValue}" NDType="java.lang.String"/>
+      <NamedData NDName="umo" NDValue="#{bindings.umo_199.inputValue}" NDType="java.lang.String"/>
+      <NamedData NDName="wr02" NDValue="#{bindings.wr02_45.inputValue}" NDType="java.lang.String"/>
+      <NamedData NDName="prodFamily" NDValue="#{bindings.prodFamily_79.inputValue}" NDType="java.lang.String"/>
+      <NamedData NDName="soType" NDValue="#{bindings.soType.inputValue}" NDType="java.lang.String"/>
+    </methodAction>
+  </bindings>
+</pageDefinition>

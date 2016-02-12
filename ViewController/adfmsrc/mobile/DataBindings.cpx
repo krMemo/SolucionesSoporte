@@ -8,6 +8,7 @@
     <page path="/StartApp/StartApp.amx" usageId="mobile_StartAppPageDef"/>
     <page path="/Customers/soDetail.amx" usageId="mobile_soDetailPageDef"/>
     <page path="/Customers/productSelection.amx" usageId="mobile_productSelectionPageDef"/>
+    <page path="/Customers/soCreation.amx" usageId="mobile_soCreationPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="mobile_custlistPageDef" path="Customers.custlistPageDef"/>
@@ -16,6 +17,7 @@
     <page id="mobile_StartAppPageDef" path="StartApp.StartAppPageDef"/>
     <page id="mobile_soDetailPageDef" path="Customers.soDetailPageDef"/>
     <page id="mobile_productSelectionPageDef" path="Customers.productSelectionPageDef"/>
+    <page id="mobile_soCreationPageDef" path="Customers.soCreationPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <dc id="RecoveryDC" path="application.RecoveryDC"/>

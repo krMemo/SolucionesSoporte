@@ -40,7 +40,7 @@
                 <amx:outputText value="#{bindings.value7.inputValue}" id="ot8"/>
             </amx:panelLabelAndMessage>
             <amx:panelLabelAndMessage label="Tipo de Reporte" id="plam9">
-                <amx:outputText value="#{bindings.value8.inputValue}" id="ot2"/>
+                <amx:outputText value="#{bindings.value8.inputValue}" id="ot3"/>
             </amx:panelLabelAndMessage>
         </amx:panelFormLayout>
     </amx:panelPage>

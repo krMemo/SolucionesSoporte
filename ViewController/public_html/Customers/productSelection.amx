@@ -4,7 +4,7 @@
     <amx:panelPage id="pp1">
         <?audit suppress oracle.maf.warning-missing-shortDesc?>
         <amx:facet name="header">
-            <amx:outputText value="Selecció de Equipo" id="ot1"/>
+            <amx:outputText value="Selección de Equipo" id="ot1"/>
         </amx:facet>
         <amx:facet name="primary">
             <amx:commandButton text="Regresar" id="cb1" action="__back"/>
