@@ -243,7 +243,7 @@ public class CustomersDC {
         FSREvent custAliasFSREvent = new FSREvent();
         custAliasFSREvent.setFieldValue("30", getCustNumber()); //set search type to parent customer
 
-        custAliasFSREvent.doControlAction("15"); // Trigger the Find Button
+        //custAliasFSREvent.doControlAction("15"); // Trigger the Find Button
         formRequest.addFSREvent(custAliasFSREvent); //add the events to the form request
         try {
             //Serialize the form request to JSON String

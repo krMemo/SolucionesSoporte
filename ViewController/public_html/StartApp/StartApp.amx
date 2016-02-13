@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <amx:view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
           xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
-<amx:panelPage id="pp1">
-<?audit suppress oracle.maf.warning-missing-shortDesc?>
-<?audit suppress oracle.maf.warning-missing-hintText?>
-    <amx:spacer height="#{deviceScope.hardware.screen.width &lt; deviceScope.hardware.screen.height?(deviceScope.hardware.screen.availableHeight)/5:(deviceScope.hardware.screen.availableHeight)/4}"
+    <amx:panelPage id="pp1">
+        <?audit suppress oracle.maf.warning-missing-shortDesc?>
+        <?audit suppress oracle.maf.warning-missing-hintText?>
+        <amx:spacer height="#{deviceScope.hardware.screen.width &lt; deviceScope.hardware.screen.height?(deviceScope.hardware.screen.availableHeight)/5:(deviceScope.hardware.screen.availableHeight)/4}"
                     id="sp1"/>
-    <amx:spacer height="#{deviceScope.hardware.screen.width &lt; deviceScope.hardware.screen.height?(deviceScope.hardware.screen.availableHeight)/10:(deviceScope.hardware.screen.availableHeight)/6}"
+        <amx:spacer height="#{deviceScope.hardware.screen.width &lt; deviceScope.hardware.screen.height?(deviceScope.hardware.screen.availableHeight)/10:(deviceScope.hardware.screen.availableHeight)/6}"
                     id="sp2" rendered="#{deviceScope.device.os eq 'Android'}"/>
         <amx:tableLayout id="tl1" width="100%" halign="center" inlineStyle="position:relative;">
             <amx:rowLayout id="rl1"
@@ -44,8 +44,7 @@
             <amx:rowLayout id="rl10" rendered="#{deviceScope.device.os eq 'Android'}">
                 <amx:cellFormat id="cf5" halign="center" valign="middle">
                     <amx:inputText id="it1" maximumLength="15" inlineStyle="width:200px; color:Gray;" simple="true"
-                                   inputType="number">
-                    </amx:inputText>
+                                   inputType="number"></amx:inputText>
                 </amx:cellFormat>
             </amx:rowLayout>
             <amx:rowLayout id="rl4" rendered="#{deviceScope.device.os eq 'Android'}">
@@ -56,7 +55,7 @@
             <amx:rowLayout id="rl5" rendered="#{deviceScope.device.os eq 'Android'}">
                 <amx:cellFormat id="cf7" halign="center" valign="middle">
                     <amx:inputText id="it2" maximumLength="15" secret="true" inlineStyle="width:200px; color:Gray;"
-                                    simple="true" keyboardDismiss="go"/>
+                                   simple="true" keyboardDismiss="go"/>
                 </amx:cellFormat>
             </amx:rowLayout>
             <amx:rowLayout id="rl7" rendered="#{deviceScope.device.os eq 'Android'}">
@@ -67,12 +66,12 @@
                     </amx:commandLink>
                 </amx:cellFormat>
             </amx:rowLayout>
-            <amx:rowLayout id="rl8" >
+            <amx:rowLayout id="rl8">
                 <amx:cellFormat id="cf10" halign="center" valign="middle" height="35px">
-                    <amx:commandLink  text="¿Olvidó su contraseña?"
-                                     id="cl2"/>
+                    <amx:commandLink actionListener="#{bindings.login.execute}" disabled="#{!bindings.login.enabled}"
+                                     text="¿Olvidó su contraseña?" id="cl2"/>
                 </amx:cellFormat>
             </amx:rowLayout>
         </amx:tableLayout>
-  </amx:panelPage>
+    </amx:panelPage>
 </amx:view>

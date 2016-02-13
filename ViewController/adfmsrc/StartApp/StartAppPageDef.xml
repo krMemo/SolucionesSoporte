@@ -3,5 +3,8 @@
                 Package="StartApp">
   <parameters/>
   <executables/>
-  <bindings/>
+  <bindings>
+    <methodAction id="login" RequiresUpdateModel="true" Action="invokeMethod" MethodName="login"
+                  IsViewObjectMethod="false" DataControl="RecoveryDC" InstanceName="data.RecoveryDC.dataProvider"/>
+  </bindings>
 </pageDefinition>
