@@ -17,6 +17,7 @@ public class P594820I_W594820IA_GridRow extends GridRowMobile {
     FieldMobile sNombreDeUsuario_595 = new FieldMobile();
     FieldMobile sTelefonoUsuario_12 = new FieldMobile();
     FieldMobile chWOType_10 = new FieldMobile();
+    FieldMobile sHoursTime_699 = new FieldMobile();
 
     public P594820I_W594820IA_GridRow() {
         super();
@@ -100,6 +101,14 @@ public class P594820I_W594820IA_GridRow extends GridRowMobile {
 
     public FieldMobile getChWOType_10() {
         return chWOType_10;
+    }
+
+    public void setSHoursTime_699(FieldMobile sHoursTime_699) {
+        this.sHoursTime_699 = sHoursTime_699;
+    }
+
+    public FieldMobile getSHoursTime_699() {
+        return sHoursTime_699;
     }
 
 }

@@ -29,6 +29,7 @@
                         <amx:selectItem id="si2" label="Correctivos" value="2"/>
                         <amx:selectItem id="si3" label="Preventivos" value="1"/>
                         <amx:selectItem id="si4" label="Capacitación" value="6"/>
+                        <amx:selectItem id="si5" label="Cerrados" value="3"/>
                     </amx:selectOneChoice>
                 </amx:cellFormat>
             </amx:rowLayout>

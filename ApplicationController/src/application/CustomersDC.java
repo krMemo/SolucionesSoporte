@@ -23,6 +23,7 @@ import ynk.supports.FormErrorWarningMobile;
 import ynk.supports.p551701s.P551701S_W551701SA_FormParent;
 import ynk.supports.p5848app.P5848APP_W5848APPA_FormParent;
 import ynk.supports.p591771i.P591771I_W591771IA_FormParent;
+import ynk.supports.p594820i.P594820I_W594820IA;
 import ynk.supports.p594820i.P594820I_W594820IA_FormParent;
 
 
@@ -275,6 +276,7 @@ public class CustomersDC {
     @SuppressWarnings("oracle.jdeveloper.java.insufficient-catch-block")
     public void getRecentServiceOrders() {
         try {
+            serviceOrders_FormParent.setFs_P594820I_W594820IA(new P594820I_W594820IA());
             if (!AdfmfJavaUtilities.getELValue("#{applicationScope.startBean.alias}").equals(null)) {
                 setAlias((String) AdfmfJavaUtilities.getELValue("#{applicationScope.startBean.alias}"));
                 setSoFilter(null);

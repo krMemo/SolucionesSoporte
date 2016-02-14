@@ -11,7 +11,7 @@ public class P594820I_W594820IA_GridColumnTitles {
     private String col_595;
     private String col_12;
     private String col_10;
-    
+    private String col_699;
         
 
     public P594820I_W594820IA_GridColumnTitles() {
@@ -88,6 +88,14 @@ public class P594820I_W594820IA_GridColumnTitles {
 
     public String getCol_10() {
         return col_10;
+    }
+
+    public void setCol_699(String col_699) {
+        this.col_699 = col_699;
+    }
+
+    public String getCol_699() {
+        return col_699;
     }
 
 }

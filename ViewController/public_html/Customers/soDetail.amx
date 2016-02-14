@@ -18,11 +18,18 @@
             <amx:panelLabelAndMessage label="No. de Reporte" id="plam7">
                 <amx:outputText value="#{bindings.value.inputValue}" id="ot12"/>
             </amx:panelLabelAndMessage>
-            <amx:panelLabelAndMessage label="Fecha de Reporte" id="plam8">
-                <amx:outputText value="#{bindings.value1.inputValue}" id="ot13"/>
+            <amx:panelLabelAndMessage label="Fecha y hora de Reporte" id="plam8">
+                <amx:outputText value="#{bindings.value1.inputValue + ' - ' + bindings.value9.inputValue}" id="ot13"/>
+                <amx:outputText value="" id="ot2"/>
             </amx:panelLabelAndMessage>
             <amx:panelLabelAndMessage label="Estatus" id="plam4">
                 <amx:outputText value="#{bindings.value2.inputValue}" id="ot9"/>
+            </amx:panelLabelAndMessage>
+            <amx:panelLabelAndMessage label="Tipo" id="plam9">
+                <amx:outputText rendered="#{bindings.value8.inputValue == 1}" value="Preventivo" id="ott1"/>
+                <amx:outputText rendered="#{bindings.value8.inputValue == 3}" value="Cerrado" id="ott3"/>
+                <amx:outputText rendered="#{bindings.value8.inputValue == 2}" value="Correctivo" id="ott2"/>
+                <amx:outputText rendered="#{bindings.value8.inputValue == 6}" value="Capacitación" id="ott6"/>
             </amx:panelLabelAndMessage>
             <amx:panelLabelAndMessage label="No. de Serie" id="plam5">
                 <amx:outputText value="#{bindings.value3.inputValue}" id="ot10"/>
@@ -39,9 +46,7 @@
             <amx:panelLabelAndMessage label="Teléfono" id="plam3">
                 <amx:outputText value="#{bindings.value7.inputValue}" id="ot8"/>
             </amx:panelLabelAndMessage>
-            <amx:panelLabelAndMessage label="Tipo" id="plam9">
-                <amx:outputText value="#{bindings.value8.inputValue}" id="ot2"/>
-            </amx:panelLabelAndMessage>
+            
         </amx:panelFormLayout>
     </amx:panelPage>
     <amx:navigationDragBehavior action="#{startBean.showCustomSpringboard}" direction="back" id="ndb1"/>
