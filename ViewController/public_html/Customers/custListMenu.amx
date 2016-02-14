@@ -74,4 +74,6 @@
             </amx:listItem>
         </amx:listView>
     </amx:panelPage>
+    <amx:navigationDragBehavior action="#{startBean.showCustomSpringboard}" direction="back" id="ndb1"/>
+    <amx:navigationDragBehavior action="#{startBean.hideCustomSpringboard}" direction="forward" id="ndb2"/>
 </amx:view>

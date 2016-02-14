@@ -39,9 +39,11 @@
             <amx:panelLabelAndMessage label="Teléfono" id="plam3">
                 <amx:outputText value="#{bindings.value7.inputValue}" id="ot8"/>
             </amx:panelLabelAndMessage>
-            <amx:panelLabelAndMessage label="Tipo de Reporte" id="plam9">
-                <amx:outputText value="#{bindings.value8.inputValue}" id="ot3"/>
+            <amx:panelLabelAndMessage label="Tipo" id="plam9">
+                <amx:outputText value="#{bindings.value8.inputValue}" id="ot2"/>
             </amx:panelLabelAndMessage>
         </amx:panelFormLayout>
     </amx:panelPage>
+    <amx:navigationDragBehavior action="#{startBean.showCustomSpringboard}" direction="back" id="ndb1"/>
+    <amx:navigationDragBehavior action="#{startBean.hideCustomSpringboard}" direction="forward" id="ndb2"/>
 </amx:view>

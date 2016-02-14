@@ -57,13 +57,13 @@ public class CustomersDC {
     String wr02;
     String orderNumber;
     P591771I_W591771IA_FormParent createOS_FormParent = new P591771I_W591771IA_FormParent();
-    
+
     FormErrorWarningMobile[] errors;
     FormErrorWarningMobile[] warnings;
     private PropertyChangeSupport propertyChangeSupport = new PropertyChangeSupport(this);
     @SuppressWarnings("oracle.jdeveloper.java.field-transient-in-non-serializable-class")
     protected transient ProviderChangeSupport errorChangeSupport = new ProviderChangeSupport(this);
-    
+
     public void addProviderChangeListener(ProviderChangeListener l) {
         errorChangeSupport.addProviderChangeListener(l);
     }
@@ -75,8 +75,8 @@ public class CustomersDC {
     public void clearErrors() {
         setErrors(null);
         setWarnings(null);
-    } 
-    
+    }
+
     public void setErrors(FormErrorWarningMobile[] errors) {
         int oldCount = 0;
         if (this.errors != null) {
@@ -120,7 +120,7 @@ public class CustomersDC {
     public void removePropertyChangeListener(PropertyChangeListener l) {
         propertyChangeSupport.removePropertyChangeListener(l);
     }
-    
+
     public CustomersDC() {
         super();
         getCustomersAliasList();
@@ -272,16 +272,24 @@ public class CustomersDC {
         }
     }
 
+    @SuppressWarnings("oracle.jdeveloper.java.insufficient-catch-block")
     public void getRecentServiceOrders() {
-        setSoFilter(null);
-        setSoType(null);
-        setAlias((String) AdfmfJavaUtilities.getELValue("#{applicationScope.startBean.alias}"));
-        getServiceOrdersList();
+        try {
+            if (!AdfmfJavaUtilities.getELValue("#{applicationScope.startBean.alias}").equals(null)) {
+                setAlias((String) AdfmfJavaUtilities.getELValue("#{applicationScope.startBean.alias}"));
+                setSoFilter(null);
+                setSoType(null);
+
+                getServiceOrdersList();
+            }
+        } catch (NullPointerException e) {
+
+        }
     }
-    
+
     public String getLastServiceOrder() {
         getRecentServiceOrders();
-        return  this.serviceOrders_FormParent.getMnPegtoWO_424ForRow(0);
+        return this.serviceOrders_FormParent.getMnPegtoWO_424ForRow(0);
     }
 
     public void getServiceOrdersList() {
@@ -352,7 +360,7 @@ public class CustomersDC {
             throw new AdfException(e.getMessage(), AdfException.ERROR);
         }
     }
-    
+
     public void createServiceOrder(String serialProduct, String descProductId, String businessUnit, String custId,
                                    String assetNumber, String parentItemNo, String secondItemNo, String priority,
                                    String umo, String wr02, String prodFamily, String soType) {
@@ -371,26 +379,26 @@ public class CustomersDC {
         this.umo = umo.trim();
         this.wr02 = wr02.trim();
         this.soType = soType.trim();
-        
-        if(this.getIssueDesc() == null || this.getIssueDesc().isEmpty()){
+
+        if (this.getIssueDesc() == null || this.getIssueDesc().isEmpty()) {
             error = "Descripción";
-        } 
-        if (this.getContactName() == null || this.getContactName().equals("")){
+        }
+        if (this.getContactName() == null || this.getContactName().equals("")) {
             if (error == "")
                 error = "Responsable";
             else
                 error += ", Responsable";
         }
-        if (this.getPhoneContact() == null || this.getPhoneContact().equals("")){
+        if (this.getPhoneContact() == null || this.getPhoneContact().equals("")) {
             if (error == "")
                 error = "Teléfono";
             else
                 error += ", Teléfono";
         }
-        if(error!=""){
+        if (error != "") {
             throw new AdfException("Favor de capturar: " + error + ".", AdfException.ERROR);
         }
-        
+
         FormRequest formRequest = new FormRequest();
         formRequest.setFormName("P591771I_W591771IA");
         formRequest.setVersion("DICIPA001");
@@ -455,11 +463,13 @@ public class CustomersDC {
         if (success == true) {
             setOrderNumber(getLastServiceOrder());
             @SuppressWarnings("unused")
-            Object errorMsg = AdfmfContainerUtilities.invokeContainerJavaScriptFunction(FeatureContext.getCurrentFeatureId(),
-                                                                      "popupUtilsShowPopup", new Object[] {
-                                                                      "_popShowId" });
+            Object errorMsg =
+                AdfmfContainerUtilities.invokeContainerJavaScriptFunction(FeatureContext.getCurrentFeatureId(),
+                                                                          "popupUtilsShowPopup", new Object[] {
+                                                                          "_popShowId" });
         } else {
-            throw new AdfException("No fue posible generar el reporte, favor de reintentar o llamar al Call Center al 01 800 284 2000.", AdfException.INFO);
+            throw new AdfException("No fue posible generar el reporte, favor de reintentar o llamar al Call Center al 01 800 284 2000.",
+                                   AdfException.INFO);
         }
     }
 

@@ -9,11 +9,11 @@
                 adf.mf.api.amx.triggerBubbleEventListener(popupOpener, "tap");
             }
             else {
-                adf.mf.log.Application.logp(adf.mf.log.level.WARNING, "MainBean", "showPopup", "hidden button to launch popup not found");
+                adf.mf.log.Application.logp(adf.mf.log.level.WARNING, "StartBean", "showPopup", "hidden button to launch popup not found");
             }
         }
         else {
-            adf.mf.log.Application.logp(adf.mf.log.level.WARNING, "MainBean", "showPopup", "Missing input argument");
+            adf.mf.log.Application.logp(adf.mf.log.level.WARNING, "StartBean", "showPopup", "Missing input argument");
         }
     }
 
@@ -26,11 +26,11 @@
                 adf.mf.api.amx.triggerBubbleEventListener(popupCloser, "tap");
             }
             else {
-                adf.mf.log.Application.logp(adf.mf.log.level.WARNING, "MainBean", "showPopup", "hidden button to close popup not found");
+                adf.mf.log.Application.logp(adf.mf.log.level.WARNING, "StartBean", "showPopup", "hidden button to close popup not found");
             }
         }
         else {
-            adf.mf.log.Application.logp(adf.mf.log.level.WARNING, "MainBean", "hidePopup", "Missing input argument");
+            adf.mf.log.Application.logp(adf.mf.log.level.WARNING, "StartBean", "hidePopup", "Missing input argument");
         }
     }
 

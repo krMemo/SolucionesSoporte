@@ -25,8 +25,8 @@
             </amx:rowLayout>
             <amx:rowLayout id="rl4">
                 <amx:cellFormat id="cf6" halign="center">
-                    <amx:commandButton text="Recuperar Contraseña"
-                                       id="cb3"/>
+                    <amx:commandLink actionListener="#{bindings.recoverPassword.execute}" text="Recuperar Contraseña"
+                                       disabled="#{!bindings.recoverPassword.enabled}" id="cb4"/>
                 </amx:cellFormat>
             </amx:rowLayout>
             <amx:rowLayout id="rl5">

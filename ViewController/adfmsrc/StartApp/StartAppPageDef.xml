@@ -2,9 +2,27 @@
 <pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.12.39" id="StartAppPageDef"
                 Package="StartApp">
   <parameters/>
-  <executables/>
+  <executables>
+    <iterator Binds="root" RangeSize="25" DataControl="RecoveryDC" id="RecoveryDCIterator"/>
+  </executables>
   <bindings>
+    <attributeValues IterBinding="RecoveryDCIterator" id="username">
+      <AttrNames>
+        <Item Value="username"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="RecoveryDCIterator" id="password">
+      <AttrNames>
+        <Item Value="password"/>
+      </AttrNames>
+    </attributeValues>
     <methodAction id="login" RequiresUpdateModel="true" Action="invokeMethod" MethodName="login"
-                  IsViewObjectMethod="false" DataControl="RecoveryDC" InstanceName="data.RecoveryDC.dataProvider"/>
+                  IsViewObjectMethod="false" DataControl="RecoveryDC" InstanceName="data.RecoveryDC.dataProvider">
+      <NamedData NDName="recovery" NDValue="true" NDType="boolean"/>
+    </methodAction>
+    <methodAction id="login1" RequiresUpdateModel="true" Action="invokeMethod" MethodName="login"
+                  IsViewObjectMethod="false" DataControl="RecoveryDC" InstanceName="data.RecoveryDC.dataProvider">
+      <NamedData NDName="recovery" NDValue="false" NDType="boolean"/>
+    </methodAction>
   </bindings>
 </pageDefinition>

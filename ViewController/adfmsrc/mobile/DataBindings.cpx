@@ -9,6 +9,7 @@
     <page path="/Customers/soDetail.amx" usageId="mobile_soDetailPageDef"/>
     <page path="/Customers/productSelection.amx" usageId="mobile_productSelectionPageDef"/>
     <page path="/Customers/soCreation.amx" usageId="mobile_soCreationPageDef"/>
+    <page path="/CustomSpringboard/customSpringboard.amx" usageId="mobile_customSpringboardPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="mobile_custlistPageDef" path="Customers.custlistPageDef"/>
@@ -18,6 +19,7 @@
     <page id="mobile_soDetailPageDef" path="Customers.soDetailPageDef"/>
     <page id="mobile_productSelectionPageDef" path="Customers.productSelectionPageDef"/>
     <page id="mobile_soCreationPageDef" path="Customers.soCreationPageDef"/>
+    <page id="mobile_customSpringboardPageDef" path="CustomSpringboard.customSpringboardPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <dc id="RecoveryDC" path="application.RecoveryDC"/>

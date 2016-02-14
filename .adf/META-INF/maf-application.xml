@@ -6,7 +6,12 @@
   <adfmf:featureReference refId="com.oracle.e1.jdemf.login" id="fr2"/>
   <adfmf:featureReference refId="Customers" id="fr1"/>
   <adfmf:featureReference refId="PassRecovery" id="fr4"/>
+  <adfmf:featureReference refId="CustomSpringboard" id="fr5" showOnNavigationBar="false" showOnSpringboard="false"/>
   <adfmf:navigation>
     <adfmf:navigationBar enabled="false"/>
+    <adfmf:springboard enabled="true" showSpringboardAtStartup="false" displayGotoSpringboardControl="false"
+                       width="200px">
+      <adfmf:springboardFeatureReference refId="CustomSpringboard" id="sfr1"/>
+    </adfmf:springboard>
   </adfmf:navigation>
 </adfmf:application>

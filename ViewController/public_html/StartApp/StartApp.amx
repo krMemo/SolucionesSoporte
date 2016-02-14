@@ -4,10 +4,7 @@
     <amx:panelPage id="pp1">
         <?audit suppress oracle.maf.warning-missing-shortDesc?>
         <?audit suppress oracle.maf.warning-missing-hintText?>
-        <amx:spacer height="#{deviceScope.hardware.screen.width &lt; deviceScope.hardware.screen.height?(deviceScope.hardware.screen.availableHeight)/5:(deviceScope.hardware.screen.availableHeight)/4}"
-                    id="sp1"/>
-        <amx:spacer height="#{deviceScope.hardware.screen.width &lt; deviceScope.hardware.screen.height?(deviceScope.hardware.screen.availableHeight)/10:(deviceScope.hardware.screen.availableHeight)/6}"
-                    id="sp2" rendered="#{deviceScope.device.os eq 'Android'}"/>
+        <amx:spacer height="25" id="sp2"/>
         <amx:tableLayout id="tl1" width="100%" halign="center" inlineStyle="position:relative;">
             <amx:rowLayout id="rl1"
                            rendered="#{deviceScope.hardware.screen.width &lt; deviceScope.hardware.screen.height?false:true}">
@@ -31,36 +28,32 @@
                                     inlineStyle="font-size:x-large; font-weight:bold; color:#5e5e5e;"/>
                 </amx:cellFormat>
             </amx:rowLayout>
-            <amx:rowLayout id="rl3">
-                <amx:cellFormat id="cf1" halign="center" valign="middle" height="65px">
-                    <amx:commandButton id="cb3" text="Iniciar Sesión" action="#{startBean.gotoLogin}"/>
-                </amx:cellFormat>
-            </amx:rowLayout>
             <amx:rowLayout id="rl2">
                 <amx:cellFormat id="cf4" halign="center" valign="middle">
-                    <amx:outputText id="ot2" value="Usuario" rendered="#{deviceScope.device.os eq 'Android'}"/>
+                    <amx:outputText id="ot2" value="Usuario"/>
                 </amx:cellFormat>
             </amx:rowLayout>
-            <amx:rowLayout id="rl10" rendered="#{deviceScope.device.os eq 'Android'}">
+            <amx:rowLayout id="rl10">
                 <amx:cellFormat id="cf5" halign="center" valign="middle">
-                    <amx:inputText id="it1" maximumLength="15" inlineStyle="width:200px; color:Gray;" simple="true"
-                                   inputType="number"></amx:inputText>
+                    <amx:inputText value="#{bindings.username.inputValue}" id="it1" maximumLength="15"
+                                   inlineStyle="width:200px; color:Gray;" simple="true" inputType="number"/>
                 </amx:cellFormat>
             </amx:rowLayout>
-            <amx:rowLayout id="rl4" rendered="#{deviceScope.device.os eq 'Android'}">
+            <amx:rowLayout id="rl4">
                 <amx:cellFormat id="cf6" halign="center" valign="middle">
                     <amx:outputText id="ot3" value="Contraseña:"/>
                 </amx:cellFormat>
             </amx:rowLayout>
-            <amx:rowLayout id="rl5" rendered="#{deviceScope.device.os eq 'Android'}">
+            <amx:rowLayout id="rl5">
                 <amx:cellFormat id="cf7" halign="center" valign="middle">
-                    <amx:inputText id="it2" maximumLength="15" secret="true" inlineStyle="width:200px; color:Gray;"
-                                   simple="true" keyboardDismiss="go"/>
+                    <amx:inputText value="#{bindings.password.inputValue}" id="it2" maximumLength="15" secret="true"
+                                   inlineStyle="width:200px; color:Gray;" simple="true" keyboardDismiss="go"/>
                 </amx:cellFormat>
             </amx:rowLayout>
-            <amx:rowLayout id="rl7" rendered="#{deviceScope.device.os eq 'Android'}">
+            <amx:rowLayout id="rl7">
                 <amx:cellFormat id="cf9" halign="center" valign="middle">
-                    <amx:commandLink id="cl1" action="go">
+                    <amx:commandLink actionListener="#{bindings.login1.execute}" disabled="#{!bindings.login1.enabled}"
+                                     id="cl1">
                         <amx:image source="/images/blueicon_key_512.png" id="i3"
                                    inlineStyle="height:50px; margin-bottom:15px;"/>
                     </amx:commandLink>

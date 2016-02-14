@@ -17,11 +17,13 @@ public class StartBean {
     boolean isPopupOpen = true;
     private PropertyChangeSupport propertyChangeSupport = new PropertyChangeSupport(this);
     private String alias;
+    private String user;
+    private String pass;
 
     public void setIsPopupOpen(boolean isPopupOpen) {
         this.isPopupOpen = isPopupOpen;
     }
-    
+
     public boolean isIsPopupOpen() {
         return isPopupOpen;
     }
@@ -76,25 +78,51 @@ public class StartBean {
     public StartBean() {
     }
 
-    
+
     /*================== =========== ==================*/
     /*================== NAVIGATION  ==================*/
     /*================== =========== ==================*/
-    
-    public String gotoLogin() {
-        AdfmfJavaUtilities.setELValue("#{applicationScope.logout}", "1");
-        AdfmfJavaUtilities.setELValue("#{preferenceScope.feature.com.oracle.e1.jdemf.login.Connection.URL}",
-                                      "http://201.161.1.59:87");
-        AdfmfContainerUtilities.resetFeature("com.oracle.e1.jdemf.login");
-        AdfmfJavaUtilities.setELValue("#{bindings.username1.inputValue}", "84002");
+    public void handleNavigation() {
+        //Code to naviagte within task flows programmatically
+        try {
+            AdfmfContainerUtilities.invokeContainerJavaScriptFunction("Customers", "adf.mf.api.amx.doNavigation", new Object[] {
+                                                                      "__back" });
+        } catch (Exception e) {
+            AdfmfJavaUtilities.logout();
+        }
+    }
+
+    public String gotoQuery() {
+        try {
+            if (!AdfmfJavaUtilities.getELValue("#{applicationScope.startBean.aliasname}").equals("")) {
+                AdfmfContainerUtilities.invokeContainerJavaScriptFunction("Customers", "adf.mf.api.amx.doNavigation", new Object[] {
+                                                                          "toQuery" });
+            }
+        } catch (NullPointerException e) {
+            AdfmfContainerUtilities.resetFeature("Customers", true);
+        } catch (Exception e) {
+            e.getMessage();
+        }
+        hideCustomSpringboard();
         return null;
     }
     
-    public void handleNavigation() {
-        //Code to naviagte within task flows programmatically
-        AdfmfContainerUtilities.invokeContainerJavaScriptFunction("Customers", "adf.mf.api.amx.doNavigation", new Object[]{"__back"});
+    public String gotoCreate() {
+        try {
+            if (!AdfmfJavaUtilities.getELValue("#{applicationScope.startBean.aliasname}").equals("")) {
+                AdfmfContainerUtilities.invokeContainerJavaScriptFunction("Customers", "adf.mf.api.amx.doNavigation", new Object[] {
+                                                                          "toProdSelect"});
+                
+            }
+        } catch (NullPointerException e) {
+            AdfmfContainerUtilities.resetFeature("Customers", true);
+        } catch (Exception e) {
+            e.getMessage();
+        }
+        hideCustomSpringboard();
+        return null;
     }
-    
+
     /*================== =========== ==================*/
     /*================== POPUPHANDLE ==================*/
     /*================== =========== ==================*/
@@ -113,7 +141,7 @@ public class StartBean {
             AdfmfContainerUtilities.invokeContainerJavaScriptFunction(FeatureContext.getCurrentFeatureId(),
                                                                       "popupUtilsHidePopup", new Object[] {
                                                                       "_popCloseId" });
-        AdfmfContainerUtilities.gotoFeature("MainMenu");
+        AdfmfContainerUtilities.resetFeature("Customers", true);
     }
 
     @SuppressWarnings("unused")
@@ -122,8 +150,7 @@ public class StartBean {
             AdfmfContainerUtilities.invokeContainerJavaScriptFunction(FeatureContext.getCurrentFeatureId(),
                                                                       "popupUtilsHidePopup", new Object[] {
                                                                       "_popCloseId" });
-        AdfmfContainerUtilities.resetFeature("LoginDicipa");
-        AdfmfContainerUtilities.gotoFeature("LoginDicipa");
+        AdfmfContainerUtilities.resetFeature("StartApp", true);
     }
 
     /*================== =========== ==================*/
@@ -165,5 +192,21 @@ public class StartBean {
 
     public String getAlias() {
         return alias;
+    }
+
+    public void setUser(String user) {
+        this.user = user;
+    }
+
+    public String getUser() {
+        return user;
+    }
+
+    public void setPass(String pass) {
+        this.pass = pass;
+    }
+
+    public String getPass() {
+        return pass;
     }
 }
