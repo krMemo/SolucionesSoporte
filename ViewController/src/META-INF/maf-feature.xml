@@ -38,7 +38,7 @@
   <adfmf:feature id="EULA" name="EULA">
     <adfmf:content id="EULA.1">
       <adfmf:constraints/>
-      <adfmf:amx file="EULA/untitled1.amx">
+      <adfmf:amx file="EULA/eula.amx">
         <adfmf:includes>
           <adfmf:include type="JavaScript" file="js/jdemfJavascript.js" id="i7"/>
         </adfmf:includes>

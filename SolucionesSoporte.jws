@@ -33,6 +33,14 @@
    <hash n="oracle.jdeveloper.deploy.dt.DeploymentProfiles">
       <hash n="profileDefinitions">
          <hash n="Android1">
+            <hash n="android_options">
+               <value n="android_deploy_debug_mode" v="false"/>
+               <value n="application_bundle_id" v="com.yankuiapps.ServiceOrders"/>
+               <value n="character_encoding" v="UTF-8"/>
+               <value n="minimum_sdk_version" v="16"/>
+               <value n="version_code" v="10"/>
+               <value n="version_name" v="4.0"/>
+            </hash>
             <hash n="archiveOptions">
                <value n="hasManifest" v="true"/>
             </hash>
@@ -118,6 +126,7 @@
             </hash>
             <hash n="iosDeploymentOptions">
                <value n="appBundleId" v="com.dicipa.SolucionesSoporte"/>
+               <value n="debugFlag" v="false"/>
                <value n="simulatorTarget" v="iPad 2 (iOS 8.4 - iPad 2)"/>
             </hash>
             <url n="jarURL" path="deploy/iOS1/iOS1.jar/"/>

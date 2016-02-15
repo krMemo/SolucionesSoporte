@@ -8,13 +8,12 @@
             <amx:outputText value="Nuevo Reporte" id="ot1"/>
         </amx:facet>
         <amx:facet name="primary">
-            <amx:commandButton text="Regresar" id="cb1" action="__back" icon="/images/icon_new_512.png" rendered="#{deviceScope.device.os eq 'iOS'}"/>
-            <amx:commandButton id="cb0" action="__back" rendered="#{deviceScope.device.os eq 'Android'}"/>
+            <amx:commandButton id="cb1" action="__back"/>
         </amx:facet>
         <amx:facet name="secondary">
             <amx:commandLink actionListener="#{bindings.createServiceOrder.execute}"
                              disabled="#{!bindings.createServiceOrder.enabled}" id="cl1">
-                <amx:image id="i1" source="/images/blueicon_send_512.png" inlineStyle="height:32pt; margin-top:-10px"/>
+                <amx:image id="i1" source="/images/icon_save_128.png" inlineStyle="height:32pt; margin-top:-10px"/>
             </amx:commandLink>
         </amx:facet>
         <amx:facet name="footer">
@@ -36,7 +35,7 @@
                 </amx:cellFormat>
                 <amx:cellFormat id="cf6" halign="start" height="34px" valign="middle">
                     <amx:commandLink id="cl2" action="__back">
-                        <amx:image id="i2" source="/images/blueicon_pencil_512.png" inlineStyle="height:32px;"/>
+                        <amx:image id="i2" source="/images/icon_edit_128.png" inlineStyle="height:32px;"/>
                     </amx:commandLink>
                     <amx:outputText value="#{bindings.serialNumber_86.inputValue}" id="ot11" inlineStyle="color:Gray;"/>
                     <amx:outputText value="#{bindings.businessUnit_77.inputValue}" id="oh1" rendered="false"/>
@@ -156,6 +155,6 @@
             </amx:rowLayout>
         </amx:tableLayout>
     </amx:popup>
-    <!--amx:navigationDragBehavior action="#{MainBean.showCustomSpringboard}" direction="back" id="ndb1"/>
-    <amx:navigationDragBehavior action="#{MainBean.hideCustomSpringboard}" direction="forward" id="ndb2"/-->
+    <amx:navigationDragBehavior action="#{startBean.showCustomSpringboard}" direction="back" id="ndb1"/>
+    <amx:navigationDragBehavior action="#{startBean.hideCustomSpringboard}" direction="forward" id="ndb2"/>
 </amx:view>

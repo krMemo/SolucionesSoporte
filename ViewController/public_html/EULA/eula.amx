@@ -29,7 +29,7 @@
             <!--amx:goLink id="gl1" text="www.dicipa.com.mx" url="www.dicipa.com.mx"
                 inlineStyle="font-size:large; font-weight:bold;"/-->
                 <amx:spacer id="s3" height="15"/>
-                            <amx:commandButton id="cb1" text="Menú principal" action="#{MainBean.goToMainMenu}"/>
+                            <amx:commandButton id="cb1" text="Menú principal" action="#{startBean.gotoMenu}"/>
         </amx:panelGroupLayout>
     </amx:panelPage>
 </amx:view>

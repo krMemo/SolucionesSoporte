@@ -7,24 +7,22 @@
             <amx:outputText value="Selección de Equipo" id="ot1"/>
         </amx:facet>
         <amx:facet name="primary">
-            <amx:commandButton text="Regresar" id="cb1" action="__back" icon="/images/icon_new_512.png" rendered="#{deviceScope.device.os eq 'iOS'}"/>
-            <amx:commandButton id="cb0" action="__back" rendered="#{deviceScope.device.os eq 'Android'}"/>
+            <amx:commandButton id="cb1" action="__back"/>
         </amx:facet>
-         <amx:facet name="footer">
+        <amx:facet name="footer">
             <amx:outputText inlineStyle="font-size:small; font-weight:lighter;" id="ot99"
                             value="#{applicationScope.startBean.aliasname}"/>
         </amx:facet>
         <amx:tableLayout id="tl3" layout="fixed" halign="center" width="100%">
             <amx:rowLayout id="rl2">
                 <amx:cellFormat id="cf6" width="80%" header="true" inlineStyle="max-width:100pt;">
-                    <amx:inputText value="#{bindings.serialFilter.inputValue}" simple="true" id="it1" hintText="No. Serie"
-                           keyboardDismiss="search" inlineStyle="width:250px;"/>
-                    
+                    <amx:inputText value="#{bindings.serialFilter.inputValue}" simple="true" id="it1"
+                                   hintText="No. Serie" keyboardDismiss="search" inlineStyle="width:250px;"/>
                 </amx:cellFormat>
                 <amx:cellFormat id="cf7" halign="center">
                     <amx:commandLink id="cl1" actionListener="#{bindings.getProductsList.execute}"
-                               disabled="#{!bindings.getProductsList.enabled}">
-                        <amx:image id="i1" source="/images/search.png" inlineStyle="height:30pt;"/>           
+                                     disabled="#{!bindings.getProductsList.enabled}">
+                        <amx:image id="i1" source="/images/search.png" inlineStyle="height:30pt;"/>
                     </amx:commandLink>
                 </amx:cellFormat>
             </amx:rowLayout>
@@ -32,8 +30,7 @@
         <amx:listView var="row" value="#{bindings.rowset.collectionModel}" fetchSize="#{bindings.rowset.rangeSize}"
                       selectedRowKeys="#{bindings.rowset.collectionModel.selectedRow}"
                       selectionListener="#{bindings.rowset.collectionModel.makeCurrent}"
-                      styleClass="adfmf-listView-insetList" showMoreStrategy="autoScroll"
-                      id="lv1" bufferSize="20">
+                      styleClass="adfmf-listView-insetList" showMoreStrategy="autoScroll" id="lv1" bufferSize="20">
             <amx:listItem id="li1" action="toCreate">
                 <amx:tableLayout width="100%" id="tl1">
                     <amx:rowLayout id="rl">
@@ -44,8 +41,8 @@
                         <amx:cellFormat width="65%" height="#{deviceScope.device.os=='Android'?'22':'19'}px" id="cf4">
                             <amx:outputText value="#{row.SProductModel_165.bindings.value.inputValue}"
                                             styleClass="adfmf-listItem-highlightText" id="ot3"/>
-                                            <amx:outputText value="#{row.SBranchPlant_77.bindings.value.inputValue}"
-                                            id="ot4" rendered="false"/>
+                            <amx:outputText value="#{row.SBranchPlant_77.bindings.value.inputValue}" id="ot4"
+                                            rendered="false"/>
                         </amx:cellFormat>
                         <amx:cellFormat width="8px" id="cf2"/>
                     </amx:rowLayout>
@@ -66,6 +63,6 @@
             </amx:rowLayout>
         </amx:tableLayout>
     </amx:panelPage>
-    <!--amx:navigationDragBehavior action="#{MainBean.showCustomSpringboard}" direction="back" id="ndb1"/>
-    <amx:navigationDragBehavior action="#{MainBean.hideCustomSpringboard}" direction="forward" id="ndb2"/-->
+    <amx:navigationDragBehavior action="#{startBean.showCustomSpringboard}" direction="back" id="ndb1"/>
+    <amx:navigationDragBehavior action="#{startBean.hideCustomSpringboard}" direction="forward" id="ndb2"/>
 </amx:view>

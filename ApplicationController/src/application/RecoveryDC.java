@@ -56,7 +56,7 @@ public class RecoveryDC {
     @SuppressWarnings("oracle.jdeveloper.java.field-transient-in-non-serializable-class")
     protected transient ProviderChangeSupport errorChangeSupport = new ProviderChangeSupport(this);
     // LOGIN
-    Boolean TEST_ENVIROMENT = true;
+    Boolean TEST_ENVIROMENT = false;
     private DefaultConfig defaultConfig = new DefaultConfig();
     private LoginRequest loginRequest = new LoginRequest();
     private LoginResponse loginResponse = new LoginResponse();
