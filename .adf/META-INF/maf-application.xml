@@ -7,6 +7,7 @@
   <adfmf:featureReference refId="Customers" id="fr1"/>
   <adfmf:featureReference refId="PassRecovery" id="fr4"/>
   <adfmf:featureReference refId="CustomSpringboard" id="fr5" showOnNavigationBar="false" showOnSpringboard="false"/>
+  <adfmf:featureReference refId="EULA" id="fr6"/>
   <adfmf:navigation>
     <adfmf:navigationBar enabled="false"/>
     <adfmf:springboard enabled="true" showSpringboardAtStartup="false" displayGotoSpringboardControl="false"

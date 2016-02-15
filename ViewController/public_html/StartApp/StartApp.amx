@@ -54,7 +54,7 @@
                 <amx:cellFormat id="cf9" halign="center" valign="middle">
                     <amx:commandLink actionListener="#{bindings.login1.execute}" disabled="#{!bindings.login1.enabled}"
                                      id="cl1">
-                        <amx:image source="/images/blueicon_key_512.png" id="i3"
+                        <amx:image source="/images/icon_key_128.png" id="i3"
                                    inlineStyle="height:50px; margin-bottom:15px;"/>
                     </amx:commandLink>
                 </amx:cellFormat>

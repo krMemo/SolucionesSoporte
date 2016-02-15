@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<amx:view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+          xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+    <?audit suppress oracle.maf.warning-missing-shortDesc?>
+    <amx:panelPage id="pp1">
+        <amx:facet name="header">
+            <amx:outputText value="Aviso de Privacidad" id="ot1"/>
+        </amx:facet>
+        <amx:spacer id="s1" height="20"/>
+        <amx:panelGroupLayout id="pgl1" halign="center" valign="middle">
+            <amx:outputText id="ot2" value="Aviso de Privacidad" inlineStyle="font-size:large; font-weight:bold;"/>
+            <amx:spacer id="s2" height="15"/>
+            <amx:verbatim id="v1">
+    <![CDATA[
+                    <p class="MsoNormal" style="margin: 10px; text-align: left; line-height: normal;">
+                    <span style="font-size: 13pt; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; color: black;">
+                        Los contenidos de las pantallas relativas a DICIPA S.A de C.V ., así como también los programas, 
+                        bases de datos, redes, archivos que permiten al usuario utilizar la aplicación, etc., son propiedad 
+                        de DICIPA S.A de C.V. y están protegidas por las leyes y los tratados internacionales de derecho de autor, 
+                        marcas, patentes y modelos industriales. <br>El uso indebido y la reproducción total o parcial de dichos 
+                        contenidos quedan prohibidos, salvo autorización expresa y por escrito de DICIPA S.A. de C.V.
+                    </span></p>
+                    <p class="MsoNormal" style="margin: 10px; text-align: left; line-height: normal;">
+                    <span style="font-size: 13pt; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; color: black;">
+                       Consulte nuestro aviso de privacidad en Página de Internet:
+                    </span></p>]]>
+    </amx:verbatim>
+            <amx:outputText id="ot3" value="www.dicipa.com.mx" inlineStyle="font-size:large; font-weight:bold;"/>
+            <!--amx:goLink id="gl1" text="www.dicipa.com.mx" url="www.dicipa.com.mx"
+                inlineStyle="font-size:large; font-weight:bold;"/-->
+                <amx:spacer id="s3" height="15"/>
+                            <amx:commandButton id="cb1" text="Menú principal" action="#{MainBean.goToMainMenu}"/>
+        </amx:panelGroupLayout>
+    </amx:panelPage>
+</amx:view>

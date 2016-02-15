@@ -14,56 +14,55 @@
                 <amx:panelGroupLayout id="pgios" rendered="#{deviceScope.device.os eq 'iOS'}"
                                       inlineStyle="width:100%; position:absolute; bottom:10px; padding-left:10px;"
                                       halign="start">
-                    
-                    <amx:commandButton id="cbios1" text="Consultar" icon="/images/blueicon_search_512.png"
+                    <amx:commandButton id="cbios1" text="Cambiar cliente" icon="/images/icon_user_128.png"
                                        inlineStyle="max-height:35px;  margin-bottom:-5px; text-indent:5pt; "
-                                       styleClass="jdemfSpringboardButton" action="#{startBean.gotoQuery}"/>
-                    <amx:commandButton id="cbios2" text="Reportar" icon="/images/blueicon_search_512.png"
+                                       styleClass="jdemfSpringboardButton" action="#{startBean.changeAlias}"/>
+                    <amx:commandButton id="cbios2" text="Menú Principal" icon="/images/icon_home_128.png"
                                        inlineStyle="max-height:35px;  margin-bottom:-5px; text-indent:5pt; "
-                                       styleClass="jdemfSpringboardButton" action="#{startBean.gotoCreate}"/>
-                    <amx:commandButton id="cbios3" text="Aviso de Privacidad" icon="/images/law.png"
+                                       styleClass="jdemfSpringboardButton" action="#{startBean.gotoMenu}"/>
+                    <amx:commandButton id="cbios3" text="Aviso de Privacidad" icon="/images/icon_law_128.png"
                                        inlineStyle="max-height:35px; margin-bottom:-5px; text-indent:5pt; "
-                                       styleClass="jdemfSpringboardButton"/>
+                                       styleClass="jdemfSpringboardButton" action="#{startBean.gotoEula}"/>
                     <amx:commandButton id="cbios4" text="Salir" icon="/images/logout.png"
                                        inlineStyle="max-height:35px; text-indent:5pt; "
-                                       styleClass="jdemfSpringboardButton"/>
+                                       styleClass="jdemfSpringboardButton" action="#{startBean.logout}"/>
                 </amx:panelGroupLayout>
                 <!--  ANDROID    -->
                 <amx:panelGroupLayout id="pgl2" rendered="#{deviceScope.device.os eq 'Android'}"
                                       inlineStyle="width:100%;position:absolute; bottom:10px;" layout="vertical">
                     <amx:panelGroupLayout id="pgl9" layout="horizontal" valign="middle">
-                        <amx:commandLink id="cl8">
-                            <amx:image id="il9" source="../images/blueicon_search_512.png"
+                        <amx:commandLink id="cl8" action="#{startBean.changeAlias}">
+                            <amx:image id="il9" source="/images/icon_user_128.png"
                                        inlineStyle="max-height:35px; padding-left:7px; padding-right:7px;"/>
                         </amx:commandLink>
-                        <amx:commandLink text="Consulta" id="cl9"
+                        <amx:commandLink text="Cambiar cliente" id="cl9" action="#{startBean.changeAlias}"
                                          inlineStyle="text-decoration:none; vertical-align:middle; color:White;"/>
                     </amx:panelGroupLayout>
                     <amx:spacer id="s2" height="12"/>
                     <amx:panelGroupLayout id="pgl36" layout="horizontal" valign="middle">
-                        <amx:commandLink id="cl5">
-                            <amx:image id="i13" source="../images/blueicon_assesment_512.png"
+                        <amx:commandLink id="cl5" action="#{startBean.gotoMenu}">
+                            <amx:image id="i13" source="/images/icon_home_128.png"
                                        inlineStyle="max-height:35px; padding-left:7px; padding-right:7px;"/>
                         </amx:commandLink>
                         <amx:commandLink inlineStyle="text-decoration:none; vertical-align:middle; color:White;"
-                                         text="Capacitación" id="cl2"/>
+                                         text="Capacitación" id="cl2" action="#{startBean.gotoMenu}"/>
                     </amx:panelGroupLayout>
                     <amx:spacer id="s4" height="18"/>
                     <amx:panelGroupLayout id="pgl37" layout="horizontal" valign="middle">
-                        <amx:commandLink id="cl6">
-                            <amx:image id="i14" source="../images/law.png"
+                        <amx:commandLink id="cl6" action="#{startBean.gotoEula}">
+                            <amx:image id="i14" source="/images/icon_law_128.png"
                                        inlineStyle="max-height:35px; padding-left:7px; padding-right:7px;"/>
                         </amx:commandLink>
                         <amx:commandLink inlineStyle="text-decoration:none; vertical-align:middle; color:White;"
-                                         text="Aviso de Privacidad" id="cl7"/>
+                                         text="Aviso de Privacidad" id="cl7" action="#{startBean.gotoEula}"/>
                     </amx:panelGroupLayout>
                     <amx:spacer id="s5" height="12"/>
                     <amx:panelGroupLayout id="pgl35" layout="horizontal" valign="middle">
-                        <amx:commandLink id="cl4">
-                            <amx:image id="i15" source="../images/logout.png"
+                        <amx:commandLink id="cl4" action="#{startBean.logout}">
+                            <amx:image id="i15" source="/images/logout.png"
                                        inlineStyle="max-height:40px; padding-left:7px; padding-right:7px;"/>
                         </amx:commandLink>
-                        <amx:commandLink id="cl13"
+                        <amx:commandLink id="cl13" action="#{startBean.logout}"
                                          inlineStyle="text-decoration:none; vertical-align:middle; color:White;"
                                          text="Salir"></amx:commandLink>
                     </amx:panelGroupLayout>

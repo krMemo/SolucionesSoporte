@@ -7,7 +7,12 @@
             <amx:outputText value="Selección de Equipo" id="ot1"/>
         </amx:facet>
         <amx:facet name="primary">
-            <amx:commandButton text="Regresar" id="cb1" action="__back"/>
+            <amx:commandButton text="Regresar" id="cb1" action="__back" icon="/images/icon_new_512.png" rendered="#{deviceScope.device.os eq 'iOS'}"/>
+            <amx:commandButton id="cb0" action="__back" rendered="#{deviceScope.device.os eq 'Android'}"/>
+        </amx:facet>
+         <amx:facet name="footer">
+            <amx:outputText inlineStyle="font-size:small; font-weight:lighter;" id="ot99"
+                            value="#{applicationScope.startBean.aliasname}"/>
         </amx:facet>
         <amx:tableLayout id="tl3" layout="fixed" halign="center" width="100%">
             <amx:rowLayout id="rl2">

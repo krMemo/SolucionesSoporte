@@ -35,4 +35,14 @@
       <adfmf:amx file="CustomSpringboard/customSpringboard.amx"/>
     </adfmf:content>
   </adfmf:feature>
+  <adfmf:feature id="EULA" name="EULA">
+    <adfmf:content id="EULA.1">
+      <adfmf:constraints/>
+      <adfmf:amx file="EULA/untitled1.amx">
+        <adfmf:includes>
+          <adfmf:include type="JavaScript" file="js/jdemfJavascript.js" id="i7"/>
+        </adfmf:includes>
+      </adfmf:amx>
+    </adfmf:content>
+  </adfmf:feature>
 </adfmf:features>

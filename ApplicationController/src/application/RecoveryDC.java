@@ -49,7 +49,6 @@ import ynk.supports.p5698ows.P5698OWS_W5698OWSB_FormParent;
 public class RecoveryDC {
 
     public RecoveryDC() {
-        super();
         this.propertyChangeSupport = new PropertyChangeSupport(this);
     }
 

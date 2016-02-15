@@ -143,12 +143,8 @@ public class CustomersDC {
         return alphaName;
     }
 
-    public void setAlias(String alias) {
-        this.alias = alias;
-    }
-
     public String getAlias() {
-        return alias;
+        return (String) AdfmfJavaUtilities.getELValue("#{applicationScope.startBean.alias}");
     }
 
     public void setSoFilter(String soFilter) {
@@ -244,7 +240,7 @@ public class CustomersDC {
         FSREvent custAliasFSREvent = new FSREvent();
         custAliasFSREvent.setFieldValue("30", getCustNumber()); //set search type to parent customer
 
-        //custAliasFSREvent.doControlAction("15"); // Trigger the Find Button
+        custAliasFSREvent.doControlAction("15"); // Trigger the Find Button
         formRequest.addFSREvent(custAliasFSREvent); //add the events to the form request
         try {
             //Serialize the form request to JSON String
@@ -262,7 +258,6 @@ public class CustomersDC {
                                                                                      response);
             if (customersAlias_FormParent.getFs_P5848APP_W5848APPA().getData().getGridData().getRowset().length == 0) {
                 AdfmfJavaUtilities.setELValue("#{applicationScope.startBean.manager}", false);
-                setAlias(getCustNumber());
                 AdfmfJavaUtilities.setELValue("#{applicationScope.startBean.alias}", getCustNumber());
                 AdfmfJavaUtilities.setELValue("#{applicationScope.startBean.aliasname}", getAlphaName());
             }
@@ -278,7 +273,6 @@ public class CustomersDC {
         try {
             serviceOrders_FormParent.setFs_P594820I_W594820IA(new P594820I_W594820IA());
             if (!AdfmfJavaUtilities.getELValue("#{applicationScope.startBean.alias}").equals(null)) {
-                setAlias((String) AdfmfJavaUtilities.getELValue("#{applicationScope.startBean.alias}"));
                 setSoFilter(null);
                 setSoType(null);
 

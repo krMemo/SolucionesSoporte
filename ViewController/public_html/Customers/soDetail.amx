@@ -11,8 +11,12 @@
         </amx:facet>
         <amx:facet name="secondary">
             <amx:commandLink id="cb1" action="__back">
-                <amx:image id="i2" inlineStyle="height:28px;" source="/images/blueicon_close_512.png"/>
+                <amx:image id="i2" inlineStyle="height:28px;" source="/images/icon_close_128.png"/>
             </amx:commandLink>
+        </amx:facet>
+        <amx:facet name="footer">
+            <amx:outputText inlineStyle="font-size:small;" id="ot99"
+                            value="#{applicationScope.startBean.aliasname}"/>
         </amx:facet>
         <amx:panelFormLayout id="pfl1" labelPosition="topStart" fieldHalign="center">
             <amx:panelLabelAndMessage label="No. de Reporte" id="plam7">
@@ -46,7 +50,6 @@
             <amx:panelLabelAndMessage label="Teléfono" id="plam3">
                 <amx:outputText value="#{bindings.value7.inputValue}" id="ot8"/>
             </amx:panelLabelAndMessage>
-            
         </amx:panelFormLayout>
     </amx:panelPage>
     <amx:navigationDragBehavior action="#{startBean.showCustomSpringboard}" direction="back" id="ndb1"/>

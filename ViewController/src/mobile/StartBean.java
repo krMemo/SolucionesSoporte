@@ -92,34 +92,28 @@ public class StartBean {
         }
     }
 
-    public String gotoQuery() {
-        try {
-            if (!AdfmfJavaUtilities.getELValue("#{applicationScope.startBean.aliasname}").equals("")) {
-                AdfmfContainerUtilities.invokeContainerJavaScriptFunction("Customers", "adf.mf.api.amx.doNavigation", new Object[] {
-                                                                          "toQuery" });
-            }
-        } catch (NullPointerException e) {
-            AdfmfContainerUtilities.resetFeature("Customers", true);
-        } catch (Exception e) {
-            e.getMessage();
-        }
+    public String gotoMenu() {
+        AdfmfContainerUtilities.resetFeature("Customers", true);
+        hideCustomSpringboard();
+        return null;
+    }
+
+    public String changeAlias() {
+        AdfmfJavaUtilities.setELValue("#{applicationScope.startBean.alias}", "");
+        AdfmfJavaUtilities.setELValue("#{applicationScope.startBean.aliasname}", "");
+        AdfmfContainerUtilities.resetFeature("Customers", true);
+        
         hideCustomSpringboard();
         return null;
     }
     
-    public String gotoCreate() {
-        try {
-            if (!AdfmfJavaUtilities.getELValue("#{applicationScope.startBean.aliasname}").equals("")) {
-                AdfmfContainerUtilities.invokeContainerJavaScriptFunction("Customers", "adf.mf.api.amx.doNavigation", new Object[] {
-                                                                          "toProdSelect"});
-                
-            }
-        } catch (NullPointerException e) {
-            AdfmfContainerUtilities.resetFeature("Customers", true);
-        } catch (Exception e) {
-            e.getMessage();
-        }
-        hideCustomSpringboard();
+    public String gotoEula(){
+        AdfmfContainerUtilities.gotoFeature("EULA");
+        return null;
+    }
+    
+    public String logout(){
+        AdfmfContainerUtilities.resetFeature("StartApp",true);
         return null;
     }
 
