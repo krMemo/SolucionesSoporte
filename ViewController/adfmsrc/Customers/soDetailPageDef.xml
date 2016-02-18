@@ -38,6 +38,10 @@
                       BeanClass="ynk.supports.FieldMobile" id="chWOType_10Iterator"/>
     <accessorIterator MasterBinding="rowsetIterator" Binds="SHoursTime_699" RangeSize="25" DataControl="CustomersDC"
                       BeanClass="ynk.supports.FieldMobile" id="SHoursTime_699Iterator"/>
+    <accessorIterator MasterBinding="rowsetIterator" Binds="dtFechaTermino_145" RangeSize="25" DataControl="CustomersDC"
+                      BeanClass="ynk.supports.FieldMobile" id="dtFechaTermino_145Iterator"/>
+    <accessorIterator MasterBinding="rowsetIterator" Binds="SHoraFin_701" RangeSize="25" DataControl="CustomersDC"
+                      BeanClass="ynk.supports.FieldMobile" id="SHoraFin_701Iterator"/>
   </executables>
   <bindings>
     <attributeValues IterBinding="mnPegtoWO_424Iterator" id="value">
@@ -86,6 +90,16 @@
       </AttrNames>
     </attributeValues>
     <attributeValues IterBinding="SHoursTime_699Iterator" id="value9">
+      <AttrNames>
+        <Item Value="value"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="dtFechaTermino_145Iterator" id="value10">
+      <AttrNames>
+        <Item Value="value"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SHoraFin_701Iterator" id="value11">
       <AttrNames>
         <Item Value="value"/>
       </AttrNames>

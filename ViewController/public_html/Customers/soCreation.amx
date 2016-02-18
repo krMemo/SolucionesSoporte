@@ -17,19 +17,11 @@
             </amx:commandLink>
         </amx:facet>
         <amx:facet name="footer">
-            <amx:outputText inlineStyle="font-size:small; font-weight:lighter;" id="ot99"
-                            value="#{applicationScope.startBean.aliasname}"/>
+            <amx:outputText id="ot99" value="#{applicationScope.startBean.aliasname}"/>
         </amx:facet>
         <amx:tableLayout id="tl1" layout="weighted" halign="center" width="100%">
             <amx:rowLayout id="rl1">
                 <amx:cellFormat id="cf1" width="10px" rowSpan="10"/>
-                <amx:cellFormat id="cf2" columnSpan="2" halign="center" valign="middle" height="40px">
-                    <amx:outputText value="#{applicationScope.startBean.aliasname}" truncateAt="30" id="ot2"
-                                    inlineStyle="font-weight:bold;"/>
-                </amx:cellFormat>
-                <amx:cellFormat id="cf3" width="10px" rowSpan="10"/>
-            </amx:rowLayout>
-            <amx:rowLayout id="rl2">
                 <amx:cellFormat id="cf4" halign="start" height="34px" valign="middle" width="40%">
                     <amx:outputText value="No. de Serie: " id="ot3"/>
                 </amx:cellFormat>
@@ -49,6 +41,7 @@
                     <amx:outputText value="#{bindings.wr02_45.inputValue}" id="oh9" rendered="false"/>
                     <amx:outputText value="#{bindings.prodFamily_79.inputValue}" id="oh10" rendered="false"/>
                 </amx:cellFormat>
+                <amx:cellFormat id="cf3" width="10px" rowSpan="10"/>
             </amx:rowLayout>
             <amx:rowLayout id="rl3">
                 <amx:cellFormat id="cf7" halign="center" valign="middle" height="30px" columnSpan="2">
@@ -56,18 +49,16 @@
                 </amx:cellFormat>
             </amx:rowLayout>
             <amx:rowLayout id="rl5">
-                <amx:cellFormat id="cf20" height="#{deviceScope.device.os=='Android'?'36':'32'}px" halign="start"
-                                valign="middle" inlineStyle="border-top-style:inset; border-top-width:thin;">
+                <amx:cellFormat id="cf20" columnSpan="2" height="#{deviceScope.device.os=='Android'?'36':'32'}px"
+                                halign="start" valign="middle"
+                                inlineStyle="border-top-style:inset; border-top-width:thin;">
                     <amx:outputText value="Tipo: " id="ot30"/>
-                    <amx:validationGroup id="vg1" validateCondition="always">
-                        <amx:selectOneChoice value="#{bindings.soType.inputValue}" label="Tipo" id="soc1" simple="true"
-                                             required="true" showRequired="true">
-                            <amx:selectItem id="si1" label="Seleccionar" value=""/>
-                            <amx:selectItem id="si2" label="Correctivos" value="2"/>
-                            <amx:selectItem id="si3" label="Preventivos" value="1"/>
-                            <amx:selectItem id="si4" label="Capacitación" value="6"/>
-                        </amx:selectOneChoice>
-                    </amx:validationGroup>
+                    <amx:selectOneChoice value="#{bindings.soType.inputValue}" label="Tipo" id="soc1" simple="true"
+                                         required="true" showRequired="true">
+                        <amx:selectItem id="si1" label="Seleccionar" value=""/>
+                        <amx:selectItem id="si2" label="Correctivo" value="2"/>
+                        <amx:selectItem id="si4" label="Capacitación" value="6"/>
+                    </amx:selectOneChoice>
                 </amx:cellFormat>
             </amx:rowLayout>
             <amx:rowLayout id="rl6">
@@ -112,7 +103,7 @@
             <amx:rowLayout id="rl11">
                 <amx:cellFormat id="cf15" columnSpan="2" height="#{deviceScope.device.os=='Android'?'36':'32'}px">
                     <amx:inputText value="#{bindings.phoneContact.inputValue}" simple="true" id="it4" maximumLength="30"
-                                   inputType="tel" hintText="Teléfono,Ext."/>
+                                   inputType="tel" hintText="Teléfono*Ext."/>
                 </amx:cellFormat>
             </amx:rowLayout>
         </amx:tableLayout>

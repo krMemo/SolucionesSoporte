@@ -10,8 +10,7 @@
             <amx:commandButton id="cb1" action="__back"/>
         </amx:facet>
         <amx:facet name="footer">
-            <amx:outputText inlineStyle="font-size:small; font-weight:lighter;" id="ot99"
-                            value="#{applicationScope.startBean.aliasname}"/>
+            <amx:outputText id="ot99" value="#{applicationScope.startBean.aliasname}"/>
         </amx:facet>
         <amx:tableLayout id="tl3" layout="fixed" halign="center" width="100%">
             <amx:rowLayout id="rl2">

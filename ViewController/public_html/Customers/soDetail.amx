@@ -15,8 +15,7 @@
             </amx:commandLink>
         </amx:facet>
         <amx:facet name="footer">
-            <amx:outputText inlineStyle="font-size:small;" id="ot99"
-                            value="#{applicationScope.startBean.aliasname}"/>
+            <amx:outputText id="ot99" value="#{applicationScope.startBean.aliasname}"/>
         </amx:facet>
         <amx:panelFormLayout id="pfl1" labelPosition="topStart" fieldHalign="center">
             <amx:panelLabelAndMessage label="No. de Reporte" id="plam7">
@@ -26,14 +25,22 @@
                 <amx:outputText value="#{bindings.value1.inputValue + ' - ' + bindings.value9.inputValue}" id="ot13"/>
                 <amx:outputText value="" id="ot2"/>
             </amx:panelLabelAndMessage>
+            <amx:panelLabelAndMessage label="Fecha termino" id="plam10" rendered="#{bindings.value10.inputValue != ''}">
+                <amx:outputText value="#{bindings.value10.inputValue + ' - ' + bindings.value11.inputValue}" id="ot3"/>
+            </amx:panelLabelAndMessage>
             <amx:panelLabelAndMessage label="Estatus" id="plam4">
                 <amx:outputText value="#{bindings.value2.inputValue}" id="ot9"/>
             </amx:panelLabelAndMessage>
             <amx:panelLabelAndMessage label="Tipo" id="plam9">
-                <amx:outputText rendered="#{bindings.value8.inputValue == 1}" value="Preventivo" id="ott1"/>
-                <amx:outputText rendered="#{bindings.value8.inputValue == 3}" value="Cerrado" id="ott3"/>
+                <amx:outputText rendered="#{bindings.value8.inputValue == 1}" value="Acondicionamiento" id="ott1"/>
                 <amx:outputText rendered="#{bindings.value8.inputValue == 2}" value="Correctivo" id="ott2"/>
+                <amx:outputText rendered="#{bindings.value8.inputValue == 3}" value="Preventivo" id="ott3"/>
+                <amx:outputText rendered="#{bindings.value8.inputValue == 4}" value="Predictivo" id="ott4"/>
+                <amx:outputText rendered="#{bindings.value8.inputValue == 5}" value="Instalación" id="ott5"/>
                 <amx:outputText rendered="#{bindings.value8.inputValue == 6}" value="Capacitación" id="ott6"/>
+                <amx:outputText rendered="#{bindings.value8.inputValue == 7}" value="Tanques" id="ott7"/>
+                <amx:outputText rendered="#{bindings.value8.inputValue == 8}" value="Desinstalación" id="ott8"/>
+                <amx:outputText rendered="#{bindings.value8.inputValue == 9}" value="Validación/Calibración" id="ott9"/>
             </amx:panelLabelAndMessage>
             <amx:panelLabelAndMessage label="No. de Serie" id="plam5">
                 <amx:outputText value="#{bindings.value3.inputValue}" id="ot10"/>

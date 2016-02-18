@@ -26,7 +26,8 @@
                                        styleClass="jdemfSpringboardButton" action="#{startBean.gotoEula}"/>
                     <amx:commandButton id="cbios4" text="Salir" icon="/images/logout.png"
                                        inlineStyle="max-height:35px; text-indent:5pt; "
-                                       styleClass="jdemfSpringboardButton" action="#{startBean.logout}"/>
+                                       styleClass="jdemfSpringboardButton" actionListener="#{bindings.logout.execute}"
+                                       disabled="#{!bindings.logout.enabled}"/>
                 </amx:panelGroupLayout>
                 <!--  ANDROID    -->
                 <amx:panelGroupLayout id="pgl2" rendered="#{deviceScope.device.os eq 'Android'}"
@@ -47,7 +48,7 @@
                                        inlineStyle="max-height:35px; padding-left:7px; padding-right:7px;"/>
                         </amx:commandLink>
                         <amx:commandLink inlineStyle="text-decoration:none; vertical-align:middle; color:White;"
-                                         text="Capacitación" id="cl2" action="#{startBean.gotoMenu}"/>
+                                         text="Menú Principal" id="cl2" action="#{startBean.gotoMenu}"/>
                     </amx:panelGroupLayout>
                     <amx:spacer id="s4" height="18"/>
                     <amx:panelGroupLayout id="pgl37" layout="horizontal" valign="middle">
@@ -60,11 +61,13 @@
                     </amx:panelGroupLayout>
                     <amx:spacer id="s5" height="12"/>
                     <amx:panelGroupLayout id="pgl35" layout="horizontal" valign="middle">
-                        <amx:commandLink id="cl4" action="#{startBean.logout}">
+                        <amx:commandLink id="cl4" actionListener="#{bindings.logout.execute}"
+                                         disabled="#{!bindings.logout.enabled}">
                             <amx:image id="i15" source="/images/logout.png"
                                        inlineStyle="max-height:40px; padding-left:7px; padding-right:7px;"/>
                         </amx:commandLink>
-                        <amx:commandLink id="cl13" action="#{startBean.logout}"
+                        <amx:commandLink id="cl13" actionListener="#{bindings.logout.execute}"
+                                         disabled="#{!bindings.logout.enabled}"
                                          inlineStyle="text-decoration:none; vertical-align:middle; color:White;"
                                          text="Salir"></amx:commandLink>
                     </amx:panelGroupLayout>

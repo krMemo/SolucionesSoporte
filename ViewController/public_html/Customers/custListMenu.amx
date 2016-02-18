@@ -3,25 +3,20 @@
           xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
     <amx:panelPage id="pp1">
         <?audit suppress oracle.maf.warning-missing-shortDesc?>
-        <amx:facet name="header">
-            <amx:outputText value="Menú Principal" id="ot10"/>
-        </amx:facet>
-        <amx:facet name="footer">
-            <amx:outputText inlineStyle="font-size:small;" id="ot2"
-                            value="#{applicationScope.startBean.aliasname}"
-                            rendered="#{applicationScope.startBean.aliasname != ''}"/>
-            <amx:outputText value="Sleccione un Cliente" rendered="#{applicationScope.startBean.aliasname == ''}"
-                            id="ot1"/>
-        </amx:facet>
+        <amx:spacer id="s1" height="10"/>
         <amx:tableLayout id="tl1" halign="center" rendered="#{applicationScope.startBean.aliasname != ''}">
+            <amx:rowLayout id="rl0">
+                <amx:cellFormat id="cf0" halign="center" valign="middle" columnSpan="3" height="60">
+                    <amx:outputText value="Menú Principal" id="ot10" inlineStyle="font-weight:bold; font-size:large;"/>
+                </amx:cellFormat>
+            </amx:rowLayout>
             <amx:rowLayout id="rl2">
-                <amx:cellFormat id="cf2" halign="center" valign="middle" width="10px" rowSpan="3"/>
                 <amx:cellFormat id="cf3" halign="center" valign="middle">
                     <amx:commandLink id="cl1" action="toQuery"
                                      actionListener="#{bindings.getRecentServiceOrders.execute}"
                                      disabled="#{!bindings.getRecentServiceOrders.enabled}">
                         <amx:image id="i1" source="/images/icon_search_512.png"
-                                   inlineStyle="height:#{(deviceScope.hardware.screen.availableWidth-(deviceScope.hardware.screen.availableWidth*.15))/4}px;"/>
+                                   inlineStyle="height:#{deviceScope.hardware.screen.width &lt; deviceScope.hardware.screen.height?(deviceScope.hardware.screen.availableWidth-(deviceScope.hardware.screen.availableWidth*.15))/2:(deviceScope.hardware.screen.availableWidth-(deviceScope.hardware.screen.availableWidth*.15))/4}px;"/>
                     </amx:commandLink>
                 </amx:cellFormat>
                 <amx:cellFormat id="cf4" halign="center" valign="middle" width="15px" rowSpan="3"/>
@@ -29,7 +24,7 @@
                     <amx:commandLink action="toProdSelect" actionListener="#{bindings.getProductsList.execute}"
                                      disabled="#{!bindings.getProductsList.enabled}" id="cl2">
                         <amx:image id="i2" source="/images/icon_new_512.png"
-                                   inlineStyle="height:#{(deviceScope.hardware.screen.availableWidth-(deviceScope.hardware.screen.availableWidth*.15))/4}px;"/>
+                                   inlineStyle="height:#{deviceScope.hardware.screen.width &lt; deviceScope.hardware.screen.height?(deviceScope.hardware.screen.availableWidth-(deviceScope.hardware.screen.availableWidth*.15))/2:(deviceScope.hardware.screen.availableWidth-(deviceScope.hardware.screen.availableWidth*.15))/4}px;"/>
                     </amx:commandLink>
                 </amx:cellFormat>
             </amx:rowLayout>
@@ -45,6 +40,14 @@
                                      actionListener="#{bindings.getProductsList.execute}"
                                      disabled="#{!bindings.getProductsList.enabled}"
                                      inlineStyle="text-decoration:none; color:Gray;"/>
+                </amx:cellFormat>
+            </amx:rowLayout>
+            <amx:rowLayout id="rl1">
+                <amx:cellFormat id="cf1" halign="center" valign="middle" columnSpan="3" height="40">
+                    <amx:outputText id="ot2" value="#{applicationScope.startBean.aliasname}"
+                                    rendered="#{applicationScope.startBean.aliasname != ''}"/>
+                    <amx:outputText value="Sleccione un Cliente"
+                                    rendered="#{applicationScope.startBean.aliasname == ''}" id="ot1"/>
                 </amx:cellFormat>
             </amx:rowLayout>
         </amx:tableLayout>

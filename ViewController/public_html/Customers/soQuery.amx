@@ -10,16 +10,15 @@
             <amx:commandButton id="cb1" action="__back"/>
         </amx:facet>
         <amx:facet name="footer">
-            <amx:outputText inlineStyle="font-size:small;" id="ot99"
-                            value="#{applicationScope.startBean.aliasname}"/>
+            <amx:outputText id="ot99" value="#{applicationScope.startBean.aliasname}"/>
         </amx:facet>
         <amx:tableLayout id="tl3" layout="fixed" halign="center" width="100%">
             <amx:rowLayout id="rl2">
-                <amx:cellFormat id="cf6" width="80%">
+                <amx:cellFormat id="cf6" columnSpan="2" width="80%">
                     <amx:inputText value="#{bindings.soFilter.inputValue}" simple="true" id="it1" inputType="number"
                                    hintText="No. Reporte" keyboardDismiss="search"/>
                 </amx:cellFormat>
-                <amx:cellFormat id="cf7" width="20%" halign="center">
+                <amx:cellFormat id="cf7" width="20%" halign="center" rowSpan="2">
                     <amx:commandLink actionListener="#{bindings.getServiceOrdersList.execute}"
                                      disabled="#{!bindings.getServiceOrdersList.enabled}" id="cl10">
                         <amx:image id="i1" source="/images/search.png" inlineStyle="height:30pt;"/>
@@ -27,14 +26,16 @@
                 </amx:cellFormat>
             </amx:rowLayout>
             <amx:rowLayout id="rl3">
-                <amx:cellFormat id="cf8" columnSpan="2">
+                <amx:cellFormat id="cf8" width="60%">
                     <amx:selectOneChoice value="#{bindings.soType.inputValue}" label="Tipo" id="soc1" simple="true">
-                        <amx:selectItem id="si1" label="Todos" value=""/>
+                        <amx:selectItem id="si0" label="Todos" value=""/>
                         <amx:selectItem id="si2" label="Correctivos" value="2"/>
-                        <amx:selectItem id="si3" label="Preventivos" value="1"/>
-                        <amx:selectItem id="si4" label="Capacitación" value="6"/>
-                        <amx:selectItem id="si5" label="Cerrados" value="3"/>
+                        <amx:selectItem id="si3" label="Preventivos" value="3"/>
+                        <amx:selectItem id="si6" label="Capacitación" value="6"/>
                     </amx:selectOneChoice>
+                </amx:cellFormat>
+                <amx:cellFormat id="cf10">
+                    <amx:selectBooleanCheckbox value="#{bindings.isClosed.inputValue}" label="Cerrados" id="sbc2"/>
                 </amx:cellFormat>
             </amx:rowLayout>
         </amx:tableLayout>
@@ -65,12 +66,30 @@
                         </amx:cellFormat>
                     </amx:rowLayout>
                     <amx:rowLayout id="rl4">
-                        <amx:cellFormat width="60%" halign="start"
+                        <amx:cellFormat width="70%" halign="start"
                                         height="#{deviceScope.device.os=='Android'?'36':'32'}px" id="cf9">
-                            <amx:outputText value="#{row.SWOSt_447.bindings.value.inputValue}"
-                                            styleClass="adfmf-listItem-captionText" id="ot5"/>
+                            <amx:outputText rendered="#{row.chWOType_10.bindings.value.inputValue == 1}"
+                                            value="Acondicionamiento" id="ott1"
+                                            styleClass="adfmf-listItem-captionText"/>
+                            <amx:outputText rendered="#{row.chWOType_10.bindings.value.inputValue == 2}"
+                                            value="Correctivo" id="ott2" styleClass="adfmf-listItem-captionText"/>
+                            <amx:outputText rendered="#{row.chWOType_10.bindings.value.inputValue == 3}"
+                                            value="Preventivo" id="ott3" styleClass="adfmf-listItem-captionText"/>
+                            <amx:outputText rendered="#{row.chWOType_10.bindings.value.inputValue == 4}"
+                                            value="Predictivo" id="ott4" styleClass="adfmf-listItem-captionText"/>
+                            <amx:outputText rendered="#{row.chWOType_10.bindings.value.inputValue == 5}"
+                                            value="Instalación" id="ott5" styleClass="adfmf-listItem-captionText"/>
+                            <amx:outputText rendered="#{row.chWOType_10.bindings.value.inputValue == 6}"
+                                            value="Capacitación" id="ott6" styleClass="adfmf-listItem-captionText"/>
+                            <amx:outputText rendered="#{row.chWOType_10.bindings.value.inputValue == 7}" value="Tanques"
+                                            id="ott7" styleClass="adfmf-listItem-captionText"/>
+                            <amx:outputText rendered="#{row.chWOType_10.bindings.value.inputValue == 8}"
+                                            value="Desinstalación" id="ott8" styleClass="adfmf-listItem-captionText"/>
+                            <amx:outputText rendered="#{row.chWOType_10.bindings.value.inputValue == 9}"
+                                            value="Validación/Calibración" id="ott9"
+                                            styleClass="adfmf-listItem-captionText"/>
                         </amx:cellFormat>
-                        <amx:cellFormat width="40%" halign="end" id="cf1">
+                        <amx:cellFormat width="30%" halign="end" id="cf1">
                             <amx:outputText value="#{row.SSerialNumber_563.bindings.value.inputValue}"
                                             styleClass="adfmf-listItem-captionText" id="ot14"/>
                         </amx:cellFormat>

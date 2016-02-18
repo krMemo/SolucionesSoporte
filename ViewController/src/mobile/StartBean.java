@@ -88,7 +88,7 @@ public class StartBean {
             AdfmfContainerUtilities.invokeContainerJavaScriptFunction("Customers", "adf.mf.api.amx.doNavigation", new Object[] {
                                                                       "__back" });
         } catch (Exception e) {
-            AdfmfJavaUtilities.logout();
+            this.logout();
         }
     }
 
@@ -113,6 +113,7 @@ public class StartBean {
     }
     
     public String logout(){
+        AdfmfContainerUtilities.resetFeature("Customers");
         AdfmfContainerUtilities.resetFeature("StartApp",true);
         return null;
     }

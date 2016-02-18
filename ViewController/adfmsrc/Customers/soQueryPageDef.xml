@@ -35,7 +35,7 @@
         </AttrNames>
         <Accessors>
           <Item Value="dtOrderDate_19"/>
-          <Item Value="SWOSt_447"/>
+          <Item Value="chWOType_10"/>
           <Item Value="SSerialNumber_563"/>
           <Item Value="SDescrpcinModelo_678"/>
           <Item Value="mnPegtoWO_424"/>
@@ -53,5 +53,14 @@
         <Item Value="soType"/>
       </AttrNames>
     </list>
+    <button IterBinding="CustomersDCIterator" id="isClosed" DTSupportsMRU="false" StaticList="true">
+      <AttrNames>
+        <Item Value="isClosed"/>
+      </AttrNames>
+      <ValueList>
+        <Item Value="!=M7"/>
+        <Item Value="M7"/>
+      </ValueList>
+    </button>
   </bindings>
 </pageDefinition>

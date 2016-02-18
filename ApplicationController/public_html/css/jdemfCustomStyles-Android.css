@@ -1,9 +1,14 @@
 /******** Android **********/
-
+.amx-panelPage {
+    background-color: #FFFFFF;
+}
 .amx-panelPage-header-overflowIcon {
   /**background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB0AAAAgCAYAAADud3N8AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wMCFBcKPGzQJQAAALhJREFUSMftlTEKAjEQRZ+LKd0j7CGiexjthK22zBms01lo4wU8gicQzCkEOxsFhYDYpBDNVu40Or8LA3nMkHkBjaaHDF4PxgWAEmiA0Xv9y5yBNXD/uNS4sAdqoSYP0dtJkSnUgpMdA+SgR0HotQs6Ay4CwBsw1TVSOagcVA4qh3+VQ9rTFlgKsB5AE73d5F7vQqjBIhkpuzKl4GSHXdCtIHSXFX70FuPCHKh6Fv4pertKn4rmx/IED1EuPO8zsFQAAAAASUVORK5CYII=);
   **/
   visibility: hidden;
+}
+.amx-panelPage-header-overflowIcon {
+    alignment-baseline: central;
 }
 
 /*Reduce top and bottom padding causing issues in Android popups*/
@@ -46,7 +51,7 @@ padding: 0px 10px 10px 0px;
 
 .jdemfFooter{
 
-height:44px;
+height:40px;
 border-top: 1px solid #D1D1D3;
 border-left: none;
 border-bottom: none;

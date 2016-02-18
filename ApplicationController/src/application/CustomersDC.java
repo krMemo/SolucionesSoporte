@@ -8,6 +8,13 @@ import com.oracle.e1.jdemf.FormRequest;
 import com.oracle.e1.jdemf.JDERestServiceException;
 import com.oracle.e1.jdemf.JDERestServiceProvider;
 
+import java.text.DateFormat;
+
+import java.text.SimpleDateFormat;
+
+import java.util.Calendar;
+import java.util.Date;
+
 import oracle.adfmf.framework.FeatureContext;
 import oracle.adfmf.framework.api.AdfmfContainerUtilities;
 import oracle.adfmf.framework.api.AdfmfJavaUtilities;
@@ -34,8 +41,12 @@ public class CustomersDC {
     String alias; //User to be refered
     P5848APP_W5848APPA_FormParent customersAlias_FormParent = new P5848APP_W5848APPA_FormParent();
     //Querying Service Orders
-    String soFilter;
-    String soType;
+    Calendar calendar = Calendar.getInstance();
+    DateFormat dateFormat;
+    Date dateFilter;
+    String soFilter = "";
+    String soType = "";
+    String isClosed = "false";
     P594820I_W594820IA_FormParent serviceOrders_FormParent = new P594820I_W594820IA_FormParent();
 
     //Querying Products
@@ -123,7 +134,8 @@ public class CustomersDC {
     }
 
     public CustomersDC() {
-        super();
+        calendar.add(Calendar.DAY_OF_MONTH, -15);
+        dateFilter = calendar.getTime();
         getCustomersAliasList();
     }
 
@@ -132,6 +144,8 @@ public class CustomersDC {
     }
 
     public String getCustNumber() {
+        if (AdfmfJavaUtilities.getELValue("#{applicationScope.startBean.user}")=="50")
+            return "50";
         return custNumber;
     }
 
@@ -161,6 +175,14 @@ public class CustomersDC {
 
     public String getSoType() {
         return soType;
+    }
+
+    public void setIsClosed(String isClosed) {
+        this.isClosed = isClosed;
+    }
+
+    public String getIsClosed() {
+        return isClosed;
     }
 
     public void setSerialFilter(String serialFilter) {
@@ -260,6 +282,10 @@ public class CustomersDC {
                 AdfmfJavaUtilities.setELValue("#{applicationScope.startBean.manager}", false);
                 AdfmfJavaUtilities.setELValue("#{applicationScope.startBean.alias}", getCustNumber());
                 AdfmfJavaUtilities.setELValue("#{applicationScope.startBean.aliasname}", getAlphaName());
+            } else {
+                AdfmfJavaUtilities.setELValue("#{applicationScope.startBean.manager}", true);
+                AdfmfJavaUtilities.setELValue("#{applicationScope.startBean.alias}", "");
+                AdfmfJavaUtilities.setELValue("#{applicationScope.startBean.aliasname}", "");
             }
         } catch (JDERestServiceException e) {
             JDERestServiceProvider.handleServiceException(e);
@@ -275,7 +301,7 @@ public class CustomersDC {
             if (!AdfmfJavaUtilities.getELValue("#{applicationScope.startBean.alias}").equals(null)) {
                 setSoFilter(null);
                 setSoType(null);
-
+                setIsClosed("false");
                 getServiceOrdersList();
             }
         } catch (NullPointerException e) {
@@ -284,6 +310,9 @@ public class CustomersDC {
     }
 
     public String getLastServiceOrder() {
+        soFilter = "";
+        soType = "";
+        isClosed = "false";
         getRecentServiceOrders();
         return this.serviceOrders_FormParent.getMnPegtoWO_424ForRow(0);
     }
@@ -302,8 +331,16 @@ public class CustomersDC {
         if (soFilter != null && soFilter.trim().length() > 0) {
             //set Service Order filter  in QBE
             w594820IAFSREvent.setQBEValue("1[424]", "*" + soFilter.trim() + "*");
-        } else if (soType != null && soType.trim().length() > 0) {
-            w594820IAFSREvent.setQBEValue("1[10]", soType.trim());
+        } else {
+            if (soType != null && soType.trim().length() > 0) 
+                w594820IAFSREvent.setQBEValue("1[10]", soType.trim());
+            if(isClosed != null && isClosed.equals("true")){
+                w594820IAFSREvent.setQBEValue("1[9]", "M7");    
+                dateFormat = new SimpleDateFormat("mmddyy");
+                w594820IAFSREvent.setQBEValue("1[145]", ">="+ dateFormat.format(dateFilter));
+            } else {
+                w594820IAFSREvent.setQBEValue("1[9]", "!=M7");    
+            }
         }
         w594820IAFSREvent.doControlAction("6"); //TriggertheFindButton
         formRequest.addFSREvent(w594820IAFSREvent); //addtheeventstotheformrequest
@@ -375,9 +412,14 @@ public class CustomersDC {
         this.umo = umo.trim();
         this.wr02 = wr02.trim();
         this.soType = soType.trim();
-
+        if (this.getSoType() == null || this.getSoType().isEmpty()) {
+            error = "Tipo";
+        }
         if (this.getIssueDesc() == null || this.getIssueDesc().isEmpty()) {
-            error = "Descripción";
+            if (error == "")
+                error = "Descripción";
+            else
+                error += ", Descripción";
         }
         if (this.getContactName() == null || this.getContactName().equals("")) {
             if (error == "")
@@ -404,14 +446,14 @@ public class CustomersDC {
         formRequest.addToFISet("33", "0"); //mnX4801JobNumber
         formRequest.addToFISet("34", "0"); //cCopyWorkOrderDetails
         formRequest.addToFISet("17", this.custId); //Address Number
-        formRequest.addToFISet("35", this.custNumber); //mnServiceAddressNumber_SAID
+        formRequest.addToFISet("35", getAlias()); //mnServiceAddressNumber_SAID
         formRequest.addToFISet("38", "V01"); //PO szNoVisita_WR06
         formRequest.addToFISet("41", "0"); //cAction
         formRequest.addToFISet("31", this.businessUnit);
 
         FSREvent createSOFSREvent = new FSREvent();
         createSOFSREvent.setFieldValue("41", this.serialProduct); //Visible Serial Product
-        createSOFSREvent.setFieldValue("445", this.custNumber); //Visible Cust Alias
+        createSOFSREvent.setFieldValue("445", getAlias()); //Visible Cust Alias
         createSOFSREvent.setFieldValue("47", this.issueDesc); // Visible Issue
         createSOFSREvent.setFieldValue("28", this.contactName); //Visible Contacto szUsuario_VR02
         createSOFSREvent.setFieldValue("84", this.phoneContact); //Visible Phone Status Comment STCM

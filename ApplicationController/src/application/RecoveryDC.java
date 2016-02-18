@@ -65,8 +65,8 @@ public class RecoveryDC {
     private boolean displayJas = false;
     private String url;
     //private boolean urlError = false;
-    private String username;
-    private String password;
+    private String username = "";
+    private String password = "";
     private String environment;
     private String role;
     private String jasserver;
@@ -639,8 +639,8 @@ public class RecoveryDC {
         }
         if (AdfmfJavaUtilities.evaluateELExpression("#{applicationScope.connected}").toString().equalsIgnoreCase("true") &&
             ApplicationGlobals.getInstance().isLoginSuccess()) {
-            JDEmfUtilities.logout();
-        } else {
+            /*  JDEmfUtilities.logout();
+        } else { */
             AdfmfJavaUtilities.setELValue("#{applicationScope.logout}", "1");
             AdfmfContainerUtilities.resetFeature("StartApp");
         }

@@ -3,5 +3,8 @@
                 Package="CustomSpringboard">
   <parameters/>
   <executables/>
-  <bindings/>
+  <bindings>
+    <methodAction id="logout" RequiresUpdateModel="true" Action="invokeMethod" MethodName="logout"
+                  IsViewObjectMethod="false" DataControl="RecoveryDC" InstanceName="data.RecoveryDC.dataProvider"/>
+  </bindings>
 </pageDefinition>
