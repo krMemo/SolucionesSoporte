@@ -28,7 +28,6 @@
             <amx:rowLayout id="rl3">
                 <amx:cellFormat id="cf8" width="60%">
                     <amx:selectOneChoice value="#{bindings.soType.inputValue}" label="Tipo" id="soc1" simple="true">
-                        <amx:selectItem id="si0" label="Todos" value=""/>
                         <amx:selectItem id="si2" label="Correctivos" value="2"/>
                         <amx:selectItem id="si3" label="Preventivos" value="3"/>
                         <amx:selectItem id="si6" label="Capacitación" value="6"/>

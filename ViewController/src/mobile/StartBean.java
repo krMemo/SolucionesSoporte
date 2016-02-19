@@ -97,15 +97,6 @@ public class StartBean {
         hideCustomSpringboard();
         return null;
     }
-
-    public String changeAlias() {
-        AdfmfJavaUtilities.setELValue("#{applicationScope.startBean.alias}", "");
-        AdfmfJavaUtilities.setELValue("#{applicationScope.startBean.aliasname}", "");
-        AdfmfContainerUtilities.resetFeature("Customers", true);
-        
-        hideCustomSpringboard();
-        return null;
-    }
     
     public String gotoEula(){
         AdfmfContainerUtilities.gotoFeature("EULA");

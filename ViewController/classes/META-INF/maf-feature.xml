@@ -5,18 +5,44 @@
       <adfmf:amx file="Customers/CustomersVC-task-flow.xml#CustomersVC-task-flow">
         <adfmf:includes>
           <adfmf:include type="JavaScript" file="js/jdemfJavascript.js" id="i1"/>
+          <adfmf:include type="JavaScript" file="js/NavigationController.js" id="i2"/>
+          <adfmf:include type="JavaScript" file="js/PopupUtils.js" id="i3"/>
         </adfmf:includes>
       </adfmf:amx>
     </adfmf:content>
   </adfmf:feature>
   <adfmf:feature id="StartApp" name="StartApp">
     <adfmf:content id="StartApp.1">
-      <adfmf:amx file="StartApp/StartApp.amx"/>
+      <adfmf:amx file="StartApp/StartApp.amx">
+        <adfmf:includes>
+          <adfmf:include type="JavaScript" file="js/jdemfJavascript.js" id="i6"/>
+        </adfmf:includes>
+      </adfmf:amx>
     </adfmf:content>
   </adfmf:feature>
   <adfmf:feature id="PassRecovery" name="PassRecovery">
     <adfmf:content id="PassRecovery.1">
-      <adfmf:amx file="PassRecovery/passRecovery.amx"/>
+      <adfmf:amx file="PassRecovery/passRecovery.amx">
+        <adfmf:includes>
+          <adfmf:include type="JavaScript" file="js/jdemfJavascript.js" id="i4"/>
+          <adfmf:include type="JavaScript" file="js/PopupUtils.js" id="i5"/>
+        </adfmf:includes>
+      </adfmf:amx>
+    </adfmf:content>
+  </adfmf:feature>
+  <adfmf:feature id="CustomSpringboard" name="CustomSpringboard">
+    <adfmf:content id="CustomSpringboard.1">
+      <adfmf:amx file="CustomSpringboard/customSpringboard.amx"/>
+    </adfmf:content>
+  </adfmf:feature>
+  <adfmf:feature id="EULA" name="EULA">
+    <adfmf:content id="EULA.1">
+      <adfmf:constraints/>
+      <adfmf:amx file="EULA/eula.amx">
+        <adfmf:includes>
+          <adfmf:include type="JavaScript" file="js/jdemfJavascript.js" id="i7"/>
+        </adfmf:includes>
+      </adfmf:amx>
     </adfmf:content>
   </adfmf:feature>
 </adfmf:features>

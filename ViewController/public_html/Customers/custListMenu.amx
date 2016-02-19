@@ -4,7 +4,7 @@
     <amx:panelPage id="pp1">
         <?audit suppress oracle.maf.warning-missing-shortDesc?>
         <amx:spacer id="s1" height="10"/>
-        <amx:tableLayout id="tl1" halign="center" rendered="#{applicationScope.startBean.aliasname != ''}">
+        <amx:tableLayout id="tl1" halign="center">
             <amx:rowLayout id="rl0">
                 <amx:cellFormat id="cf0" halign="center" valign="middle" columnSpan="3" height="60">
                     <amx:outputText value="Menú Principal" id="ot10" inlineStyle="font-weight:bold; font-size:large;"/>
@@ -14,7 +14,7 @@
                 <amx:cellFormat id="cf3" halign="center" valign="middle">
                     <amx:commandLink id="cl1" action="toQuery"
                                      actionListener="#{bindings.getRecentServiceOrders.execute}"
-                                     disabled="#{!bindings.getRecentServiceOrders.enabled}">
+                                     disabled="#{applicationScope.startBean.aliasname == ''}">
                         <amx:image id="i1" source="/images/icon_search_512.png"
                                    inlineStyle="height:#{deviceScope.hardware.screen.width &lt; deviceScope.hardware.screen.height?(deviceScope.hardware.screen.availableWidth-(deviceScope.hardware.screen.availableWidth*.15))/2:(deviceScope.hardware.screen.availableWidth-(deviceScope.hardware.screen.availableWidth*.15))/4}px;"/>
                     </amx:commandLink>
@@ -22,7 +22,7 @@
                 <amx:cellFormat id="cf4" halign="center" valign="middle" width="15px" rowSpan="3"/>
                 <amx:cellFormat id="cf5" halign="center" valign="middle">
                     <amx:commandLink action="toProdSelect" actionListener="#{bindings.getProductsList.execute}"
-                                     disabled="#{!bindings.getProductsList.enabled}" id="cl2">
+                                     disabled="#{applicationScope.startBean.aliasname == ''}" id="cl2">
                         <amx:image id="i2" source="/images/icon_new_512.png"
                                    inlineStyle="height:#{deviceScope.hardware.screen.width &lt; deviceScope.hardware.screen.height?(deviceScope.hardware.screen.availableWidth-(deviceScope.hardware.screen.availableWidth*.15))/2:(deviceScope.hardware.screen.availableWidth-(deviceScope.hardware.screen.availableWidth*.15))/4}px;"/>
                     </amx:commandLink>
@@ -32,13 +32,13 @@
                 <amx:cellFormat id="cf6" halign="center" valign="middle">
                     <amx:commandLink id="cl3" text="Consultar" action="toQuery"
                                      actionListener="#{bindings.getRecentServiceOrders.execute}"
-                                     disabled="#{!bindings.getRecentServiceOrders.enabled}"
+                                     disabled="#{applicationScope.startBean.aliasname == ''}"
                                      inlineStyle="text-decoration:none; color:Gray;"/>
                 </amx:cellFormat>
                 <amx:cellFormat id="cf7" halign="center" valign="middle">
                     <amx:commandLink id="cl4" text="Reportar" action="toProdSelect"
                                      actionListener="#{bindings.getProductsList.execute}"
-                                     disabled="#{!bindings.getProductsList.enabled}"
+                                     disabled="#{applicationScope.startBean.aliasname == ''}"
                                      inlineStyle="text-decoration:none; color:Gray;"/>
                 </amx:cellFormat>
             </amx:rowLayout>
@@ -64,11 +64,11 @@
                 <amx:tableLayout width="100%" id="tl2">
                     <amx:rowLayout id="rl4">
                         <amx:cellFormat width="8px" id="cf8"/>
-                        <amx:cellFormat width="60%" height="43px" id="cf9">
+                        <amx:cellFormat width="25%" height="43px" id="cf9">
                             <amx:outputText value="#{row.mnPadreNumber_19.bindings.value.inputValue}" id="ot3"/>
                         </amx:cellFormat>
                         <amx:cellFormat width="8px" id="cf10"/>
-                        <amx:cellFormat width="40%" halign="end" id="cf11">
+                        <amx:cellFormat width="75%" halign="start" id="cf11">
                             <amx:outputText value="#{row.SPadreNameExtended_36.bindings.value.inputValue}"
                                             styleClass="adfmf-listItem-highlightText" id="ot5"/>
                         </amx:cellFormat>

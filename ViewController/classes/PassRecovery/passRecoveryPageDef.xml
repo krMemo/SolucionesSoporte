@@ -8,5 +8,9 @@
   <bindings>
     <methodAction id="resetpassword" RequiresUpdateModel="true" Action="invokeMethod" MethodName="resetpassword"
                   IsViewObjectMethod="false" DataControl="RecoveryDC" InstanceName="data.RecoveryDC.dataProvider"/>
+    <methodAction id="recoverPassword" RequiresUpdateModel="true" Action="invokeMethod" MethodName="recoverPassword"
+                  IsViewObjectMethod="false" DataControl="RecoveryDC" InstanceName="data.RecoveryDC.dataProvider"/>
+    <methodAction id="logout" RequiresUpdateModel="true" Action="invokeMethod" MethodName="logout"
+                  IsViewObjectMethod="false" DataControl="RecoveryDC" InstanceName="data.RecoveryDC.dataProvider"/>
   </bindings>
 </pageDefinition>

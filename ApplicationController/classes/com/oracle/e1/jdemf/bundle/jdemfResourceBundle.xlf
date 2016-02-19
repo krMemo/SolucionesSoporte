@@ -33,7 +33,7 @@
                 <note>The text placed on the Login button when pressed will use the users credentials to attempt to login to E1</note>
             </trans-unit>
             <trans-unit id="URL_TEXT_1">
-                <source>Cannot Connect to Server</source>
+                <source>No se puede conectar al Servidor</source>
                 <target/>
                 <note>No maxwidth. Header text shown on the form prior to the login form, which is only shown if the user has not entered their login
                 URL in the app Preferences, it was entered incorrectly, or the server is unavailable.  A field will be shown where they can 
@@ -45,32 +45,32 @@
                 <note>An acknowledgement of the presented information</note>
             </trans-unit>
             <trans-unit id="AUTH_ERROR">
-                <source>Authentication Error: Authentication Failed</source>
+                <source>Error de Autenticación: Revise sus datos</source>
                 <target/>
                 <note>An error shown on the login form when the user login failed</note>
             </trans-unit>
             <trans-unit id="DEFAULT_ERROR">
-                <source>Server Connection Error: The application cannot connect to the server</source>
+                <source>Error de Conexión: La App no puede conectarse, revise su internet.</source>
                 <target/>
                 <note>No max width. An error shown when the app cannot connect to the server but the reason is unknown</note>
             </trans-unit>
             <trans-unit id="ADMIN_ERROR">
-                <source>Contact Administrator:  The url is not registered in the jas.ini of the JAS server</source>
+                <source>Contacte a Dicipa:  Error JAS server</source>
                 <target/>
                 <note>No max width. An error shown when the app cannot connect because the URL is not registered, the user cannot correct this </note>
             </trans-unit>
             <trans-unit id="USER_REQ_ERROR">
-                <source>Authentication Error: User and password are required fields</source>
+                <source>Error: Capture su Usuario y Contraseña</source>
                 <target/>
                 <note>No max width. User and password cannot be blank</note>
             </trans-unit>
             <trans-unit id="SERVER_PROCESS_ERROR">
-                <source>The server is unable to process the request.</source>
+                <source>El servidor no ha dado respuesta.</source>
                 <target/>
                 <note>No max width. Error shown on the screen when the request to the server failed</note>
             </trans-unit>
             <trans-unit id="TIMEOUT_ERROR">
-                <source>Your session is no longer valid. Please login again.</source>
+                <source>Su sesión terminó. Por favor ingrese de nuevo.</source>
                 <target/>
                 <note>No max width. Error shown on the screen when the session has timed out</note>
             </trans-unit>
@@ -86,7 +86,7 @@
                 <note>No max width. Text shown if the application is unable to connect to the server. A field (not editable) will be shown with the url that is configured.</note>
             </trans-unit>
             <trans-unit id="LOGOUT" maxwidth="10">
-                <source>Logout</source>
+                <source>Salir</source>
                 <target/>
                 <note>Logout button will terminate the users session and then allow them to login again.</note>
             </trans-unit>

@@ -8,12 +8,12 @@ import com.oracle.e1.jdemf.FormRequest;
 import com.oracle.e1.jdemf.JDERestServiceException;
 import com.oracle.e1.jdemf.JDERestServiceProvider;
 
-import java.text.DateFormat;
-
 import java.text.SimpleDateFormat;
 
 import java.util.Calendar;
 import java.util.Date;
+
+import java.util.Locale;
 
 import oracle.adfmf.framework.FeatureContext;
 import oracle.adfmf.framework.api.AdfmfContainerUtilities;
@@ -41,11 +41,9 @@ public class CustomersDC {
     String alias; //User to be refered
     P5848APP_W5848APPA_FormParent customersAlias_FormParent = new P5848APP_W5848APPA_FormParent();
     //Querying Service Orders
-    Calendar calendar = Calendar.getInstance();
-    DateFormat dateFormat;
-    Date dateFilter;
+    Calendar dateFilter = Calendar.getInstance();
     String soFilter = "";
-    String soType = "";
+    String soType = "2";
     String isClosed = "false";
     P594820I_W594820IA_FormParent serviceOrders_FormParent = new P594820I_W594820IA_FormParent();
 
@@ -134,8 +132,6 @@ public class CustomersDC {
     }
 
     public CustomersDC() {
-        calendar.add(Calendar.DAY_OF_MONTH, -15);
-        dateFilter = calendar.getTime();
         getCustomersAliasList();
     }
 
@@ -300,7 +296,7 @@ public class CustomersDC {
             serviceOrders_FormParent.setFs_P594820I_W594820IA(new P594820I_W594820IA());
             if (!AdfmfJavaUtilities.getELValue("#{applicationScope.startBean.alias}").equals(null)) {
                 setSoFilter(null);
-                setSoType(null);
+                setSoType("2");
                 setIsClosed("false");
                 getServiceOrdersList();
             }
@@ -311,7 +307,6 @@ public class CustomersDC {
 
     public String getLastServiceOrder() {
         soFilter = "";
-        soType = "";
         isClosed = "false";
         getRecentServiceOrders();
         return this.serviceOrders_FormParent.getMnPegtoWO_424ForRow(0);
@@ -332,12 +327,17 @@ public class CustomersDC {
             //set Service Order filter  in QBE
             w594820IAFSREvent.setQBEValue("1[424]", "*" + soFilter.trim() + "*");
         } else {
-            if (soType != null && soType.trim().length() > 0) 
-                w594820IAFSREvent.setQBEValue("1[10]", soType.trim());
+            if (soType == null || soType.trim().length() == 0) 
+                setSoType("2");
+            w594820IAFSREvent.setQBEValue("1[10]", soType.trim());
             if(isClosed != null && isClosed.equals("true")){
-                w594820IAFSREvent.setQBEValue("1[9]", "M7");    
-                dateFormat = new SimpleDateFormat("mmddyy");
-                w594820IAFSREvent.setQBEValue("1[145]", ">="+ dateFormat.format(dateFilter));
+                w594820IAFSREvent.setQBEValue("1[9]", "M7");
+                dateFilter = Calendar.getInstance();
+                dateFilter.add(Calendar.MONTH, -1);
+                String date = ">=" + dateFilter.get(Calendar.DATE) + "/";
+                date += (dateFilter.get(Calendar.MONTH)+1) + "/";
+                date += dateFilter.get(Calendar.YEAR); 
+                w594820IAFSREvent.setQBEValue("1[145]", date); 
             } else {
                 w594820IAFSREvent.setQBEValue("1[9]", "!=M7");    
             }

@@ -8,7 +8,8 @@
             <amx:outputText value="Recuperar Contraseña" id="ot1"/>
         </amx:facet>
         <amx:facet name="secondary">
-            <amx:commandLink id="cb1" action="#{startBean.logout}">
+            <amx:commandLink id="cb1" actionListener="#{bindings.logout.execute}"
+                             disabled="#{!bindings.logout.enabled}">
                 <amx:image id="i1" source="/images/icon_close_128.png" inlineStyle="height:22pt;"/>
             </amx:commandLink>
         </amx:facet>
