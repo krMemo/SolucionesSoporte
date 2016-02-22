@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <adfmf:application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:adfmf="http://xmlns.oracle.com/adf/mf"
-                   version="1.0" name="SolucionesSoporte" id="com.company.SolucionesSoporte"
+                   version="4.0" name=" Soluciones Soporte" id="com.company.SolucionesSoporte"
                    appControllerFolder="ApplicationController" listener-class="application.LifeCycleListenerImpl">
+  <adfmf:description>Consulta y generación de reportes de servicio para clientes de Dicipa.</adfmf:description>
   <adfmf:featureReference refId="StartApp" id="fr3"/>
   <adfmf:featureReference refId="com.oracle.e1.jdemf.login" id="fr2"/>
   <adfmf:featureReference refId="Customers" id="fr1"/>
