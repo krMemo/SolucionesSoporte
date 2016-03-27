@@ -8,12 +8,7 @@ import com.oracle.e1.jdemf.FormRequest;
 import com.oracle.e1.jdemf.JDERestServiceException;
 import com.oracle.e1.jdemf.JDERestServiceProvider;
 
-import java.text.SimpleDateFormat;
-
 import java.util.Calendar;
-import java.util.Date;
-
-import java.util.Locale;
 
 import oracle.adfmf.framework.FeatureContext;
 import oracle.adfmf.framework.api.AdfmfContainerUtilities;
@@ -296,7 +291,6 @@ public class CustomersDC {
             serviceOrders_FormParent.setFs_P594820I_W594820IA(new P594820I_W594820IA());
             if (!AdfmfJavaUtilities.getELValue("#{applicationScope.startBean.alias}").equals(null)) {
                 setSoFilter(null);
-                setSoType("2");
                 setIsClosed("false");
                 getServiceOrdersList();
             }

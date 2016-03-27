@@ -38,8 +38,8 @@
                <value n="application_bundle_id" v="com.yankuiapps.ServiceOrders"/>
                <value n="character_encoding" v="UTF-8"/>
                <value n="minimum_sdk_version" v="16"/>
-               <value n="version_code" v="10"/>
-               <value n="version_name" v="4.0"/>
+               <value n="version_code" v="12"/>
+               <value n="version_name" v="4.1"/>
             </hash>
             <hash n="archiveOptions">
                <value n="hasManifest" v="true"/>

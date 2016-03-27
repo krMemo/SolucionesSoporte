@@ -155,11 +155,11 @@ public class RecoveryDC {
         }
         if (getUsername().startsWith("87.")) {
             AdfmfJavaUtilities.setELValue("#{preferenceScope.feature.com.oracle.e1.jdemf.login.Connection.URL}",
-                                          "http://201.161.1.59:87");
+                                          "http://201.149.35.59:87");
             setUsername(getUsername().substring(3));
         } else {
             AdfmfJavaUtilities.setELValue("#{preferenceScope.feature.com.oracle.e1.jdemf.login.Connection.URL}",
-                                          "http://201.161.1.59:89");
+                                          "http://201.149.35.59:89");
         }
         if (recovery) {
             setUsername(recoveryUser);
