@@ -44,7 +44,9 @@ import oracle.adfmf.util.BundleFactory;
 import oracle.adfmf.util.Utility;
 
 import ynk.supports.FormErrorWarningMobile;
+import ynk.supports.p559803.P559803_W559803A_FormParent;
 import ynk.supports.p5698ows.P5698OWS_W5698OWSB_FormParent;
+import ynk.supports.p591771i.P591771I_W591771IA_FormParent;
 
 public class RecoveryDC {
 
@@ -138,6 +140,46 @@ public class RecoveryDC {
             throw new AdfException(e.getMessage(), AdfException.ERROR);
         }
     }
+    
+    P559803_W559803A_FormParent logEvent_FormParent = new P559803_W559803A_FormParent();
+    
+    public void logEventLogin() {
+        FormRequest formRequest = new FormRequest();
+        formRequest.setFormName("P559803_W559803A");
+        formRequest.setVersion("");
+        formRequest.setFormServiceAction("C");
+
+        FSREvent w559803AFSREvent = new FSREvent();
+        w559803AFSREvent.setFieldValue("15", getUsername());
+        w559803AFSREvent.setFieldValue("17", "SS_Login");
+        w559803AFSREvent.doControlAction("11"); //TriggertheFindButton
+        formRequest.addFSREvent(w559803AFSREvent); //addtheeventstotheformrequest
+        try {
+            JSONObject jsonObject = (JSONObject) JSONBeanSerializationHelper.toJSON(formRequest);
+            String postData = jsonObject.toString();
+            String response =
+                JDERestServiceProvider.jdeRestServiceCall(postData, JDERestServiceProvider.POST,
+                                                          JDERestServiceProvider.FORM_SERVICE_URI);
+
+            logEvent_FormParent =
+                (P559803_W559803A_FormParent) JSONBeanSerializationHelper.fromJSON(P559803_W559803A_FormParent.class,
+                                                                                     response);
+            clearErrors();
+            if (logEvent_FormParent.getFs_P559803_W559803A().getErrors() != null &&
+                logEvent_FormParent.getFs_P559803_W559803A().getErrors().length > 0) {
+                setErrors(logEvent_FormParent.getFs_P559803_W559803A().getErrors());
+            } else if (logEvent_FormParent.getFs_P559803_W559803A().getWarnings() != null &&
+                       logEvent_FormParent.getFs_P559803_W559803A().getWarnings().length > 0) {
+                setErrors(logEvent_FormParent.getFs_P559803_W559803A().getWarnings());
+            }
+            AdfmfJavaUtilities.setELValue("#{applicationScope.startBean.aliasname}", ApplicationGlobals.getInstance().getLoginResponse().getUserInfo().getAlphaName());
+
+        } catch (JDERestServiceException e) {
+            System.out.println(e.getMessage().toString());
+        } catch (Exception e) {
+            throw new AdfException(e.getMessage(), AdfException.ERROR);
+        }  
+    }
 
     public void clearErrors() {
         setErrors(null);
@@ -171,16 +213,17 @@ public class RecoveryDC {
         
         this.loadDefaultConfig();
         this.processLoginRequest(false);
+        logEventLogin();
     }
 
     public void initLoginFeature() {
         AdfmfJavaUtilities.setELValue("#{applicationScope.connected}", "true");
         ApplicationGlobals.getInstance().setLoginSuccess(false);
         ValueExpression ve1 = AdfmfJavaUtilities.getValueExpression("#{applicationScope.logout}", String.class);
-        String logout = (String) ve1.getValue(AdfmfJavaUtilities.getAdfELContext());
+        String logout = (String) ve1.getValue(AdfmfJavaUtilities.getELContext());
         if (logout != null && logout.trim().length() > 0 && logout == "1") {
             ValueExpression ve2 = AdfmfJavaUtilities.getValueExpression("#{applicationScope.logout}", String.class);
-            ve2.setValue(AdfmfJavaUtilities.getAdfELContext(), "");
+            ve2.setValue(AdfmfJavaUtilities.getELContext(), "");
             this.setUsername("");
             this.setPassword("");
             this.setEnvironment("");
@@ -205,7 +248,7 @@ public class RecoveryDC {
                 ValueExpression ve1 =
                     AdfmfJavaUtilities.getValueExpression("#{preferenceScope.feature.com.oracle.e1.jdemf.login.Connection.URL}",
                                                           String.class);
-                this.url = (String) ve1.getValue(AdfmfJavaUtilities.getAdfELContext());
+                this.url = (String) ve1.getValue(AdfmfJavaUtilities.getELContext());
 
                 if (this.url != null) {
                     String response;
@@ -643,6 +686,8 @@ public class RecoveryDC {
         } else { */
             AdfmfJavaUtilities.setELValue("#{applicationScope.logout}", "1");
             AdfmfContainerUtilities.resetFeature("StartApp");
+            AdfmfJavaUtilities.setELValue("#{applicationScope.startBean.aliasname}", "");
+
         }
     }
 
