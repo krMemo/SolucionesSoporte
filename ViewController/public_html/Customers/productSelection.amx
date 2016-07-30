@@ -18,11 +18,23 @@
                     <amx:inputText value="#{bindings.serialFilter.inputValue}" simple="true" id="it1"
                                    hintText="No. Serie" keyboardDismiss="search" inlineStyle="width:250px;"/>
                 </amx:cellFormat>
-                <amx:cellFormat id="cf7" halign="center">
+                <amx:cellFormat id="cf7" halign="center" rowSpan="2">
                     <amx:commandLink id="cl1" actionListener="#{bindings.getProductsList.execute}"
                                      disabled="#{!bindings.getProductsList.enabled}">
                         <amx:image id="i1" source="/images/search.png" inlineStyle="height:30pt;"/>
                     </amx:commandLink>
+                </amx:cellFormat>
+            </amx:rowLayout>
+            <amx:rowLayout id="rl3">
+                <amx:cellFormat id="cf8" width="80%" header="true" inlineStyle="max-width:100pt;">
+                    <amx:selectOneChoice value="#{bindings.familyFilter.inputValue}" label="Familia" id="it2" simple="true"
+                                         required="true" showRequired="true">
+                        <amx:selectItem id="si1" label="" value=""/>
+                        <amx:selectItem id="si5" label="Laboratorio" value="001"/>
+                        <amx:selectItem id="si2" label="Banco de Sangre" value="002"/>
+                        <amx:selectItem id="si4" label="Imagenología" value="003"/>
+                        <amx:selectItem id="si3" label="Hemodiálisis" value="004"/>
+                    </amx:selectOneChoice>
                 </amx:cellFormat>
             </amx:rowLayout>
         </amx:tableLayout>

@@ -7,6 +7,7 @@ public class P551701S_W551701SA_FormData {
     private FormFieldMobile txtProductModel_16 = new FormFieldMobile();
     private FormFieldMobile txtItemNumber_Unknown_20 = new FormFieldMobile();
     private FormFieldMobile txtCustomerNumber_ALKY_24 = new FormFieldMobile();
+    private FormFieldMobile txtRateGroup_201 = new FormFieldMobile();
     private P551701S_W551701SA_GridData gridData = new P551701S_W551701SA_GridData();
 
     public void setTxtProductModel_16(FormFieldMobile txtProductModel_16) {
@@ -31,6 +32,14 @@ public class P551701S_W551701SA_FormData {
 
     public FormFieldMobile getTxtCustomerNumber_ALKY_24() {
         return txtCustomerNumber_ALKY_24;
+    }
+
+    public void setTxtRateGroup_201(FormFieldMobile txtRateGroup_201) {
+        this.txtRateGroup_201 = txtRateGroup_201;
+    }
+
+    public FormFieldMobile getTxtRateGroup_201() {
+        return txtRateGroup_201;
     }
 
     public void setGridData(P551701S_W551701SA_GridData gridData) {

@@ -44,6 +44,7 @@ public class CustomersDC {
 
     //Querying Products
     String serialFilter;
+    String familyFilter;
     P551701S_W551701SA_FormParent productList_FormParent = new P551701S_W551701SA_FormParent();
     //Creating Service Orders
     String issueDesc;
@@ -182,6 +183,15 @@ public class CustomersDC {
 
     public String getSerialFilter() {
         return serialFilter;
+    }
+
+
+    public void setFamilyFilter(String familyFilter) {
+        this.familyFilter = familyFilter;
+    }
+
+    public String getFamilyFilter() {
+        return familyFilter;
     }
 
     public void setIssueDesc(String issueDesc) {
@@ -366,6 +376,8 @@ public class CustomersDC {
         findProductFSREvent.setQBEValue("1[83]", getAlias());
         if (serialFilter != null && serialFilter.trim().length() > 0) {
             findProductFSREvent.setQBEValue("1[86]", "*" + serialFilter.trim() + "*");
+        } else if (familyFilter != null && familyFilter.trim().length() > 0) {
+            findProductFSREvent.setFieldValue("205", familyFilter.trim());
         }
         findProductFSREvent.doControlAction("14"); //TriggertheFindButton
         formRequest.addFSREvent(findProductFSREvent); //addtheeventstotheformrequest
@@ -446,6 +458,8 @@ public class CustomersDC {
         formRequest.addToFISet("31", this.businessUnit);
 
         FSREvent createSOFSREvent = new FSREvent();
+        //createSOFSREvent.setFieldValue("76", "26/05/2016"); //Visible Serial Product
+        //createSOFSREvent.setFieldValue("225", "18:20:00"); //Visible Serial Product
         createSOFSREvent.setFieldValue("41", this.serialProduct); //Visible Serial Product
         createSOFSREvent.setFieldValue("445", getAlias()); //Visible Cust Alias
         createSOFSREvent.setFieldValue("47", this.issueDesc); // Visible Issue

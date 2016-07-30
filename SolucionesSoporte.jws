@@ -38,8 +38,8 @@
                <value n="application_bundle_id" v="com.yankuiapps.ServiceOrders"/>
                <value n="character_encoding" v="UTF-8"/>
                <value n="minimum_sdk_version" v="16"/>
-               <value n="version_code" v="12"/>
-               <value n="version_name" v="4.1"/>
+               <value n="version_code" v="16"/>
+               <value n="version_name" v="4.6"/>
             </hash>
             <hash n="archiveOptions">
                <value n="hasManifest" v="true"/>
@@ -81,6 +81,44 @@
                </list>
             </hash>
             <url n="jarURL" path="deploy/Android1/Android1.jar/"/>
+            <hash n="mnfImageOptions">
+               <list n="deviceTypes">
+                  <hash>
+                     <value n="appIconPath" v="resources/android/display-mdpi-icon.png"/>
+                     <value n="deviceTypeName" v="Medium Density"/>
+                     <value n="landscapeSplashScreenPath" v="resources/android/display-land-mdpi-splashscreen.9.png"/>
+                     <value n="portraitSplashScreenPath" v="resources/android/display-port-mdpi-splashscreen.9.png"/>
+                  </hash>
+                  <hash>
+                     <value n="appIconPath" v="resources/android/display-ldpi-icon.png"/>
+                     <value n="deviceTypeName" v="Low Density"/>
+                     <value n="landscapeSplashScreenPath" v="resources/android/display-land-ldpi-splashscreen.9.png"/>
+                     <value n="portraitSplashScreenPath" v="resources/android/display-port-ldpi-splashscreen.9.png"/>
+                  </hash>
+                  <hash>
+                     <value n="appIconPath" v="resources/android/display-xxxhdpi-icon.png"/>
+                     <value n="deviceTypeName" v="Extra-Extra-Extra-High Density"/>
+                  </hash>
+                  <hash>
+                     <value n="appIconPath" v="resources/android/display-hdpi-icon.png"/>
+                     <value n="deviceTypeName" v="High Density"/>
+                     <value n="landscapeSplashScreenPath" v="resources/android/display-land-hdpi-splashscreen.9.png"/>
+                     <value n="portraitSplashScreenPath" v="resources/android/display-port-hdpi-splashscreen.9.png"/>
+                  </hash>
+                  <hash>
+                     <value n="appIconPath" v="resources/android/display-xxhdpi-icon.png"/>
+                     <value n="deviceTypeName" v="Extra-Extra-High Density"/>
+                     <value n="landscapeSplashScreenPath" v="resources/android/display-land-xxhdpi-splashscreen.9.png"/>
+                     <value n="portraitSplashScreenPath" v="resources/android/display-port-xxhdpi-splashscreen.9.png"/>
+                  </hash>
+                  <hash>
+                     <value n="appIconPath" v="resources/android/display-xhdpi-icon.png"/>
+                     <value n="deviceTypeName" v="Extra-High Density"/>
+                     <value n="landscapeSplashScreenPath" v="resources/android/display-land-xhdpi-splashscreen.9.png"/>
+                     <value n="portraitSplashScreenPath" v="resources/android/display-port-xhdpi-splashscreen.9.png"/>
+                  </hash>
+               </list>
+            </hash>
             <value n="profileClass" v="oracle.adfmf.framework.dt.deploy.android.AndroidProfile"/>
             <value n="profileName" v="Android1"/>
          </hash>
@@ -127,7 +165,8 @@
             <hash n="iosDeploymentOptions">
                <value n="appBundleId" v="com.dicipa.SolucionesSoporte"/>
                <value n="debugFlag" v="false"/>
-               <value n="simulatorTarget" v="iPad 2 (iOS 8.4 - iPad 2)"/>
+               <value n="simulatorDeviceId" v="FDA71ADA-1A4C-49FF-A365-7DC8D021D1E6"/>
+               <value n="simulatorTarget" v="iPhone 6 (iOS 9.3 - iPhone 6)"/>
             </hash>
             <url n="jarURL" path="deploy/iOS1/iOS1.jar/"/>
             <hash n="mnfImageOptions">
@@ -175,6 +214,7 @@
                <value n="IPAD_NON_RETINA_7_PORT_SPLASH" v="resources/ios/Default-PortraitRetina.png"/>
                <value n="IPAD_NON_RETINA_7_SETTINGS" v="resources/ios/Icon-29.png"/>
                <value n="IPAD_NON_RETINA_7_SPOTLIGHT" v="resources/ios/Icon-40.png"/>
+               <value n="IPAD_PRO_RETINA_APP_IMAGE" v="resources/ios/Icon-83.5@2x.png"/>
                <value n="IPAD_RETINA_7_APP_IMAGE" v="resources/ios/Icon-76@2x.png"/>
                <value n="IPAD_RETINA_7_HORIZ_SPLASH" v="resources/ios/Default-LandscapeRetina@2x.png"/>
                <value n="IPAD_RETINA_7_PORT_SPLASH" v="resources/ios/Default-PortraitRetina@2x.png"/>
@@ -257,6 +297,22 @@
       </list>
    </hash>
    <hash n="oracle.jdeveloper.model.PathsConfiguration">
+      <hash n="ADFContentSet">
+         <list n="pattern-filters">
+            <string v="+**"/>
+         </list>
+         <list n="url-path">
+            <url path=".adf/"/>
+         </list>
+      </hash>
+      <hash n="ApplicationBuildToolContentSet">
+         <list n="pattern-filters">
+            <string v="+*"/>
+         </list>
+         <list n="url-path">
+            <url path="."/>
+         </list>
+      </hash>
       <hash n="ApplicationSrcContentSet">
          <list n="constituent-sets">
             <hash/>
@@ -275,9 +331,41 @@
             <url path="src/"/>
          </list>
       </hash>
+      <hash n="MobileResourcesContentSet">
+         <list n="pattern-filters">
+            <string v="+**"/>
+         </list>
+         <list n="url-path">
+            <url path="resources/"/>
+         </list>
+      </hash>
+      <hash n="ResourceBundlesContentSet">
+         <list n="pattern-filters">
+            <string v="+**"/>
+         </list>
+         <list n="url-path">
+            <url path="resourcebundles/"/>
+         </list>
+      </hash>
+   </hash>
+   <hash n="oracle.mds.internal.dt.ide.appresources.MDSAppResourceCSProvider">
+      <hash n="MDSAppContentSet">
+         <list n="pattern-filters">
+            <string v="+**"/>
+         </list>
+         <list n="url-path">
+            <url path=".mds/"/>
+         </list>
+      </hash>
+   </hash>
+   <hash n="oracle.mds.internal.dt.ide.CustOptions">
+      <list n="customizationLibraries">
+         <hash/>
+      </list>
    </hash>
    <hash n="ResourceBundleOptions">
       <value n="DefaultBundleTypeId" v="xliffResourceBundleId"/>
+      <list n="RegisteredResourceBundles"/>
    </hash>
    <hash n="shared-project-properties">
       <hash n="oracle.jdeveloper.runner.RunConfigurations">

@@ -7,7 +7,7 @@ import com.oracle.e1.jdemf.FSREvent;
 import com.oracle.e1.jdemf.FormRequest;
 import com.oracle.e1.jdemf.JDERestServiceException;
 import com.oracle.e1.jdemf.JDERestServiceProvider;
-import com.oracle.e1.jdemf.UserInfo;
+
 
 import com.oracle.e1.jdemf.JDEmfCapability;
 import com.oracle.e1.jdemf.JDEmfUtilities;
@@ -17,7 +17,8 @@ import com.oracle.e1.jdemf.LoginResponse;
 import com.oracle.e1.jdemf.disconnected.DBConnectionFactory;
 import com.oracle.e1.jdemf.disconnected.E1Connect;
 import com.oracle.e1.jdemf.disconnected.E1Disconnected;
-import com.oracle.e1.jdemf.mobile.AboutValues;
+//import com.oracle.e1.jdemf.mobile.AboutValues;
+
 
 import java.util.Locale;
 import java.util.ResourceBundle;
@@ -150,7 +151,7 @@ public class RecoveryDC {
         formRequest.setFormServiceAction("C");
 
         FSREvent w559803AFSREvent = new FSREvent();
-        w559803AFSREvent.setFieldValue("15", getUsername());
+        w559803AFSREvent.setFieldValue("15", "84002");//getUsername());
         w559803AFSREvent.setFieldValue("17", "SS_Login");
         w559803AFSREvent.doControlAction("11"); //TriggertheFindButton
         formRequest.addFSREvent(w559803AFSREvent); //addtheeventstotheformrequest
@@ -274,17 +275,17 @@ public class RecoveryDC {
                                                                                          (String) response);
                             } catch (CapabilityException ce) {
                                 skipProcessing = true;
-                                this.aboutValuesFromLocalDB();
+                                //this.aboutValuesFromLocalDB();
                                 AdfmfJavaUtilities.setELValue("#{applicationScope.connected}", "false");
                             } catch (Exception e) {
 
                                 skipProcessing = true;
-                                this.aboutValuesFromLocalDB();
+                                //this.aboutValuesFromLocalDB();
                                 AdfmfJavaUtilities.setELValue("#{applicationScope.connected}", "false");
                             }
                         } else {
                             skipProcessing = true;
-                            this.aboutValuesFromLocalDB();
+                            //this.aboutValuesFromLocalDB();
                         }
                     } else {
                         response =
@@ -593,7 +594,7 @@ public class RecoveryDC {
             try {
                 E1Disconnected.createTable("LOGINTABLE");
                 E1Disconnected.localDBInsert(1, "LOGINTABLE", loginCreds);
-                this.aboutValuesToLocalDB();
+                //this.aboutValuesToLocalDB();
             } catch (Exception ex) {
                 Utility.ApplicationLogger.severe(ex.getMessage());
                 ex.printStackTrace();
@@ -602,7 +603,7 @@ public class RecoveryDC {
         }
     }
 
-    private void aboutValuesToLocalDB() {
+    /* private void aboutValuesToLocalDB() {
         try {
             AboutValues aV = new AboutValues();
             aV.setAbout_MobileAppID(ApplicationGlobals.getInstance().getAbout_MobileAppID());
@@ -663,7 +664,7 @@ public class RecoveryDC {
             Utility.ApplicationLogger.severe(ex.getMessage());
             ex.printStackTrace();
         }
-    }
+    } */
 
     public void logout() {
         DBConnectionFactory.closeConnection();

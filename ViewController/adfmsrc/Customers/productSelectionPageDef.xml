@@ -45,5 +45,10 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <attributeValues IterBinding="CustomersDCIterator" id="familyFilter">
+      <AttrNames>
+        <Item Value="familyFilter"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>
