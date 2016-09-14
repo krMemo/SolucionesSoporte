@@ -280,7 +280,7 @@
          <list n="libraryDefinitions">
             <hash>
                <list n="classPath">
-                  <url path="../../../../JDeveloper/JDEMobileFramework_2_1_0/Login.jar" jar-entry=""/>
+                  <url path="../Login.jar" jar-entry=""/>
                </list>
                <value n="deployedByDefault" v="true"/>
                <value n="description" v="Login.jar"/>

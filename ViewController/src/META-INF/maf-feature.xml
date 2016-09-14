@@ -7,6 +7,7 @@
           <adfmf:include type="JavaScript" file="js/jdemfJavascript.js" id="i1"/>
           <adfmf:include type="JavaScript" file="js/NavigationController.js" id="i2"/>
           <adfmf:include type="JavaScript" file="js/PopupUtils.js" id="i3"/>
+          <adfmf:include type="JavaScript" file="js/scanner.js" id="i8"/>
         </adfmf:includes>
       </adfmf:amx>
     </adfmf:content>

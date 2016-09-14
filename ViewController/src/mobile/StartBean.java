@@ -97,15 +97,15 @@ public class StartBean {
         hideCustomSpringboard();
         return null;
     }
-    
-    public String gotoEula(){
+
+    public String gotoEula() {
         AdfmfContainerUtilities.gotoFeature("EULA");
         return null;
     }
-    
-    public String logout(){
+
+    public String logout() {
         AdfmfContainerUtilities.resetFeature("Customers");
-        AdfmfContainerUtilities.resetFeature("StartApp",true);
+        AdfmfContainerUtilities.resetFeature("StartApp", true);
         return null;
     }
 
@@ -194,5 +194,63 @@ public class StartBean {
 
     public String getPass() {
         return pass;
+    }
+
+    /*================== =========== ==================*/
+    /*==================   BARCODE   ==================*/
+    /*================== =========== ==================*/
+
+    private String barcodeError = "";
+    private String barcodeResult = "";
+    private String barcodeFormat = "";
+    private String barcodeCancelled = "";
+
+    public void scanBarcode(ActionEvent event) {
+        // Our AMX page includes a small JavaScript function which wraps the Cordova
+        // barcode scanning function in a manner that makes it more suitable for invocation
+        // from Java bean code. This is the function we are invoking below:
+        AdfmfContainerUtilities.invokeContainerJavaScriptFunction(AdfmfJavaUtilities.getFeatureId(),
+                                                                  "scanBarcodeFromJavaBean", new Object[] { });
+    }
+
+
+    public void setBarcodeError(String barcodeError) {
+        String oldBarcodeError = this.barcodeError;
+        this.barcodeError = barcodeError;
+        propertyChangeSupport.firePropertyChange("barcodeError", oldBarcodeError, barcodeError);
+    }
+
+    public String getBarcodeError() {
+        return barcodeError;
+    }
+
+    public void setBarcodeResult(String barcodeResult) {
+        String oldBarcodeResult = this.barcodeResult;
+        this.barcodeResult = barcodeResult;
+        propertyChangeSupport.firePropertyChange("barcodeResult", oldBarcodeResult, barcodeResult);
+    }
+
+    public String getBarcodeResult() {
+        return barcodeResult;
+    }
+
+    public void setBarcodeFormat(String barcodeFormat) {
+        String oldBarcodeFormat = this.barcodeFormat;
+        this.barcodeFormat = barcodeFormat;
+        propertyChangeSupport.firePropertyChange("barcodeFormat", oldBarcodeFormat, barcodeFormat);
+    }
+
+    public String getBarcodeFormat() {
+        return barcodeFormat;
+    }
+
+    public void setBarcodeCancelled(String barcodeCancelled) {
+        String oldBarcodeCancelled = this.barcodeCancelled;
+        this.barcodeCancelled = barcodeCancelled;
+        propertyChangeSupport.firePropertyChange("barcodeCancelled", oldBarcodeCancelled, barcodeCancelled);
+    }
+
+    public String getBarcodeCancelled() {
+        return barcodeCancelled;
     }
 }
