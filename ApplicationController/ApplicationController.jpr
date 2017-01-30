@@ -287,10 +287,6 @@
             <value n="isJDK" v="false"/>
          </hash>
          <hash>
-            <value n="id" v="JDEMobileFramework.jar"/>
-            <value n="isJDK" v="false"/>
-         </hash>
-         <hash>
             <value n="id" v="Trinidad Databinding Runtime"/>
             <value n="isJDK" v="false"/>
          </hash>
@@ -322,12 +318,29 @@
             <value n="id" v="ADF Web Runtime"/>
             <value n="isJDK" v="false"/>
          </hash>
+         <hash>
+            <value n="id" v="Login.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="JDEMobileFramework.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
       </list>
       <hash n="internalDefinitions">
          <list n="libraryDefinitions">
             <hash>
                <list n="classPath">
-                  <url path="../../JDEMobileFramework.jar" jar-entry=""/>
+                  <url path="../../../../Users/kamehy/Downloads/JDEMobileFramework_2_1_0/Login.jar" jar-entry=""/>
+               </list>
+               <value n="deployedByDefault" v="true"/>
+               <value n="description" v="Login.jar"/>
+               <value n="id" v="Login.jar"/>
+               <value n="locked" v="true"/>
+            </hash>
+            <hash>
+               <list n="classPath">
+                  <url path="../../../../Users/kamehy/Downloads/JDEMobileFramework_2_1_0/JDEMobileFramework.jar" jar-entry=""/>
                </list>
                <value n="deployedByDefault" v="true"/>
                <value n="description" v="JDEMobileFramework.jar"/>
@@ -371,10 +384,6 @@
             <value n="isJDK" v="false"/>
          </hash>
          <hash>
-            <value n="id" v="JDEMobileFramework.jar"/>
-            <value n="isJDK" v="false"/>
-         </hash>
-         <hash>
             <value n="id" v="Trinidad Databinding Runtime"/>
             <value n="isJDK" v="false"/>
          </hash>
@@ -404,6 +413,14 @@
          </hash>
          <hash>
             <value n="id" v="ADF Web Runtime"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Login.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="JDEMobileFramework.jar"/>
             <value n="isJDK" v="false"/>
          </hash>
       </list>

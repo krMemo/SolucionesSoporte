@@ -2,6 +2,10 @@
 <maf-plugins xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.oracle.com/adf/mf">
    <cordova-plugins>
       <core-cordova-plugin id="c1" pluginId="cordova-plugin-network-information"/>
+      <core-cordova-plugin id="c5" pluginId="org.apache.cordova.contacts"/>
+      <core-cordova-plugin id="c6" pluginId="com.oracle.maf.email"/>
+      <core-cordova-plugin id="c7" pluginId="com.oracle.maf.sms"/>
+      <core-cordova-plugin id="c3" pluginId="maf-cordova-plugin-push"/>
       <cordova-plugin id="c2" pluginId="com.phonegap.plugins.barcodescanner" path="../../src/BarcodeScanner-master/">
          <platform id="p1" name="android" enabled="true"/>
          <platform id="p2" name="ios" enabled="true"/>

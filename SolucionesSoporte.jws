@@ -369,6 +369,7 @@
    </hash>
    <hash n="shared-project-properties">
       <hash n="oracle.jdeveloper.runner.RunConfigurations">
+         <value n="activeName" v="Android Device"/>
          <hash n="runConfigurationDefinitions">
             <hash n="Android Device">
                <hash n="Android_options">

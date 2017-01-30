@@ -3,6 +3,15 @@ package application;
 import com.oracle.e1.jdemf.LoginConfiguration;
 
 import oracle.adfmf.application.LifeCycleListener;
+import oracle.adfmf.application.PushNotificationConfig;
+
+import oracle.adfmf.framework.event.EventSource;
+import oracle.adfmf.framework.event.EventSourceFactory;
+
+import ynk.supports.listener.NativePushNotificationListener;
+import oracle.adfmf.framework.api.AdfmfJavaUtilities;
+
+import javax.el.ValueExpression;
 
 /**
  * The application life cycle listener provides the basic structure for developers needing
@@ -42,7 +51,7 @@ import oracle.adfmf.application.LifeCycleListener;
  *
  * @see oracle.adfmf.application.LifeCycleListener
  */
-public class LifeCycleListenerImpl implements LifeCycleListener
+public class LifeCycleListenerImpl implements LifeCycleListener,PushNotificationConfig 
 {
   public LifeCycleListenerImpl()
   {
@@ -64,6 +73,11 @@ public class LifeCycleListenerImpl implements LifeCycleListener
   {
     // Add code here...
     LoginConfiguration.setDefaultFeature("Customers");  
+    
+      EventSource evtSource = EventSourceFactory.getEventSource(
+              EventSourceFactory.NATIVE_PUSH_NOTIFICATION_REMOTE_EVENT_SOURCE_NAME);
+      
+      evtSource.addListener(new NativePushNotificationListener());
   }
 
   /**
@@ -130,4 +144,20 @@ public class LifeCycleListenerImpl implements LifeCycleListener
   {
     // Add code here...
   }
+
+
+    @Override
+    public long getNotificationStyle() {
+        // TODO Implement this method
+        //return PushNotificationConfig.NOTIFICATION_STYLE_BADGE | PushNotificationConfig.NOTIFICATION_STYLE_ALERT | PushNotificationConfig.NOTIFICATION_STYLE_SOUND;
+        return 0L;
+    }
+
+    @Override
+    public String getSourceAuthorizationId() {
+        String senderId = ""; // Google Project Number        
+        ValueExpression ve = AdfmfJavaUtilities.getValueExpression("#{applicationScope.applicationId}", String.class);
+             ve.setValue(AdfmfJavaUtilities.getELContext(), senderId);
+             return senderId;
+    }
 }
