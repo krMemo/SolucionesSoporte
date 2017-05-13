@@ -1,5 +1,6 @@
 package application;
 
+//import com.oracle.e1.jdemf.mobile.AboutValues;
 import com.oracle.e1.jdemf.ApplicationGlobals;
 import com.oracle.e1.jdemf.CapabilityException;
 import com.oracle.e1.jdemf.DefaultConfig;
@@ -7,8 +8,6 @@ import com.oracle.e1.jdemf.FSREvent;
 import com.oracle.e1.jdemf.FormRequest;
 import com.oracle.e1.jdemf.JDERestServiceException;
 import com.oracle.e1.jdemf.JDERestServiceProvider;
-
-
 import com.oracle.e1.jdemf.JDEmfCapability;
 import com.oracle.e1.jdemf.JDEmfUtilities;
 import com.oracle.e1.jdemf.LoginConfiguration;
@@ -17,8 +16,6 @@ import com.oracle.e1.jdemf.LoginResponse;
 import com.oracle.e1.jdemf.disconnected.DBConnectionFactory;
 import com.oracle.e1.jdemf.disconnected.E1Connect;
 import com.oracle.e1.jdemf.disconnected.E1Disconnected;
-//import com.oracle.e1.jdemf.mobile.AboutValues;
-
 
 import java.util.Locale;
 import java.util.ResourceBundle;
@@ -32,22 +29,17 @@ import oracle.adfmf.framework.api.AdfmfJavaUtilities;
 import oracle.adfmf.framework.api.GeneratedPassword;
 import oracle.adfmf.framework.api.JSONBeanSerializationHelper;
 import oracle.adfmf.framework.exception.AdfException;
-
 import oracle.adfmf.java.beans.PropertyChangeListener;
 import oracle.adfmf.java.beans.PropertyChangeSupport;
 import oracle.adfmf.java.beans.ProviderChangeListener;
 import oracle.adfmf.java.beans.ProviderChangeSupport;
-
 import oracle.adfmf.json.JSONObject;
-
 import oracle.adfmf.util.BundleFactory;
-
 import oracle.adfmf.util.Utility;
 
 import ynk.supports.FormErrorWarningMobile;
 import ynk.supports.p559803.P559803_W559803A_FormParent;
 import ynk.supports.p5698ows.P5698OWS_W5698OWSB_FormParent;
-import ynk.supports.p591771i.P591771I_W591771IA_FormParent;
 
 public class RecoveryDC {
 
@@ -264,7 +256,7 @@ public class RecoveryDC {
                     }
                     boolean skipProcessing = false;
                     if (ApplicationGlobals.getInstance().isDisconnectedApp()) {
-                        if (AdfmfJavaUtilities.evaluateELExpression("#{applicationScope.connected}").toString().equalsIgnoreCase("true")) {
+                        if (AdfmfJavaUtilities.getELValue("#{applicationScope.connected}").toString().equalsIgnoreCase("true")) {
                             try {
                                 response =
                                     JDERestServiceProvider.jdeRestServiceCallwURL(this.url, "", "GET",
@@ -299,7 +291,7 @@ public class RecoveryDC {
                     if (!skipProcessing) {
                         AdfmfJavaUtilities.setELValue("#{preferenceScope.feature.com.oracle.e1.jdemf.login.Connection.URL}",
                                                       this.url);
-                        ApplicationGlobals.getInstance().setAisServerURL(this.url);
+                        ApplicationGlobals.getInstance().setServerURL(this.url);
                         ApplicationGlobals.getInstance().setDefaultConfig(this.defaultConfig);
                         ApplicationGlobals.getInstance().setCapabilityList(this.defaultConfig.getCapabilityList());
 
@@ -363,7 +355,7 @@ public class RecoveryDC {
         block31:
         {
             if (ApplicationGlobals.getInstance().isDisconnectedApp() &&
-                AdfmfJavaUtilities.evaluateELExpression("#{applicationScope.connected}").toString().equalsIgnoreCase("true")) {
+                AdfmfJavaUtilities.getELValue("#{applicationScope.connected}").toString().equalsIgnoreCase("true")) {
                 ApplicationGlobals.getInstance().setConnectedCheck(false);
                 try {
                     if (this.url != null && this.url.trim().length() > 0) {
@@ -379,7 +371,7 @@ public class RecoveryDC {
                 }
             }
             if (ApplicationGlobals.getInstance().isDisconnectedApp() &&
-                AdfmfJavaUtilities.evaluateELExpression("#{applicationScope.connected}").toString().equalsIgnoreCase("false")) {
+                AdfmfJavaUtilities.getELValue("#{applicationScope.connected}").toString().equalsIgnoreCase("false")) {
                 String defaultFeature = ApplicationGlobals.getInstance().getDefaultFeature();
                 if (this.disconnectedLoginRequest() &&
                     ((defaultFeature) == null || defaultFeature.trim().length() != 0)) {
@@ -669,7 +661,7 @@ public class RecoveryDC {
     public void logout() {
         DBConnectionFactory.closeConnection();
         if (ApplicationGlobals.getInstance().isDisconnectedApp() &&
-            AdfmfJavaUtilities.evaluateELExpression("#{applicationScope.connected}").toString().equalsIgnoreCase("true")) {
+            AdfmfJavaUtilities.getELValue("#{applicationScope.connected}").toString().equalsIgnoreCase("true")) {
             try {
                 if (this.url != null && this.url.trim().length() > 0) {
                     E1Connect.jdeRestServiceCallConnectionCheck(this.url, "", "GET", "defaultconfig", "StartApp");
@@ -681,7 +673,7 @@ public class RecoveryDC {
                 AdfmfJavaUtilities.setELValue("#{applicationScope.connected}", "false");
             }
         }
-        if (AdfmfJavaUtilities.evaluateELExpression("#{applicationScope.connected}").toString().equalsIgnoreCase("true") &&
+        if (AdfmfJavaUtilities.getELValue("#{applicationScope.connected}").toString().equalsIgnoreCase("true") &&
             ApplicationGlobals.getInstance().isLoginSuccess()) {
             /*  JDEmfUtilities.logout();
         } else { */
