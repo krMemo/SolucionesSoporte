@@ -95,13 +95,6 @@ color:White;
         padding: 5px 10px;
     }*/
     
-    
-    
-    
-    
-    
-
-    
     /* Remove some padding in PFL*/
     html[dir=ltr] .amx-panelFormLayout_body{
         padding-left: 3px;
@@ -244,11 +237,8 @@ color:White;
         height:30px!important; 
         width:30px!important;
     }
-    
-    
-    
-    
-/* begin styles to support point of sale app */ 
+     
+/* point of sale app */ 
      
     .badge {
   padding: 1px 4px 2px;
@@ -281,8 +271,37 @@ color:White;
     white-space:nowrap;
 
     }   
+        
+    .dvtm-ratingGauge {
+    }
     
-/* end styles to support point of sale app */ 
+    .dvtm-ratingGauge .dvtm-ratingGaugeSelected {
+       border-width: 1px;
+       border-style: solid;
+       border-color: #FFC61A;
+       color: #FFBB00;
+    }
+    
+    .dvtm-ratingGauge .dvtm-ratingGaugeUnselected {
+       border-width: 1px;
+       border-style: solid;
+       border-color: #FFC61A;
+       color: #FFBB00;
+    }
+    
+    .dvtm-ratingGauge .dvtm-ratingGaugeHover {
+       border-width: 1px;
+       border-style: solid;
+       border-color: #FFC61A;
+       color: #FFBB00;
+    }
+    
+    .dvtm-ratingGauge .dvtm-ratingGaugeChanged {
+       border-width: 1px;
+       border-style: solid;
+       border-color: #FFC61A;
+       color: #FFBB00;
+    }
 
     
     

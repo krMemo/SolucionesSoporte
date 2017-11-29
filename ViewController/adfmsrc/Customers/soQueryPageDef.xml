@@ -27,26 +27,9 @@
     </attributeValues>
     <methodAction id="getServiceOrdersList" RequiresUpdateModel="true" Action="invokeMethod"
                   MethodName="getServiceOrdersList" IsViewObjectMethod="false" DataControl="CustomersDC"
-                  InstanceName="data.CustomersDC.dataProvider"/>
-    <tree IterBinding="rowsetIterator" id="rowset">
-      <nodeDefinition DefName="ynk.supports.p594820i.P594820I_W594820IA_GridRow" Name="rowset0">
-        <AttrNames>
-        <Item Value="value"/>
-        </AttrNames>
-        <Accessors>
-          <Item Value="dtOrderDate_19"/>
-          <Item Value="chWOType_10"/>
-          <Item Value="SSerialNumber_563"/>
-          <Item Value="SDescrpcinModelo_678"/>
-          <Item Value="mnPegtoWO_424"/>
-        </Accessors>
-      </nodeDefinition>
-      <nodeDefinition DefName="ynk.supports.FieldMobile">
-        <AttrNames>
-          <Item Value="value"/>
-        </AttrNames>
-      </nodeDefinition>
-    </tree>
+                  InstanceName="data.CustomersDC.dataProvider">
+      <NamedData NDName="filterOp" NDValue="" NDType="String"/>
+    </methodAction>
     <list IterBinding="CustomersDCIterator" id="soType" DTSupportsMRU="true" SelectItemValueMode="ListObject"
           StaticList="true">
       <AttrNames>
@@ -62,5 +45,23 @@
         <Item Value="M7"/>
       </ValueList>
     </button>
+    <tree IterBinding="rowsetIterator" id="rowset">
+      <nodeDefinition DefName="ynk.supports.p594820i.P594820I_W594820IA_GridRow" Name="rowset0">
+        <AttrNames>
+        </AttrNames>
+        <Accessors>
+          <Item Value="mnPegtoWO_424"/>
+          <Item Value="SDescrpcinModelo_678"/>
+          <Item Value="SSerialNumber_563"/>
+          <Item Value="dtOrderDate_19"/>
+          <Item Value="chWOType_10"/>
+        </Accessors>
+      </nodeDefinition>
+      <nodeDefinition DefName="ynk.supports.Field">
+        <AttrNames>
+          <Item Value="value"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
   </bindings>
 </pageDefinition>

@@ -7,13 +7,9 @@
             <amx:outputText value="Detalle del Reporte" id="ot1"/>
         </amx:facet>
         <amx:facet name="primary">
-            <amx:commandButton id="cb0" action="__back" rendered="#{deviceScope.device.os eq 'Android'}"/>
+            <amx:commandButton id="cb1" action="__back"/>
         </amx:facet>
-        <amx:facet name="secondary">
-            <amx:commandLink id="cb1" action="__back">
-                <amx:image id="i2" inlineStyle="height:28px;" source="/images/icon_close_128.png"/>
-            </amx:commandLink>
-        </amx:facet>
+        
         <amx:facet name="footer">
             <amx:outputText id="ot99" value="#{applicationScope.startBean.aliasname}"/>
         </amx:facet>
@@ -25,7 +21,7 @@
                 <amx:outputText value="#{bindings.value1.inputValue + ' - ' + bindings.value9.inputValue}" id="ot13"/>
                 <amx:outputText value="" id="ot2"/>
             </amx:panelLabelAndMessage>
-            <amx:panelLabelAndMessage label="Fecha termino" id="plam10" rendered="#{bindings.value10.inputValue != ''}">
+            <amx:panelLabelAndMessage label="Fecha de cierre" id="plam10" rendered="#{bindings.value10.inputValue != ''}">
                 <amx:outputText value="#{bindings.value10.inputValue + ' - ' + bindings.value11.inputValue}" id="ot3"/>
             </amx:panelLabelAndMessage>
             <amx:panelLabelAndMessage label="Estatus" id="plam4">
@@ -52,7 +48,7 @@
                 <amx:outputText value="#{bindings.value5.inputValue}" id="ot7"/>
             </amx:panelLabelAndMessage>
             <amx:panelLabelAndMessage label="Contacto" id="plam6">
-                <amx:outputText value="#{bindings.value6.inputValue}" id="ot11"/>
+                <amx:outputText value="#{bindings.value12.inputValue}" id="ot4"/>
             </amx:panelLabelAndMessage>
             <amx:panelLabelAndMessage label="Teléfono" id="plam3">
                 <amx:outputText value="#{bindings.value7.inputValue}" id="ot8"/>

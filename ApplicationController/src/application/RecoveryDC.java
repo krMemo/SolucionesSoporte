@@ -184,9 +184,9 @@ public class RecoveryDC {
     /*******************************************************/
 
     public void login(boolean recovery) {
-        if (TEST_ENVIROMENT){
-            setUsername("87.84002");
-            setPassword("DCP84002");
+        if (getUsername().isEmpty() && TEST_ENVIROMENT){
+            setUsername("90000");
+            setPassword("DCP90000");
         }
         if (getUsername().startsWith("87.")) {
             AdfmfJavaUtilities.setELValue("#{preferenceScope.feature.com.oracle.e1.jdemf.login.Connection.URL}",

@@ -17,6 +17,12 @@
     <view id="productSelection">
       <page>/Customers/productSelection.amx</page>
     </view>
+    <view id="soSurvey">
+      <page>/Customers/soSurvey.amx</page>
+    </view>
+    <view id="createSurvey">
+      <page>/Survey/createSurvey.amx</page>
+    </view>
     <control-flow-rule id="__8">
       <from-activity-id>custListMenu</from-activity-id>
       <control-flow-case id="__1">
@@ -27,6 +33,10 @@
       <control-flow-case id="__4">
         <from-outcome>toProdSelect</from-outcome>
         <to-activity-id>productSelection</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__5">
+        <from-outcome>toSurvey</from-outcome>
+        <to-activity-id>soSurvey</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <control-flow-rule id="__10">
@@ -42,6 +52,13 @@
       <control-flow-case id="__3">
         <from-outcome>toCreate</from-outcome>
         <to-activity-id>soCreation</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__6">
+      <from-activity-id>soSurvey</from-activity-id>
+      <control-flow-case id="__7">
+        <from-outcome>survToDetail</from-outcome>
+        <to-activity-id>createSurvey</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <page-flow-scope-behavior>

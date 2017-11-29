@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.22.33" id="createSurveyPageDef"
+                Package="Survey">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="root" RangeSize="25" DataControl="CustomersDC" id="CustomersDCIterator"/>
+    <accessorIterator MasterBinding="CustomersDCIterator" Binds="serviceOrders_FormParent" RangeSize="25"
+                      DataControl="CustomersDC" BeanClass="ynk.supports.p594820i.P594820I_W594820IA_FormParent"
+                      id="serviceOrders_FormParentIterator"/>
+    <accessorIterator MasterBinding="serviceOrders_FormParentIterator" Binds="fs_P594820I_W594820IA" RangeSize="25"
+                      DataControl="CustomersDC" BeanClass="ynk.supports.p594820i.P594820I_W594820IA"
+                      id="fs_P594820I_W594820IAIterator"/>
+    <accessorIterator MasterBinding="fs_P594820I_W594820IAIterator" Binds="data" RangeSize="25"
+                      DataControl="CustomersDC" BeanClass="ynk.supports.p594820i.P594820I_W594820IA_FormData"
+                      id="dataIterator"/>
+    <accessorIterator MasterBinding="dataIterator" Binds="gridData" RangeSize="25" DataControl="CustomersDC"
+                      BeanClass="ynk.supports.p594820i.P594820I_W594820IA_GridData" id="gridDataIterator"/>
+    <accessorIterator MasterBinding="gridDataIterator" Binds="rowset" RangeSize="25" DataControl="CustomersDC"
+                      BeanClass="ynk.supports.p594820i.P594820I_W594820IA_GridRow" id="rowsetIterator"/>
+    <accessorIterator MasterBinding="rowsetIterator" Binds="mnPegtoWO_424" RangeSize="25" DataControl="CustomersDC"
+                      BeanClass="ynk.supports.Field" id="mnPegtoWO_424Iterator"/>
+    <accessorIterator MasterBinding="rowsetIterator" Binds="SDescrpcinModelo_678" RangeSize="25"
+                      DataControl="CustomersDC" BeanClass="ynk.supports.Field" id="SDescrpcinModelo_678Iterator"/>
+    <accessorIterator MasterBinding="rowsetIterator" Binds="SSerialNumber_563" RangeSize="25" DataControl="CustomersDC"
+                      BeanClass="ynk.supports.Field" id="SSerialNumber_563Iterator"/>
+    <accessorIterator MasterBinding="rowsetIterator" Binds="SWOSt_9" RangeSize="25" DataControl="CustomersDC"
+                      BeanClass="ynk.supports.Field" id="SWOSt_9Iterator"/>
+    <accessorIterator MasterBinding="rowsetIterator" Binds="SWOSt_447" RangeSize="25" DataControl="CustomersDC"
+                      BeanClass="ynk.supports.Field" id="SWOSt_447Iterator"/>
+    <accessorIterator MasterBinding="rowsetIterator" Binds="dtOrderDate_19" RangeSize="25" DataControl="CustomersDC"
+                      BeanClass="ynk.supports.Field" id="dtOrderDate_19Iterator"/>
+    <accessorIterator MasterBinding="rowsetIterator" Binds="SDescripcinFalla_217" RangeSize="25"
+                      DataControl="CustomersDC" BeanClass="ynk.supports.Field" id="SDescripcinFalla_217Iterator"/>
+    <accessorIterator MasterBinding="rowsetIterator" Binds="SNombredeUsuario_595" RangeSize="25"
+                      DataControl="CustomersDC" BeanClass="ynk.supports.Field" id="SNombredeUsuario_595Iterator"/>
+    <accessorIterator MasterBinding="rowsetIterator" Binds="chWOType_10" RangeSize="25" DataControl="CustomersDC"
+                      BeanClass="ynk.supports.Field" id="chWOType_10Iterator"/>
+    <accessorIterator MasterBinding="rowsetIterator" Binds="dtFechaTermino_145" RangeSize="25" DataControl="CustomersDC"
+                      BeanClass="ynk.supports.Field" id="dtFechaTermino_145Iterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="mnPegtoWO_424Iterator" id="value">
+      <AttrNames>
+        <Item Value="value"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SDescrpcinModelo_678Iterator" id="value1">
+      <AttrNames>
+        <Item Value="value"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SSerialNumber_563Iterator" id="value2">
+      <AttrNames>
+        <Item Value="value"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SWOSt_9Iterator" id="value3">
+      <AttrNames>
+        <Item Value="value"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SWOSt_447Iterator" id="value4">
+      <AttrNames>
+        <Item Value="value"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="dtOrderDate_19Iterator" id="value5">
+      <AttrNames>
+        <Item Value="value"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SDescripcinFalla_217Iterator" id="value6">
+      <AttrNames>
+        <Item Value="value"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SNombredeUsuario_595Iterator" id="value7">
+      <AttrNames>
+        <Item Value="value"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="chWOType_10Iterator" id="value8">
+      <AttrNames>
+        <Item Value="value"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="dtFechaTermino_145Iterator" id="value9">
+      <AttrNames>
+        <Item Value="value"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CustomersDCIterator" id="surveyStars1">
+      <AttrNames>
+        <Item Value="surveyStars1"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CustomersDCIterator" id="surveyStars2">
+      <AttrNames>
+        <Item Value="surveyStars2"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CustomersDCIterator" id="surveyQuestion3">
+      <AttrNames>
+        <Item Value="surveyQuestion3"/>
+      </AttrNames>
+    </attributeValues>
+    <button IterBinding="CustomersDCIterator" id="surveyContact4" DTSupportsMRU="false" StaticList="true">
+      <AttrNames>
+        <Item Value="surveyContact4"/>
+      </AttrNames>
+      <ValueList>
+        <Item Value="true"/>
+        <Item Value="false"/>
+      </ValueList>
+    </button>
+    <methodAction id="createSurvey" RequiresUpdateModel="true" Action="invokeMethod" MethodName="createSurvey"
+                  IsViewObjectMethod="false" DataControl="CustomersDC" InstanceName="data.CustomersDC.dataProvider">
+      <NamedData NDName="ServiceOrder_2Survey" NDValue="#{bindings.value.inputValue}" NDType="java.lang.String"/>
+    </methodAction>
+    <list IterBinding="CustomersDCIterator" id="surveyStars1R" DTSupportsMRU="true" SelectItemValueMode="ListObject"
+          StaticList="true">
+      <AttrNames>
+        <Item Value="surveyStars1R"/>
+      </AttrNames>
+      <ValueList>
+        <Item Value="Servicio de Call Center"/>
+        <Item Value="Conocimiento del Ingeniero"/>
+        <Item Value="El tiempo de Solución"/>
+        <Item Value="La reincidencia en fallas"/>
+      </ValueList>
+    </list>
+    <list IterBinding="CustomersDCIterator" id="surveyStars2R" DTSupportsMRU="true" SelectItemValueMode="ListObject"
+          StaticList="true">
+      <AttrNames>
+        <Item Value="surveyStars2R"/>
+      </AttrNames>
+      <ValueList>
+        <Item Value="Llamada a Call Center"/>
+        <Item Value="Atención del Ingeniero"/>
+        <Item Value="Reparaciones"/>
+        <Item Value="Disponibilidad de Refacciones"/>
+      </ValueList>
+    </list>
+  </bindings>
+</pageDefinition>

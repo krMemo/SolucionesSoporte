@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<amx:view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+          xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+    <?audit suppress oracle.maf.warning-missing-shortDesc?>
+    <?audit suppress oracle.maf.warning-missing-hintText?>
+    <amx:panelPage id="pp1">
+        <amx:facet name="header">
+            <amx:outputText value="Encuestas pendientes" id="ot1"/>
+        </amx:facet>
+        <amx:facet name="primary">
+            <amx:commandButton id="cb1" action="__back"/>
+        </amx:facet>
+        
+        <amx:panelStretchLayout id="psl2" rendered="#{!bindings.surveyRequired.inputValue}">
+            <amx:facet name="center">
+                <amx:verbatim id="v2">
+                    <![CDATA[<p class="MsoNormal" style="margin: 10px; text-align: center; line-height: normal;">
+                    <span style="font-size: 15pt; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; color: black;">
+                        Gracias por ayudarnos con su opinión. <br /> Por el momento no hay más encuestas pendientes. 
+                    </span></p>]]>
+                </amx:verbatim>
+            </amx:facet>
+        </amx:panelStretchLayout>
+        <amx:panelStretchLayout id="psl1" rendered="#{bindings.surveyRequired.inputValue}">
+            <amx:facet name="top">
+                <amx:verbatim id="v1">
+                    <![CDATA[<p class="MsoNormal" style="margin: 10px; text-align: left; line-height: normal;">
+                    <span style="font-size: 12pt; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; color: black;">
+                        Apreciado cliente, buscando la mejora en la Calidad de nuestro Servicio, le solicitamos responder un breve cuestionario. Seleccione una orden para continuar:
+                    </span></p>]]>
+                </amx:verbatim>
+                <amx:listView var="row" value="#{bindings.rowset.collectionModel}"
+                              fetchSize="#{bindings.rowset.rangeSize}"
+                              selectedRowKeys="#{bindings.rowset.collectionModel.selectedRow}"
+                              initialScrollRowKeys="#{bindings.rowset.collectionModel.selectedRow}"
+                              selectionListener="#{bindings.rowset.collectionModel.makeCurrent}"
+                              dividerAttribute="mnPegtoWO_424.value" dividerMode="all"
+                              styleClass="adfmf-listView-insetList" showMoreStrategy="off" bufferStrategy="viewport"
+                              id="lv2">
+                    <amx:listItem id="li2" action="survToDetail">
+                        <amx:tableLayout width="100%" id="tl3">
+                            <amx:rowLayout id="rl8">
+                                <amx:cellFormat width="10px" rowSpan="2" id="cf4"/>
+                                <amx:cellFormat width="70%" height="#{deviceScope.device.os=='Android'?'36':'32'}px"
+                                                id="cf7">
+                                    <amx:outputText value="#{row.SDescrpcinModelo_678.bindings.value.inputValue}"
+                                                    id="ot6"/>
+                                </amx:cellFormat>
+                                <amx:cellFormat width="10px" rowSpan="2" id="cf3"/>
+                                <amx:cellFormat width="30%" halign="end" id="cf6">
+                                    <amx:outputText value="#{row.dtOrderDate_19.bindings.value.inputValue}"
+                                                    styleClass="adfmf-listItem-highlightText" id="ot5"/>
+                                </amx:cellFormat>
+                            </amx:rowLayout>
+                            <amx:rowLayout id="rl9">
+                                <amx:cellFormat width="70%" height="#{deviceScope.device.os=='Android'?'22':'19'}px"
+                                                id="cf8">
+                                    <amx:outputText rendered="#{row.chWOType_10.bindings.value.inputValue == 1}"
+                                                    value="Acondicionamiento" id="ott1"
+                                                    styleClass="adfmf-listItem-captionText"/>
+                                    <amx:outputText rendered="#{row.chWOType_10.bindings.value.inputValue == 2}"
+                                                    value="Correctivo" id="ott2"
+                                                    styleClass="adfmf-listItem-captionText"/>
+                                    <amx:outputText rendered="#{row.chWOType_10.bindings.value.inputValue == 3}"
+                                                    value="Preventivo" id="ott3"
+                                                    styleClass="adfmf-listItem-captionText"/>
+                                    <amx:outputText rendered="#{row.chWOType_10.bindings.value.inputValue == 4}"
+                                                    value="Predictivo" id="ott4"
+                                                    styleClass="adfmf-listItem-captionText"/>
+                                    <amx:outputText rendered="#{row.chWOType_10.bindings.value.inputValue == 5}"
+                                                    value="Instalación" id="ott5"
+                                                    styleClass="adfmf-listItem-captionText"/>
+                                    <amx:outputText rendered="#{row.chWOType_10.bindings.value.inputValue == 6}"
+                                                    value="Capacitación" id="ott6"
+                                                    styleClass="adfmf-listItem-captionText"/>
+                                    <amx:outputText rendered="#{row.chWOType_10.bindings.value.inputValue == 7}"
+                                                    value="Tanques" id="ott7" styleClass="adfmf-listItem-captionText"/>
+                                    <amx:outputText rendered="#{row.chWOType_10.bindings.value.inputValue == 8}"
+                                                    value="Desinstalación" id="ott8"
+                                                    styleClass="adfmf-listItem-captionText"/>
+                                    <amx:outputText rendered="#{row.chWOType_10.bindings.value.inputValue == 9}"
+                                                    value="Validación/Calibración" id="ott9"
+                                                    styleClass="adfmf-listItem-captionText"/>
+                                </amx:cellFormat>
+                                <amx:cellFormat width="30%" halign="end" id="cf10">
+                                    <amx:outputText value="#{row.SDescripcinFalla_217.bindings.value.inputValue}"
+                                                    styleClass="adfmf-listItem-captionText" id="ot8"/>
+                                </amx:cellFormat>
+                            </amx:rowLayout>
+                        </amx:tableLayout>
+                    </amx:listItem>
+                </amx:listView>
+            </amx:facet>
+        </amx:panelStretchLayout>
+    </amx:panelPage>
+    <amx:navigationDragBehavior action="#{startBean.showCustomSpringboard}" direction="back" id="ndb1"/>
+    <amx:navigationDragBehavior action="#{startBean.hideCustomSpringboard}" direction="forward" id="ndb2"/>
+</amx:view>

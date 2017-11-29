@@ -5,41 +5,41 @@
       <property
          name="linkStyle">Orthogonal</property>
       <property
-         name="y">266.5</property>
-      <property
          name="x">91.65625</property>
+      <property
+         name="y">266.5</property>
    </OverallProperties>
    <View
       id="View2">
       <property
          name="activityId">custListMenu</property>
       <property
-         name="page">/Customers/custListMenu.amx</property>
+         name="x">91.65625</property>
       <property
          name="start">true</property>
       <property
          name="description">&lt;html>&lt;p>&lt;b>custListMenu&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
+         name="y">99.03516</property>
+      <property
+         name="page">/Customers/custListMenu.amx</property>
+      <property
          name="exceptionHandler">false</property>
-      <property
-         name="y">99.30078</property>
-      <property
-         name="x">91.65625</property>
    </View>
    <View
       id="View7">
       <property
          name="activityId">soQuery</property>
       <property
-         name="page">/Customers/soQuery.amx</property>
+         name="x">317.1504</property>
       <property
          name="description">&lt;html>&lt;p>&lt;b>soQuery&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
-         name="exceptionHandler">false</property>
-      <property
          name="y">99.90234</property>
       <property
-         name="x">317.1504</property>
+         name="page">/Customers/soQuery.amx</property>
+      <property
+         name="exceptionHandler">false</property>
    </View>
    <ControlFlowCase
       islink="true"
@@ -49,22 +49,22 @@
       <property
          name="fromOutcome">toQuery</property>
       <property
-         name="sdm:polyPoints">R50,204.40332,99.234375,204.40332,99.83594,L50</property>
+         name="sdm:polyPoints">R50,204.40332,98.68457,204.40332,99.55176,L50</property>
    </ControlFlowCase>
    <View
       id="View12">
       <property
          name="activityId">soDetail</property>
       <property
-         name="page">/Customers/soDetail.amx</property>
+         name="x">547.0</property>
       <property
          name="description">&lt;html>&lt;p>&lt;b>soDetail&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
-         name="exceptionHandler">false</property>
-      <property
          name="y">99.40234</property>
       <property
-         name="x">547.0</property>
+         name="page">/Customers/soDetail.amx</property>
+      <property
+         name="exceptionHandler">false</property>
    </View>
    <ControlFlowCase
       islink="true"
@@ -74,37 +74,37 @@
       <property
          name="fromOutcome">toDetail</property>
       <property
-         name="sdm:polyPoints">R50,432.0752,99.83594,432.0752,99.33594,L50</property>
+         name="sdm:polyPoints">R50,432.0752,99.55176,432.0752,99.05176,L50</property>
    </ControlFlowCase>
    <View
       id="View8">
       <property
          name="activityId">soCreation</property>
       <property
-         name="page">/Customers/soCreation.amx</property>
+         name="x">546.0</property>
       <property
          name="description">&lt;html>&lt;p>&lt;b>soCreation&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
-         name="exceptionHandler">false</property>
-      <property
          name="y">215.40234</property>
       <property
-         name="x">546.0</property>
+         name="page">/Customers/soCreation.amx</property>
+      <property
+         name="exceptionHandler">false</property>
    </View>
    <View
       id="View10">
       <property
          name="activityId">productSelection</property>
       <property
-         name="page">/Customers/productSelection.amx</property>
+         name="x">321.0</property>
       <property
          name="description">&lt;html>&lt;p>&lt;b>productSelection&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
-         name="exceptionHandler">false</property>
-      <property
          name="y">215.60156</property>
       <property
-         name="x">321.0</property>
+         name="page">/Customers/productSelection.amx</property>
+      <property
+         name="exceptionHandler">false</property>
    </View>
    <ControlFlowCase
       islink="true"
@@ -112,13 +112,13 @@
       from="View10"
       to="View8">
       <property
-         name="fromOutcome">toCreate</property>
-      <property
          name="tosrcid">__3</property>
+      <property
+         name="fromOutcome">toCreate</property>
       <property
          name="fromsrcid">__2</property>
       <property
-         name="sdm:polyPoints">R50,433.5,215.53516,433.5,215.33594,L50</property>
+         name="sdm:polyPoints">R50,433.5,215.25098,433.5,215.05176,L50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -128,6 +128,60 @@
       <property
          name="fromOutcome">toProdSelect</property>
       <property
-         name="sdm:polyPoints">B50,91.65625,215.53516,L50</property>
+         name="sdm:polyPoints">B50,91.65625,215.25098,L50</property>
    </ControlFlowCase>
+   <View
+      id="View13">
+      <property
+         name="activityId">soSurvey</property>
+      <property
+         name="x">318.0</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>soSurvey&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="y">-50.033203</property>
+      <property
+         name="page">/Customers/soSurvey.amx</property>
+      <property
+         name="exceptionHandler">false</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase15"
+      from="View2"
+      to="View13">
+      <property
+         name="tosrcid">__5</property>
+      <property
+         name="fromOutcome">toSurvey</property>
+      <property
+         name="fromsrcid">__8</property>
+      <property
+         name="sdm:polyPoints">T50,91.65625,-50.38379,L50</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase16"
+      from="View13"
+      to="View17">
+      <property
+         name="fromOutcome">survToDetail</property>
+      <property
+         name="sdm:polyPoints">R50,434.0,-50.38379,434.0,-50.804688,L50</property>
+   </ControlFlowCase>
+   <View
+      id="View17">
+      <property
+         name="activityId">createSurvey</property>
+      <property
+         name="x">550.0</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>createSurvey&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="y">-50.4541</property>
+      <property
+         name="page">/Survey/createSurvey.amx</property>
+      <property
+         name="exceptionHandler">false</property>
+   </View>
 </SDM>

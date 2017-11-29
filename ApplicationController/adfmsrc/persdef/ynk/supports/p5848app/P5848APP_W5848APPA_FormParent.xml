@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE PDefViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<PDefViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="P5848APP_W5848APPA_FormParent"
+  Version="12.2.1.22.33">
+  <DesignTime>
+    <Attr Name="_DCName" Value="application.DataControls.CustomersDC"/>
+    <Attr Name="_SDName" Value="ynk.supports.p5848app.P5848APP_W5848APPA_FormParent"/>
+  </DesignTime>
+</PDefViewObject>

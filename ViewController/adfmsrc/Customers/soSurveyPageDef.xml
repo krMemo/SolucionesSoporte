@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.22.33" id="soSurveyPageDef"
+                Package="Customers">
+  
+  <parameters/><executables>
+    <iterator Binds="root" RangeSize="20" DataControl="CustomersDC" id="CustomersDCIterator"/>
+    <accessorIterator MasterBinding="CustomersDCIterator" Binds="serviceOrders_FormParent" RangeSize="20"
+                      DataControl="CustomersDC" BeanClass="ynk.supports.p594820i.P594820I_W594820IA_FormParent"
+                      id="serviceOrders_FormParentIterator"/>
+    <accessorIterator MasterBinding="serviceOrders_FormParentIterator" Binds="fs_P594820I_W594820IA" RangeSize="20"
+                      DataControl="CustomersDC" BeanClass="ynk.supports.p594820i.P594820I_W594820IA"
+                      id="fs_P594820I_W594820IAIterator"/>
+    <accessorIterator MasterBinding="fs_P594820I_W594820IAIterator" Binds="data" RangeSize="20"
+                      DataControl="CustomersDC" BeanClass="ynk.supports.p594820i.P594820I_W594820IA_FormData"
+                      id="dataIterator"/>
+    <accessorIterator MasterBinding="dataIterator" Binds="gridData" RangeSize="20" DataControl="CustomersDC"
+                      BeanClass="ynk.supports.p594820i.P594820I_W594820IA_GridData" id="gridDataIterator"/>
+    <accessorIterator MasterBinding="gridDataIterator" Binds="rowset" RangeSize="20" DataControl="CustomersDC"
+                      BeanClass="ynk.supports.p594820i.P594820I_W594820IA_GridRow" id="rowsetIterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="CustomersDCIterator" id="surveyStars1">
+      <AttrNames>
+        <Item Value="surveyStars1"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CustomersDCIterator" id="surveyStars2">
+      <AttrNames>
+        <Item Value="surveyStars2"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CustomersDCIterator" id="surveyQuestion3">
+      <AttrNames>
+        <Item Value="surveyQuestion3"/>
+      </AttrNames>
+    </attributeValues>
+  
+    <tree IterBinding="rowsetIterator" id="rowset">
+      <nodeDefinition DefName="ynk.supports.p594820i.P594820I_W594820IA_GridRow" Name="rowset0">
+        <AttrNames>
+        </AttrNames>
+        <Accessors>
+          <Item Value="mnPegtoWO_424"/>
+          <Item Value="SDescrpcinModelo_678"/>
+          <Item Value="dtOrderDate_19"/>
+          <Item Value="chWOType_10"/>
+          <Item Value="SDescripcinFalla_217"/>
+        </Accessors>
+      </nodeDefinition>
+      <nodeDefinition DefName="ynk.supports.Field">
+        <AttrNames>
+          <Item Value="value"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <button IterBinding="CustomersDCIterator" id="surveyContact4" DTSupportsMRU="false" StaticList="true">
+      <AttrNames>
+        <Item Value="surveyContact4"/>
+      </AttrNames>
+      <ValueList>
+        <Item Value="true"/>
+        <Item Value="false"/>
+      </ValueList>
+    </button>
+    <attributeValues IterBinding="CustomersDCIterator" id="surveyRequired">
+      <AttrNames>
+        <Item Value="surveyRequired"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

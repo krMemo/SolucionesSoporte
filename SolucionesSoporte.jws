@@ -2,8 +2,18 @@
 <jws:workspace xmlns:jws="http://xmlns.oracle.com/ide/project">
    <hash n="adrs-workspace-properties">
       <value n="adrs-instance-binding" v="DefaultServer"/>
+      <value n="deploy-timeout" v="0"/>
+      <value n="runtime-application-name" v="SolucionesSoporte"/>
+   </hash>
+   <hash n="adrs-workspace-weblogic-properties">
+      <value n="hot-class-reload" v="ide-default"/>
    </hash>
    <value n="appTemplateId" v="mafAppTemplate"/>
+   <hash n="appWebServicePolicy">
+      <value n="location"/>
+      <value n="LOCATION_TYPE" v="policy.config.PolicyOptions.LocationType.FILE_STORE"/>
+      <value n="SERVER_LOCATION" v="IntegratedWebLogicServer"/>
+   </hash>
    <hash n="component-versions">
       <value n="oracle.adf.share.dt.migration.jps.JaznCredStoreMigratorHelper" v="11.1.1.1.0"/>
       <value n="oracle.adf.share.dt.migration.wsm.PolicyAttachmentMigratorHelper" v="12.1.2.0.0"/>
@@ -31,7 +41,7 @@
       <hash><url n="URL" path="ApplicationController/ApplicationController.jpr"/></hash>
       <hash><url n="URL" path="ViewController/ViewController.jpr"/></hash>
    </list>
-   <value n="MafApplicationJitCleanRequired" v="true"/>
+   <value n="MafApplicationJitCleanRequired" v="false"/>
    <hash n="oracle.jdeveloper.deploy.dt.DeploymentProfiles">
       <hash n="profileDefinitions">
          <hash n="Android1">
@@ -39,9 +49,9 @@
                <value n="android_deploy_debug_mode" v="false"/>
                <value n="application_bundle_id" v="com.yankuiapps.ServiceOrders"/>
                <value n="character_encoding" v="UTF-8"/>
-               <value n="minimum_sdk_version" v="16"/>
-               <value n="version_code" v="16"/>
-               <value n="version_name" v="4.6"/>
+               <value n="minimum_sdk_version" v="18"/>
+               <value n="version_code" v="19"/>
+               <value n="version_name" v="7"/>
             </hash>
             <hash n="archiveOptions">
                <value n="hasManifest" v="true"/>
@@ -167,8 +177,11 @@
             <hash n="iosDeploymentOptions">
                <value n="appBundleId" v="com.dicipa.SolucionesSoporte"/>
                <value n="debugFlag" v="false"/>
-               <value n="simulatorDeviceId" v="76463B20-FCA2-460D-A5CB-7DCBC5A0B6A4"/>
-               <value n="simulatorTarget" v="iPhone 6s Plus (iOS 10.3 - iPhone 6s Plus)"/>
+               <value n="iPadOrientationPortraitUpsideDown" v="false"/>
+               <value n="iPhoneOrientationPortraitUpsideDown" v="false"/>
+               <value n="omssFlag" v="false"/>
+               <value n="simulatorDeviceId" v="48F266A9-2C3E-49AE-9623-1AB81EF205A0"/>
+               <value n="simulatorTarget" v="iPhone 6s Plus (iOS 10.2 - iPhone 6s Plus)"/>
             </hash>
             <url n="jarURL" path="deploy/iOS1/iOS1.jar/"/>
             <hash n="mnfImageOptions">
@@ -210,27 +223,32 @@
                      <value n="portraitSplashScreenPath" v=""/>
                   </hash>
                </list>
-               <value n="imageResourceBaseDir" v="/Users/yankuiapps/Documents/Mobile/YankuiApps/SolucionesSoporte/resources/ios/"/>
+               <value n="imageResourceBaseDir" v="resources/ios/"/>
                <value n="IPAD_NON_RETINA_7_APP_IMAGE" v="resources/ios/Icon-76.png"/>
                <value n="IPAD_NON_RETINA_7_HORIZ_SPLASH" v="resources/ios/Default-LandscapeRetina.png"/>
+               <value n="IPAD_NON_RETINA_7_NOTIFICATIONS" v="resources/ios/Icon-20.png"/>
                <value n="IPAD_NON_RETINA_7_PORT_SPLASH" v="resources/ios/Default-PortraitRetina.png"/>
                <value n="IPAD_NON_RETINA_7_SETTINGS" v="resources/ios/Icon-29.png"/>
                <value n="IPAD_NON_RETINA_7_SPOTLIGHT" v="resources/ios/Icon-40.png"/>
                <value n="IPAD_PRO_RETINA_APP_IMAGE" v="resources/ios/Icon-83.5@2x.png"/>
                <value n="IPAD_RETINA_7_APP_IMAGE" v="resources/ios/Icon-76@2x.png"/>
                <value n="IPAD_RETINA_7_HORIZ_SPLASH" v="resources/ios/Default-LandscapeRetina@2x.png"/>
+               <value n="IPAD_RETINA_7_NOTIFICATIONS" v="resources/ios/Icon-40.png"/>
                <value n="IPAD_RETINA_7_PORT_SPLASH" v="resources/ios/Default-PortraitRetina@2x.png"/>
                <value n="IPAD_RETINA_7_SETTINGS" v="resources/ios/Icon-29@2x.png"/>
                <value n="IPAD_RETINA_7_SPOTLIGHT" v="resources/ios/Icon-40@2x.png"/>
                <value n="IPHONE_6_PLUS_APP_IMAGE" v="resources/ios/Icon-60@3x.png"/>
                <value n="IPHONE_6_PLUS_HORIZ_SPLASH" v="resources/ios/Default-Landscape-621@2x.png"/>
+               <value n="IPHONE_6_PLUS_NOTIFICATIONS" v="resources/ios/Icon-20@3x.png"/>
                <value n="IPHONE_6_PLUS_PORT_SPLASH" v="resources/ios/Default-1104h@2x.png"/>
                <value n="IPHONE_6_PLUS_SETTINGS" v="resources/ios/Icon-29@3x.png"/>
                <value n="IPHONE_6_PLUS_SPOTLIGHT" v="resources/ios/Icon-40@3x.png"/>
                <value n="IPHONE_6_SPLASH" v="resources/ios/Default-667h@2x.png"/>
                <value n="IPHONE_RETINA_6_SPLASH" v="resources/ios/Default@2x.png"/>
                <value n="IPHONE_RETINA_7_APP_IMAGE" v="resources/ios/Icon-120.png"/>
+               <value n="IPHONE_RETINA_7_NOTIFICATIONS" v="resources/ios/Icon-40.png"/>
                <value n="IPHONE_RETINA_7_SPLASH" v="resources/ios/Default-568h@2x.png"/>
+               <value n="IPHONE_RETINA_7_SPOTLIGHT" v="resources/ios/Icon-40@2x.png"/>
                <value n="itunesArtwork" v="resources/ios/iTunesArtwork.png"/>
             </hash>
             <value n="profileClass" v="oracle.adfmf.framework.dt.deploy.ios.McIosFrameworkProfile"/>
@@ -422,13 +440,15 @@
                <hash n="Android_options">
                   <value n="debugConnectInterval" v="5"/>
                   <value n="debugConnectMaxAttempts" v="5"/>
-                  <value n="deployTarget" v="Device"/>
+                  <value n="deployTarget" v="Emulator"/>
                </hash>
                <value n="custom" v="false"/>
+               <value n="debugPort" v="8000"/>
                <value n="mobilePlatform" v="Android"/>
                <value n="name" v="Android Device"/>
                <value n="profileName" v="Android1"/>
                <url n="targetURL" path=".adf/META-INF/maf-application.xml"/>
+               <value n="useProxy" v="false"/>
             </hash>
             <hash n="Android Emulator">
                <hash n="Android_options">
@@ -444,13 +464,15 @@
             </hash>
             <hash n="iOS Simulator">
                <value n="custom" v="false"/>
+               <value n="debugPort" v="8000"/>
                <hash n="iOS_options">
-                  <value n="iosSimulatorDeviceId" v="76463B20-FCA2-460D-A5CB-7DCBC5A0B6A4"/>
-                  <value n="iosSimulatorName" v="iPhone 6s Plus (iOS 10.3 - iPhone 6s Plus)"/>
+                  <value n="iosSimulatorDeviceId" v="48F266A9-2C3E-49AE-9623-1AB81EF205A0"/>
+                  <value n="iosSimulatorName" v="iPhone 6s Plus (iOS 10.2 - iPhone 6s Plus)"/>
                </hash>
                <value n="mobilePlatform" v="iOS"/>
                <value n="name" v="iOS Simulator"/>
                <value n="profileName" v="iOS1"/>
+               <value n="saveAllBeforeRun" v="true"/>
                <url n="targetURL" path=".adf/META-INF/maf-application.xml"/>
             </hash>
          </hash>

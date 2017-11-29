@@ -28,8 +28,9 @@
             <amx:rowLayout id="rl3">
                 <amx:cellFormat id="cf8" width="80%" header="true" inlineStyle="max-width:100pt;">
                     <amx:selectOneChoice value="#{bindings.familyFilter.inputValue}" label="Familia" id="it2" simple="true"
-                                         required="true" showRequired="true">
-                        <amx:selectItem id="si1" label="" value=""/>
+                                         required="true" showRequired="true" 
+                                         valueChangeListener="#{bindings.getProductsList.execute}"> 
+                        <amx:selectItem id="si1" label="Todas las Divisiones" value=""/>
                         <amx:selectItem id="si5" label="Laboratorio" value="001"/>
                         <amx:selectItem id="si2" label="Banco de Sangre" value="002"/>
                         <amx:selectItem id="si4" label="Imagenología" value="003"/>

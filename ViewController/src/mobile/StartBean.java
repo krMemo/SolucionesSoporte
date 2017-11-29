@@ -9,7 +9,7 @@ import oracle.adfmf.java.beans.PropertyChangeSupport;
 
 @SuppressWarnings("oracle.jdeveloper.java.tag-is-missing")
 public class StartBean {
-    private Boolean manager = true;
+    private Boolean manager = false;
     private String soType;
     private String aliasname;
     private String recoveryUser;
@@ -19,6 +19,7 @@ public class StartBean {
     private String alias;
     private String user;
     private String pass;
+    private String serviceOrderToSurvey;
 
     public void setIsPopupOpen(boolean isPopupOpen) {
         this.isPopupOpen = isPopupOpen;
@@ -28,9 +29,10 @@ public class StartBean {
         return isPopupOpen;
     }
 
-
     public void setManager(Boolean manager) {
+        Boolean oldManager = this.manager;
         this.manager = manager;
+        propertyChangeSupport.firePropertyChange("manager", oldManager, manager);
     }
 
     public Boolean getManager() {
@@ -100,6 +102,11 @@ public class StartBean {
     
     public String gotoEula(){
         AdfmfContainerUtilities.gotoFeature("EULA");
+        return null;
+    }
+    
+    public String gotoSurvey() {
+        AdfmfContainerUtilities.gotoFeature("Survey");
         return null;
     }
     
@@ -195,4 +202,5 @@ public class StartBean {
     public String getPass() {
         return pass;
     }
+
 }

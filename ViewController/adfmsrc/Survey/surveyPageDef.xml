@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.22.33" id="surveyPageDef" Package="Survey">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="root" RangeSize="25" DataControl="CustomersDC" id="CustomersDCIterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="CustomersDCIterator" id="surveyStars1">
+      <AttrNames>
+        <Item Value="surveyStars1"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CustomersDCIterator" id="surveyStars2">
+      <AttrNames>
+        <Item Value="surveyStars2"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CustomersDCIterator" id="surveyQuestion3">
+      <AttrNames>
+        <Item Value="surveyQuestion3"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CustomersDCIterator" id="orderNumber">
+      <AttrNames>
+        <Item Value="orderNumber"/>
+      </AttrNames>
+    </attributeValues>
+    <methodAction id="createSurvey" RequiresUpdateModel="true" Action="invokeMethod" MethodName="createSurvey"
+                  IsViewObjectMethod="false" DataControl="CustomersDC" InstanceName="data.CustomersDC.dataProvider">
+      <NamedData NDName="surveyStars1" NDValue="#{bindings.surveyStars1.inputValue}" NDType="java.lang.String"/>
+      <NamedData NDName="surveyStars2" NDValue="#{bindings.surveyStars2.inputValue}" NDType="java.lang.String"/>
+      <NamedData NDName="surveyQuestion3" NDValue="#{bindings.surveyQuestion3.inputValue}" NDType="java.lang.String"/>
+      <NamedData NDName="orderNumber" NDValue="#{startBean.alias}" NDType="java.lang.String"/>
+      <NamedData NDName="alias" NDValue="#{bindings.orderNumber.inputValue}" NDType="java.lang.String"/>
+    </methodAction>
+  </bindings>
+</pageDefinition>

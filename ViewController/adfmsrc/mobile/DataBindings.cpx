@@ -10,6 +10,9 @@
     <page path="/Customers/productSelection.amx" usageId="mobile_productSelectionPageDef"/>
     <page path="/Customers/soCreation.amx" usageId="mobile_soCreationPageDef"/>
     <page path="/CustomSpringboard/customSpringboard.amx" usageId="mobile_customSpringboardPageDef"/>
+    <page path="/Survey/survey.amx" usageId="mobile_surveyPageDef"/>
+    <page path="/Customers/soSurvey.amx" usageId="mobile_soSurveyPageDef"/>
+    <page path="/Survey/createSurvey.amx" usageId="mobile_createSurveyPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="mobile_custlistPageDef" path="Customers.custlistPageDef"/>
@@ -20,6 +23,9 @@
     <page id="mobile_productSelectionPageDef" path="Customers.productSelectionPageDef"/>
     <page id="mobile_soCreationPageDef" path="Customers.soCreationPageDef"/>
     <page id="mobile_customSpringboardPageDef" path="CustomSpringboard.customSpringboardPageDef"/>
+    <page id="mobile_surveyPageDef" path="Survey.surveyPageDef"/>
+    <page id="mobile_soSurveyPageDef" path="Customers.soSurveyPageDef"/>
+    <page id="mobile_createSurveyPageDef" path="Survey.createSurveyPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <dc id="RecoveryDC" path="application.RecoveryDC"/>

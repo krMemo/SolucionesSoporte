@@ -10,9 +10,6 @@ public class GridRowMobile extends GridRow
     private String datatype;
     private Object internalValue;
     private boolean editable;
-    private MathValue mathValue;
-	
-	
 
     public void setId(String id) {
         this.id = id;
@@ -63,12 +60,5 @@ public class GridRowMobile extends GridRow
     {
         return this.editable;
     }
-
-    public void setMathValue(MathValue mathValue) {
-        this.mathValue = mathValue;
-    }
-
-    public MathValue getMathValue() {
-        return mathValue;
-    }
+    
 }

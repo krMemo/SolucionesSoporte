@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<amx:view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+          xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+    <?audit suppress oracle.maf.warning-missing-shortDesc?>
+    <?audit suppress oracle.maf.warning-missing-hintText?>
+    <amx:panelPage id="pp1">
+        <amx:facet name="header">
+            <amx:outputText value="Encuesta de Satisfacción" id="ot1"/>
+        </amx:facet>
+        <amx:panelStretchLayout id="psl1">
+            <amx:facet name="top"/>
+            <amx:facet name="center">
+                <amx:verbatim id="v1">
+        <![CDATA[<p class="MsoNormal" style="margin: 10px; text-align: left; line-height: normal;">
+                    <span style="font-size: 12pt; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; color: black;">
+                        Su opinión es importante para nosotros, por favor ayúdenos con la siguiente encuesta de satisfacción:
+                    </span></p>]]>
+        </amx:verbatim>
+                <amx:tableLayout id="tl1" layout="weighted" halign="center" width="100%"
+                                 xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+                                 inlineStyle="margin-left:10px; margin-right:10px;">
+                    <amx:rowLayout id="rl1">
+                        <amx:cellFormat id="cf11" halign="start" height="34px" valign="middle" width="40%">
+                            <amx:outputText styleClass="adfmf-outputText-padded"
+                                            value="¿Cómo evalua el servicio en general?" id="ot3"/>
+                        </amx:cellFormat>
+                    </amx:rowLayout>
+                    <amx:rowLayout id="rl2">
+                        <amx:cellFormat id="cf12" halign="start" height="75px" valign="middle" width="40%">
+                            <dvtm:ratingGauge id="rg1" unselectedShape="dot" value="#{bindings.surveyStars1.inputValue}" inlineStyle="max-width:50%;"/>
+                        </amx:cellFormat>
+                    </amx:rowLayout>
+                    <amx:rowLayout id="rl3">
+                        <amx:cellFormat id="cf13" halign="start" height="34px" valign="middle" width="40%">
+                            <amx:outputText styleClass="adfmf-outputText-padded"
+                                            value="¿El tiempo de resolución fue adecuado?" id="ot2"/>
+                        </amx:cellFormat>
+                    </amx:rowLayout>
+                    <amx:rowLayout id="rl4">
+                        <amx:cellFormat id="cf14" halign="start" height="75px" valign="middle" width="40%">
+                            <dvtm:ratingGauge id="rg2" unselectedShape="dot" value="#{bindings.surveyStars2.inputValue}" inlineStyle="max-width:50%;"/>
+                        </amx:cellFormat>
+                    </amx:rowLayout>
+                    <amx:rowLayout id="rl5">
+                        <amx:cellFormat id="cf15" halign="start" height="34px" valign="middle" width="40%">
+                            <amx:outputText styleClass="adfmf-outputText-padded"
+                                            value="¿Tiene un comentario o sugerencia que compartir?" id="ot4"/>
+                        </amx:cellFormat>
+                    </amx:rowLayout>
+                    <amx:rowLayout id="rl6">
+                        <amx:cellFormat id="cf16" halign="start" valign="middle" width="40%">
+                            <amx:inputText id="it1" value="#{bindings.surveyQuestion3.inputValue}" maximumLength="255" simple="true" rows="3"/>
+                        </amx:cellFormat>
+                    </amx:rowLayout>
+                    <amx:rowLayout id="rl7">
+                        <amx:cellFormat id="cf17" halign="center" height="34px" valign="middle" width="40%">
+                            <amx:commandButton actionListener="#{bindings.createSurvey.execute}" text="Enviar"
+                                               disabled="#{!bindings.createSurvey.enabled}" id="cb1"/>
+                            <amx:outputText value="#{bindings.orderNumber.inputValue}" id="ot5" rendered="false"/>
+                        </amx:cellFormat>
+                    </amx:rowLayout>
+                </amx:tableLayout>
+            </amx:facet>
+        </amx:panelStretchLayout>
+    </amx:panelPage>
+</amx:view>

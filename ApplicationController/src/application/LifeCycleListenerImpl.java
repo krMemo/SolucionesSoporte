@@ -1,5 +1,7 @@
 package application;
 
+import com.oracle.e1.jdemf.LoginConfiguration;
+
 import oracle.adfmf.application.LifeCycleListener;
 
 /**
@@ -61,7 +63,7 @@ public class LifeCycleListenerImpl implements LifeCycleListener
   public void start()
   {
     // Add code here...
-    //LoginConfiguration.setDefaultFeature("EULA");  
+    LoginConfiguration.setDefaultFeature("Customers");  
   }
 
   /**

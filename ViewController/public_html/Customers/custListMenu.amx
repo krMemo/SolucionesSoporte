@@ -20,7 +20,7 @@
                     </amx:commandLink>
                 </amx:cellFormat>
                 <amx:cellFormat id="cf4" halign="center" valign="middle" width="15px" rowSpan="3"/>
-                <amx:cellFormat id="cf5" halign="center" valign="middle">
+                <amx:cellFormat halign="center" valign="middle" id="cf5">
                     <amx:commandLink action="toProdSelect" actionListener="#{bindings.getProductsList.execute}"
                                      disabled="#{applicationScope.startBean.aliasname == ''}" id="cl2">
                         <amx:image id="i2" source="/images/icon_new_512.png"
@@ -42,7 +42,31 @@
                                      inlineStyle="text-decoration:none; color:Gray;"/>
                 </amx:cellFormat>
             </amx:rowLayout>
-            <amx:rowLayout id="rl1">
+        </amx:tableLayout>
+        
+        <amx:tableLayout id="tl2" halign="center"
+                         rendered="#{!startBean.manager &amp;&amp; bindings.surveyRequired.inputValue}">
+            <amx:rowLayout id="rl7">
+                <amx:cellFormat id="cf17" halign="center" valign="middle" height="40">
+                    <amx:commandLink action="toSurvey" id="cl7"
+                                     actionListener="#{bindings.getSurveysDone.execute}"
+                                     disabled="#{!bindings.getSurveysDone.enabled}">
+                        <amx:image id="i7" source="/images/icon_survey_512.png" 
+                        inlineStyle="height:#{deviceScope.hardware.screen.width &lt; deviceScope.hardware.screen.height?(deviceScope.hardware.screen.availableWidth-(deviceScope.hardware.screen.availableWidth*.15))/2:(deviceScope.hardware.screen.availableWidth-(deviceScope.hardware.screen.availableWidth*.15))/5}px;"/>
+                    </amx:commandLink>
+                </amx:cellFormat>
+            </amx:rowLayout>
+            <amx:rowLayout id="rl8">
+                <amx:cellFormat id="cf8" halign="center" valign="middle" height="40">
+                    <amx:commandLink text="Encuesta de Satisfacción" id="cl8" action="toSurvey"
+                                     actionListener="#{bindings.getSurveysDone.execute}"
+                                     disabled="#{!bindings.getSurveysDone.enabled}"
+                                     inlineStyle="text-decoration:none; color:Gray;"/>
+                </amx:cellFormat>
+            </amx:rowLayout>
+        </amx:tableLayout>
+        <amx:tableLayout id="tl3" halign="center">
+            <amx:rowLayout id="rl9">
                 <amx:cellFormat id="cf1" halign="center" valign="middle" columnSpan="3" height="40">
                     <amx:outputText id="ot2" value="#{applicationScope.startBean.aliasname}"
                                     rendered="#{applicationScope.startBean.aliasname != ''}"/>
@@ -51,26 +75,28 @@
                 </amx:cellFormat>
             </amx:rowLayout>
         </amx:tableLayout>
-        <amx:listView var="row" value="#{bindings.rowset1.collectionModel}" fetchSize="#{bindings.rowset1.rangeSize}"
-                      selectedRowKeys="#{bindings.rowset1.collectionModel.selectedRow}"
-                      selectionListener="#{bindings.rowset1.collectionModel.makeCurrent}"
-                      dividerAttribute="SAliasNameExtended_37.value" dividerMode="all" showMoreStrategy="autoScroll"
-                      bufferStrategy="viewport" id="lv1" rendered="#{applicationScope.startBean.manager}">
-            <amx:listItem id="li1">
-                <amx:setPropertyListener id="spl1" from="#{row.SPadreNameExtended_36.bindings.value.inputValue}"
+        <amx:listView var="row" value="#{bindings.rowset.collectionModel}" fetchSize="#{bindings.rowset.rangeSize}"
+                      selectedRowKeys="#{bindings.rowset.collectionModel.selectedRow}"
+                      initialScrollRowKeys="#{bindings.rowset.collectionModel.selectedRow}"
+                      selectionListener="#{bindings.rowset.collectionModel.makeCurrent}" rendered="#{startBean.manager}"
+                      styleClass="adfmf-listView-insetList" showMoreStrategy="autoScroll" bufferStrategy="viewport"
+                      id="lv1">
+            <amx:listItem id="li2">
+                <amx:setPropertyListener id="spl1" from="#{row.SPadreNameExtended_36.bindings.internalValue.inputValue}"
                                          to="#{applicationScope.startBean.aliasname}" type="action"/>
-                <amx:setPropertyListener id="spl2" from="#{row.mnPadreNumber_19.bindings.value.inputValue}"
+                <amx:setPropertyListener id="spl2" from="#{row.mnPadreNumber_19.bindings.internalValue.inputValue}"
                                          to="#{applicationScope.startBean.alias}" type="action"/>
-                <amx:tableLayout width="100%" id="tl2">
-                    <amx:rowLayout id="rl4">
-                        <amx:cellFormat width="8px" id="cf8"/>
-                        <amx:cellFormat width="25%" height="43px" id="cf9">
-                            <amx:outputText value="#{row.mnPadreNumber_19.bindings.value.inputValue}" id="ot3"/>
+                <amx:tableLayout width="100%" id="tl3">
+                    <amx:rowLayout id="rl1">
+                        <amx:cellFormat width="8px" id="cf13"/>
+                        <amx:cellFormat width="75%" height="43px" id="cf14">
+                            <amx:outputText value="#{row.SPadreNameExtended_36.bindings.internalValue.inputValue}"
+                                            id="ot6"/>
                         </amx:cellFormat>
-                        <amx:cellFormat width="8px" id="cf10"/>
-                        <amx:cellFormat width="75%" halign="start" id="cf11">
-                            <amx:outputText value="#{row.SPadreNameExtended_36.bindings.value.inputValue}"
-                                            styleClass="adfmf-listItem-highlightText" id="ot5"/>
+                        <amx:cellFormat width="10px" id="cf2"/>
+                        <amx:cellFormat width="25%" halign="center" id="cf12">
+                            <amx:outputText value="#{row.mnPadreNumber_19.bindings.internalValue.inputValue}"
+                                            styleClass="adfmf-listItem-highlightText" id="ot4"/>
                         </amx:cellFormat>
                     </amx:rowLayout>
                 </amx:tableLayout>

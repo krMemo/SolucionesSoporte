@@ -19,29 +19,29 @@
     <accessorIterator MasterBinding="gridDataIterator" Binds="rowset" RangeSize="25" DataControl="CustomersDC"
                       BeanClass="ynk.supports.p551701s.P551701S_W551701SA_GridRow" id="rowsetIterator"/>
     <accessorIterator MasterBinding="rowsetIterator" Binds="SSerialNumber_86" RangeSize="25" DataControl="CustomersDC"
-                      BeanClass="ynk.supports.FieldMobile" id="SSerialNumber_86Iterator"/>
+                      BeanClass="ynk.supports.FormFieldMobile" id="SSerialNumber_86Iterator"/>
     <accessorIterator MasterBinding="rowsetIterator" Binds="SBranchPlant_77" RangeSize="25" DataControl="CustomersDC"
-                      BeanClass="ynk.supports.FieldMobile" id="SBranchPlant_77Iterator"/>
+                      BeanClass="ynk.supports.FormFieldMobile" id="SBranchPlant_77Iterator"/>
     <accessorIterator MasterBinding="rowsetIterator" Binds="mnCliente_84" RangeSize="25" DataControl="CustomersDC"
-                      BeanClass="ynk.supports.FieldMobile" id="mnCliente_84Iterator"/>
+                      BeanClass="ynk.supports.FormFieldMobile" id="mnCliente_84Iterator"/>
     <accessorIterator MasterBinding="rowsetIterator" Binds="SProductModel_78" RangeSize="25" DataControl="CustomersDC"
-                      BeanClass="ynk.supports.FieldMobile" id="SProductModel_78Iterator"/>
+                      BeanClass="ynk.supports.FormFieldMobile" id="SProductModel_78Iterator"/>
     <accessorIterator MasterBinding="rowsetIterator" Binds="mnAssetNumber_57" RangeSize="25" DataControl="CustomersDC"
-                      BeanClass="ynk.supports.FieldMobile" id="mnAssetNumber_57Iterator"/>
+                      BeanClass="ynk.supports.FormFieldMobile" id="mnAssetNumber_57Iterator"/>
     <accessorIterator MasterBinding="rowsetIterator" Binds="mnParentItemNo_195" RangeSize="25" DataControl="CustomersDC"
-                      BeanClass="ynk.supports.FieldMobile" id="mnParentItemNo_195Iterator"/>
+                      BeanClass="ynk.supports.FormFieldMobile" id="mnParentItemNo_195Iterator"/>
     <accessorIterator MasterBinding="rowsetIterator" Binds="s2ndItemNumber_196" RangeSize="25" DataControl="CustomersDC"
-                      BeanClass="ynk.supports.FieldMobile" id="s2ndItemNumber_196Iterator"/>
+                      BeanClass="ynk.supports.FormFieldMobile" id="s2ndItemNumber_196Iterator"/>
     <accessorIterator MasterBinding="rowsetIterator" Binds="SPrioridad_200" RangeSize="25" DataControl="CustomersDC"
-                      BeanClass="ynk.supports.FieldMobile" id="SPrioridad_200Iterator"/>
+                      BeanClass="ynk.supports.FormFieldMobile" id="SPrioridad_200Iterator"/>
     <accessorIterator MasterBinding="rowsetIterator" Binds="SUnidadMedida_199" RangeSize="25" DataControl="CustomersDC"
-                      BeanClass="ynk.supports.FieldMobile" id="SUnidadMedida_199Iterator"/>
+                      BeanClass="ynk.supports.FormFieldMobile" id="SUnidadMedida_199Iterator"/>
     <accessorIterator MasterBinding="rowsetIterator" Binds="SRatGrp_45" RangeSize="25" DataControl="CustomersDC"
-                      BeanClass="ynk.supports.FieldMobile" id="SRatGrp_45Iterator"/>
+                      BeanClass="ynk.supports.FormFieldMobile" id="SRatGrp_45Iterator"/>
     <accessorIterator MasterBinding="rowsetIterator" Binds="SLinea_79" RangeSize="25" DataControl="CustomersDC"
-                      BeanClass="ynk.supports.FieldMobile" id="SLinea_79Iterator"/>
+                      BeanClass="ynk.supports.FormFieldMobile" id="SLinea_79Iterator"/>
     <accessorIterator MasterBinding="rowsetIterator" Binds="SProductModel_165" RangeSize="25" DataControl="CustomersDC"
-                      BeanClass="ynk.supports.FieldMobile" id="SProductModel_165Iterator"/>
+                      BeanClass="ynk.supports.FormFieldMobile" id="SProductModel_165Iterator"/>
   </executables>
   <bindings>
     <attributeValues IterBinding="SSerialNumber_86Iterator" id="serialNumber_86">

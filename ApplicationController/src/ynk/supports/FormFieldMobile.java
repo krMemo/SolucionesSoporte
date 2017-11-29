@@ -1,6 +1,6 @@
 package ynk.supports;
 
-public class FormFieldMobile extends FieldMobile {
+public class FormFieldMobile extends Field {
     
     String assocDesc;
     String staticText;

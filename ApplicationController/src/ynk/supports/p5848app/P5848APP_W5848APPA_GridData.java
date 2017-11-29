@@ -1,18 +1,32 @@
 package ynk.supports.p5848app;
 
 import ynk.supports.GridDataMobile;
+import oracle.adfmf.java.beans.PropertyChangeSupport;
+import oracle.adfmf.java.beans.PropertyChangeListener;
+
 import java.util.ArrayList;
 
 public class P5848APP_W5848APPA_GridData extends GridDataMobile {
 
     private P5848APP_W5848APPA_GridColumnTitles titles = new P5848APP_W5848APPA_GridColumnTitles();
+    private PropertyChangeSupport propertyChangeSupport = new PropertyChangeSupport(this); 
+
+    public void addPropertyChangeListener(PropertyChangeListener l) {
+        propertyChangeSupport.addPropertyChangeListener(l);
+    }
+
+    public void removePropertyChangeListener(PropertyChangeListener l) {
+        propertyChangeSupport.removePropertyChangeListener(l);
+    }
 
     public P5848APP_W5848APPA_GridData() {
         super();
     }
 
     public void setTitles(P5848APP_W5848APPA_GridColumnTitles titles) {
+        P5848APP_W5848APPA_GridColumnTitles oldtitles = this.titles;
         this.titles = titles;
+        propertyChangeSupport.firePropertyChange("titles", oldtitles,titles);
     }
 
     public P5848APP_W5848APPA_GridColumnTitles getTitles() {

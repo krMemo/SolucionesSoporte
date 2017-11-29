@@ -1,6 +1,7 @@
 package ynk.supports;
 
 import java.util.Date;
+import java.util.TimeZone;
 
 public class Field {
     
@@ -9,8 +10,7 @@ public class Field {
     private String title;
     private String datatype;
     private Object internalValue;
-    private boolean editable;
-    private MathValue mathValue = new MathValue() ;
+    private boolean editable;    
     private boolean visible;
     private boolean bsvw;
     
@@ -69,7 +69,10 @@ public class Field {
                 try 
                 {
                     long millis = Long.parseLong(iValObj.toString());
-                    return new Date(millis);
+					//apply offset to millis so formatted dates will be correct no matter what time zone					
+					millis = millis - TimeZone.getDefault().getOffset(millis);
+					Date returnDate = new Date(millis);
+                    return returnDate;
                 }
                 catch (NumberFormatException nfe) 
                 {
@@ -104,13 +107,6 @@ public class Field {
         return this.editable;
     }
     
-    public void setMathValue(MathValue mathValue) {
-        this.mathValue = mathValue;
-    }
-
-    public MathValue getMathValue() {
-        return mathValue;
-    }
     public void setVisible(boolean visible)
     {
         this.visible = visible;

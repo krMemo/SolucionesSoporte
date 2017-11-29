@@ -38,33 +38,67 @@
                 </amx:cellFormat>
             </amx:rowLayout>
         </amx:tableLayout>
+        <!--amx:listView var="row" value="#{bindings.rowset.collectionModel}" fetchSize="#{bindings.rowset.rangeSize}"
+                      selectedRowKeys="#{bindings.rowset.collectionModel.selectedRow}"
+                      initialScrollRowKeys="#{bindings.rowset.collectionModel.selectedRow}"
+                      selectionListener="#{bindings.rowset.collectionModel.makeCurrent}"
+                      dividerAttribute="mnPegtoWO_424.value" dividerMode="all" showMoreStrategy="autoScroll"
+                      bufferStrategy="viewport" id="lv1">
+            <amx:listItem id="li2">
+                <amx:tableLayout width="100%" id="tl2">
+                    <amx:rowLayout id="rl4">
+                        <amx:cellFormat width="10px" rowSpan="2" id="cf11"/>
+                        <amx:cellFormat width="60%" height="#{deviceScope.device.os=='Android'?'36':'32'}px" id="cf12">
+                            <amx:outputText value="#{row.SDescrpcinModelo_678.bindings.value.inputValue}" id="ot2"/>
+                        </amx:cellFormat>
+                        <amx:cellFormat width="10px" rowSpan="2" id="cf13"/>
+                        <amx:cellFormat width="40%" halign="end" id="cf14">
+                            <amx:outputText value="#{row.SSerialNumber_563.bindings.value.inputValue}"
+                                            styleClass="adfmf-listItem-highlightText" id="ot3"/>
+                        </amx:cellFormat>
+                    </amx:rowLayout>
+                    <amx:rowLayout id="rl6">
+                        <amx:cellFormat width="60%" height="#{deviceScope.device.os=='Android'?'22':'19'}px" id="cf15">
+                            <amx:outputText value="#{row.dtOrderDate_19.bindings.value.inputValue}"
+                                            styleClass="adfmf-listItem-captionText" id="ot5"/>
+                        </amx:cellFormat>
+                        <amx:cellFormat width="40%" halign="end" id="cf16">
+                            <amx:outputText value="#{row.chWOType_10.bindings.value.inputValue}"
+                                            styleClass="adfmf-listItem-captionText" id="ot9"/>
+                        </amx:cellFormat>
+                    </amx:rowLayout>
+                </amx:tableLayout>
+            </amx:listItem>
+        </amx:listView-->
         <amx:listView var="row" value="#{bindings.rowset.collectionModel}" fetchSize="#{bindings.rowset.rangeSize}"
                       selectedRowKeys="#{bindings.rowset.collectionModel.selectedRow}"
-                      selectionListener="#{bindings.rowset.collectionModel.makeCurrent}" showMoreStrategy="autoScroll"
-                      bufferStrategy="viewport" id="lv1" bufferSize="20">
+                      initialScrollRowKeys="#{bindings.rowset.collectionModel.selectedRow}"
+                      selectionListener="#{bindings.rowset.collectionModel.makeCurrent}"
+                      showMoreStrategy="autoScroll"
+                      bufferStrategy="viewport" id="lv2" bufferSize="20">
             <amx:listItem id="li1" action="toDetail">
                 <amx:tableLayout width="100%" id="tl1">
                     <amx:rowLayout id="rheader">
-                        <amx:cellFormat width="10px" rowSpan="3" id="cf3"/>
+                        <amx:cellFormat width="8px" rowSpan="3" id="cf3"/>
                         <amx:cellFormat width="100%" columnSpan="2"
                                         height="#{deviceScope.device.os=='Android'?'36':'32'}px" id="cf4"
                                         inlineStyle="background-color:Highlight;">
                             <amx:outputText value="Reporte No. #{row.mnPegtoWO_424.bindings.value.inputValue}"
-                                            id="ot3"/>
+                                            id="ot8"/>
                         </amx:cellFormat>
                     </amx:rowLayout>
                     <amx:rowLayout id="rl1">
                         <amx:cellFormat width="70%" halign="start"
                                         height="#{deviceScope.device.os=='Android'?'36':'32'}px" id="cf2">
                             <amx:outputText value="#{row.SDescrpcinModelo_678.bindings.value.inputValue}"
-                                            styleClass="adfmf-listItem-highlightText" id="ot2"/>
+                                            styleClass="adfmf-listItem-highlightText" id="ot6"/>
                         </amx:cellFormat>
                         <amx:cellFormat width="30%" halign="end" id="cf5">
                             <amx:outputText value="#{row.dtOrderDate_19.bindings.value.inputValue}"
-                                            styleClass="adfmf-listItem-captionText" id="ot4"/>
+                                            styleClass="adfmf-listItem-highlightText" id="ot4"/>
                         </amx:cellFormat>
                     </amx:rowLayout>
-                    <amx:rowLayout id="rl4">
+                    <amx:rowLayout id="rl5">
                         <amx:cellFormat width="70%" halign="start"
                                         height="#{deviceScope.device.os=='Android'?'36':'32'}px" id="cf9">
                             <amx:outputText rendered="#{row.chWOType_10.bindings.value.inputValue == 1}"
@@ -80,8 +114,8 @@
                                             value="Instalación" id="ott5" styleClass="adfmf-listItem-captionText"/>
                             <amx:outputText rendered="#{row.chWOType_10.bindings.value.inputValue == 6}"
                                             value="Capacitación" id="ott6" styleClass="adfmf-listItem-captionText"/>
-                            <amx:outputText rendered="#{row.chWOType_10.bindings.value.inputValue == 7}" value="Tanques"
-                                            id="ott7" styleClass="adfmf-listItem-captionText"/>
+                            <amx:outputText rendered="#{row.chWOType_10.bindings.value.inputValue == 7}"
+                                            value="Tanques" id="ott7" styleClass="adfmf-listItem-captionText"/>
                             <amx:outputText rendered="#{row.chWOType_10.bindings.value.inputValue == 8}"
                                             value="Desinstalación" id="ott8" styleClass="adfmf-listItem-captionText"/>
                             <amx:outputText rendered="#{row.chWOType_10.bindings.value.inputValue == 9}"
@@ -90,7 +124,7 @@
                         </amx:cellFormat>
                         <amx:cellFormat width="30%" halign="end" id="cf1">
                             <amx:outputText value="#{row.SSerialNumber_563.bindings.value.inputValue}"
-                                            styleClass="adfmf-listItem-captionText" id="ot14"/>
+                                            styleClass="adfmf-listItem-captionText" id="ot7"/>
                         </amx:cellFormat>
                     </amx:rowLayout>
                 </amx:tableLayout>

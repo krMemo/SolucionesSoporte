@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<amx:view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+          xmlns:dvtm="http://xmlns.oracle.com/adf/mf/amx/dvt">
+    <?audit suppress oracle.maf.warning-missing-shortDesc?>
+    <?audit suppress oracle.maf.warning-missing-hintText?>
+    <amx:panelPage id="pp1">
+        <amx:facet name="header">
+            <amx:outputText value="Encuesta de Satisfacción" id="oth1"/>
+        </amx:facet>
+        <amx:facet name="primary">
+            <amx:commandButton id="cb1" action="__back"/>
+        </amx:facet>
+        <amx:tableLayout width="90%" id="tl3" halign="center" inlineStyle="padding:10px;">
+            <amx:rowLayout id="rl1">
+                <amx:cellFormat width="10px" rowSpan="4" id="cfs1"/>
+                <amx:cellFormat width="50%" id="cf1" inlineStyle="font-weight:bold; background-color:ActiveCaption;">
+                    <amx:outputText value="No. de Reporte: #{bindings.value.inputValue}" id="ot1"/>
+                </amx:cellFormat>
+                <amx:cellFormat width="50%" halign="end" id="cf6"
+                                inlineStyle="font-weight:bold; background-color:ActiveCaption;">
+                    <amx:outputText value="Fecha de cierre: #{bindings.value5.inputValue}"
+                                    styleClass="adfmf-listItem-highlightText" id="ot5"/>
+                </amx:cellFormat>
+                <amx:cellFormat width="10px" rowSpan="4" id="cfs2"/>
+            </amx:rowLayout>
+            <amx:rowLayout id="rl2">
+                <amx:cellFormat width="50%" columnSpan="2" halign="start"
+                                height="#{deviceScope.device.os=='Android'?'22':'19'}px" id="cf8">
+                    <amx:outputText rendered="#{bindings.value8.inputValue == 1}" value="Tipo: Acondicionamiento"
+                                    id="ott1" styleClass="adfmf-listItem-captionText"/>
+                    <amx:outputText rendered="#{bindings.value8.inputValue == 2}" value="Tipo: Correctivo" id="ott2"
+                                    styleClass="adfmf-listItem-captionText"/>
+                    <amx:outputText rendered="#{bindings.value8.inputValue == 3}" value="Tipo: Preventivo" id="ott3"
+                                    styleClass="adfmf-listItem-captionText"/>
+                    <amx:outputText rendered="#{bindings.value8.inputValue == 4}" value="Tipo: Predictivo" id="ott4"
+                                    styleClass="adfmf-listItem-captionText"/>
+                    <amx:outputText rendered="#{bindings.value8.inputValue == 5}" value="Tipo: Instalación" id="ott5"
+                                    styleClass="adfmf-listItem-captionText"/>
+                    <amx:outputText rendered="#{bindings.value8.inputValue == 6}" value="Tipo: Capacitación" id="ott6"
+                                    styleClass="adfmf-listItem-captionText"/>
+                    <amx:outputText rendered="#{bindings.value8.inputValue == 7}" value="Tipo: Tanques" id="ott7"
+                                    styleClass="adfmf-listItem-captionText"/>
+                    <amx:outputText rendered="#{bindings.value8.inputValue == 8}" value="Tipo: Desinstalación" id="ott8"
+                                    styleClass="adfmf-listItem-captionText"/>
+                    <amx:outputText rendered="#{bindings.value8.inputValue == 9}" value="Tipo: Validación/Calibración"
+                                    id="ott9" styleClass="adfmf-listItem-captionText"/>
+                </amx:cellFormat>
+            </amx:rowLayout>
+            <amx:rowLayout id="rl8">
+                <amx:cellFormat id="cf7" columnSpan="2" height="#{deviceScope.device.os=='Android'?'36':'32'}px">
+                    <amx:outputText value="Equipo: #{bindings.value1.inputValue}" id="ot6"/>
+                </amx:cellFormat>
+            </amx:rowLayout>
+            <amx:rowLayout id="rl9">
+                <amx:cellFormat id="cf10" columnSpan="2" height="#{deviceScope.device.os=='Android'?'36':'32'}px">
+                    <amx:outputText value="Descripción: #{bindings.value7.inputValue}"
+                                    styleClass="adfmf-listItem-captionText" id="ot8"/>
+                </amx:cellFormat>
+            </amx:rowLayout>
+        </amx:tableLayout>
+        <amx:tableLayout id="tls2" layout="weighted" halign="center" width="100%"
+                         xmlns:amx="http://xmlns.oracle.com/adf/mf/amx"
+                         inlineStyle="margin-left:10px; margin-right:10px;">
+            <amx:rowLayout id="rls1">
+                <amx:cellFormat id="cf11" halign="start" height="34px" valign="middle" width="40%">
+                    <amx:outputText styleClass="adfmf-outputText-padded" value="¿Cómo evalua el servicio en general?"
+                                    id="ot3"/>
+                </amx:cellFormat>
+            </amx:rowLayout>
+            <amx:rowLayout id="rls2">
+                <amx:cellFormat id="cf12" halign="start" height="75px" valign="middle" width="40%">
+                    <dvtm:ratingGauge id="rg1" unselectedShape="dot" value="#{bindings.surveyStars1.inputValue}"
+                                      inlineStyle="max-width:50%;"/>
+                </amx:cellFormat>
+            </amx:rowLayout>
+            <amx:rowLayout id="rls21" rendered="#{bindings.surveyStars1.inputValue &lt; 3}">
+                <amx:cellFormat id="cf121" halign="start" height="75px" valign="middle" width="40%">
+                    <amx:selectOneChoice value="#{bindings.surveyStars1R.inputValue}"
+                                         required="#{bindings.surveyStars1.inputValue &lt; 3}"
+                                         label="¿Qué podemos mejorar?" id="soc1">
+                        <amx:selectItems value="#{bindings.surveyStars1R.items}" id="si1"/>
+                    </amx:selectOneChoice>
+                </amx:cellFormat>
+            </amx:rowLayout>
+            <amx:rowLayout id="rls3">
+                <amx:cellFormat id="cf13" halign="start" height="34px" valign="middle" width="40%">
+                    <amx:outputText styleClass="adfmf-outputText-padded" value="¿El tiempo de resolución fue adecuado?"
+                                    id="ots2"/>
+                </amx:cellFormat>
+            </amx:rowLayout>
+            <amx:rowLayout id="rls4">
+                <amx:cellFormat id="cf14" halign="start" height="75px" valign="middle" width="40%">
+                    <dvtm:ratingGauge id="rg2" unselectedShape="dot" value="#{bindings.surveyStars2.inputValue}"
+                                      inlineStyle="max-width:50%;"/>
+                </amx:cellFormat>
+            </amx:rowLayout>
+            <amx:rowLayout id="rls41" rendered="#{bindings.surveyStars2.inputValue &lt; 3}">
+                <amx:cellFormat id="cf141" halign="start" height="75px" valign="middle" width="40%">
+                    <amx:selectOneChoice value="#{bindings.surveyStars2R.inputValue}" label="¿Qué podemos mejorar?"
+                                         id="soc2" required="#{bindings.surveyStars2.inputValue &lt; 3}">
+                        <amx:selectItems value="#{bindings.surveyStars2R.items}" id="si2"/>
+                    </amx:selectOneChoice>
+                </amx:cellFormat>
+            </amx:rowLayout>
+            <amx:rowLayout id="rls22">
+                <amx:cellFormat id="cf22" halign="start" height="34px" valign="middle" width="40%"
+                                inlineStyle="margin:10px;">
+                    <amx:selectBooleanCheckbox value="#{bindings.surveyContact4.inputValue}"
+                                               label="¿Desea que un ejecutivo lo contacte?" id="sbc1"/>
+                </amx:cellFormat>
+            </amx:rowLayout>
+            <amx:rowLayout id="rls5">
+                <amx:cellFormat id="cf15" halign="start" height="34px" valign="middle" width="40%">
+                    <amx:outputText styleClass="adfmf-outputText-padded"
+                                    value="¿Tiene un comentario o sugerencia que compartir?" id="ots4"/>
+                </amx:cellFormat>
+            </amx:rowLayout>
+            <amx:rowLayout id="rls6">
+                <amx:cellFormat id="cf16" halign="start" valign="middle" width="40%">
+                    <amx:inputText id="it1" value="#{bindings.surveyQuestion3.inputValue}" maximumLength="255"
+                                   simple="true" rows="3"/>
+                </amx:cellFormat>
+            </amx:rowLayout>
+            <amx:rowLayout id="rls7">
+                <amx:cellFormat id="cf17" halign="center" height="34px" valign="middle" width="40%">
+                    <amx:commandButton actionListener="#{bindings.createSurvey.execute}" text="Enviar"
+                                       disabled="#{!bindings.createSurvey.enabled}" id="cb2"/>
+                </amx:cellFormat>
+            </amx:rowLayout>
+        </amx:tableLayout>
+        <amx:commandButton text="_hiddenShow" id="_popShowId" inlineStyle="visibility: hidden;">
+            <amx:showPopupBehavior id="spb1" popupId="p1" type="action" decoration="simple" alignId="pp1"
+                                   align="overlapMiddleCenter"/>
+        </amx:commandButton>
+        <amx:commandButton text="_hiddenClose" id="_popCloseId" inlineStyle="visibility: hidden;">
+            <amx:closePopupBehavior id="cpb1" popupId="p1" type="action"/>
+        </amx:commandButton>
+    </amx:panelPage>
+    <amx:popup id="p1" animation="slideUp" autoDismiss="false" backgroundDimming="on">
+        <amx:tableLayout id="tl2" halign="center">
+            <amx:rowLayout id="rl90">
+                <amx:cellFormat id="cf90" halign="center" valign="middle" header="true"
+                                inlineStyle="background-color:Highlight;">
+                    <amx:outputText id="ot90" value="¡Gracias!" inlineStyle="font-size:large; font-weight:bold;"/>
+                </amx:cellFormat>
+            </amx:rowLayout>
+            <amx:rowLayout id="rl93">
+                <amx:cellFormat id="cf93" halign="center" valign="middle">
+                    <amx:outputText value="Dicipa agradece su amable participación." id="ot24"/>
+                </amx:cellFormat>
+            </amx:rowLayout>
+            <amx:rowLayout id="rl94">
+                <amx:cellFormat id="cf94" halign="center" valign="middle">
+                    <amx:commandButton id="cb94" text="Cerrar" actionListener="#{startBean.closePopup}"/>
+                </amx:cellFormat>
+            </amx:rowLayout>
+        </amx:tableLayout>
+    </amx:popup>
+    <amx:navigationDragBehavior action="#{startBean.showCustomSpringboard}" direction="back" id="ndb1"/>
+    <amx:navigationDragBehavior action="#{startBean.hideCustomSpringboard}" direction="forward" id="ndb2"/>
+</amx:view>

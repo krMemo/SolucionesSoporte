@@ -39,7 +39,7 @@
           <Item Value="SProductModel_165"/>
         </Accessors>
       </nodeDefinition>
-      <nodeDefinition DefName="ynk.supports.FieldMobile">
+      <nodeDefinition DefName="ynk.supports.FormFieldMobile">
         <AttrNames>
           <Item Value="value"/>
         </AttrNames>

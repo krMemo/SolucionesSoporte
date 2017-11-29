@@ -10,8 +10,8 @@
         </adfmf:includes>
       </adfmf:amx>
     </adfmf:content>
-    <adfmf:properties id="p1">
-      <adfmf:property name="iOSWebView" value="legacy" id="p2"/>
+    <adfmf:properties id="p3">
+      <adfmf:property name="iOSWebView" value="legacy" id="p4"/>
     </adfmf:properties>
   </adfmf:feature>
   <adfmf:feature id="StartApp" name="StartApp">
@@ -22,8 +22,8 @@
         </adfmf:includes>
       </adfmf:amx>
     </adfmf:content>
-    <adfmf:properties id="p5">
-      <adfmf:property name="iOSWebView" value="legacy" id="p6"/>
+    <adfmf:properties id="p11">
+      <adfmf:property name="iOSWebView" value="legacy" id="p12"/>
     </adfmf:properties>
   </adfmf:feature>
   <adfmf:feature id="PassRecovery" name="PassRecovery">
@@ -35,16 +35,16 @@
         </adfmf:includes>
       </adfmf:amx>
     </adfmf:content>
-    <adfmf:properties id="p7">
-      <adfmf:property name="iOSWebView" value="legacy" id="p8"/>
+    <adfmf:properties id="p9">
+      <adfmf:property name="iOSWebView" value="legacy" id="p10"/>
     </adfmf:properties>
   </adfmf:feature>
   <adfmf:feature id="CustomSpringboard" name="CustomSpringboard">
     <adfmf:content id="CustomSpringboard.1">
       <adfmf:amx file="CustomSpringboard/customSpringboard.amx"/>
     </adfmf:content>
-    <adfmf:properties id="p9">
-      <adfmf:property name="iOSWebView" value="legacy" id="p10"/>
+    <adfmf:properties id="p5">
+      <adfmf:property name="iOSWebView" value="legacy" id="p6"/>
     </adfmf:properties>
   </adfmf:feature>
   <adfmf:feature id="EULA" name="EULA">
@@ -56,8 +56,22 @@
         </adfmf:includes>
       </adfmf:amx>
     </adfmf:content>
-    <adfmf:properties id="p3">
-      <adfmf:property name="iOSWebView" value="legacy" id="p4"/>
+    <adfmf:properties id="p7">
+      <adfmf:property name="iOSWebView" value="legacy" id="p8"/>
+    </adfmf:properties>
+  </adfmf:feature>
+  <adfmf:feature id="Survey" name="Survey">
+    <adfmf:content id="Survey.1">
+      <adfmf:amx file="Survey/survey.amx">
+        <adfmf:includes>
+          <adfmf:include type="JavaScript" file="js/PopupUtils.js" id="i8"/>
+          <adfmf:include type="JavaScript" file="js/NavigationController.js" id="i9"/>
+          <adfmf:include type="JavaScript" file="js/jdemfJavascript.js" id="i10"/>
+        </adfmf:includes>
+      </adfmf:amx>
+    </adfmf:content>
+    <adfmf:properties id="p1">
+      <adfmf:property name="iOSWebView" value="legacy" id="p2"/>
     </adfmf:properties>
   </adfmf:feature>
 </adfmf:features>
